@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { Icon } from "@iconify/react";
 
 const HeroSection = () => {
     return (
@@ -17,12 +19,31 @@ const HeroSection = () => {
                 </div>
             </div>
             <div className="flex justify-center space-x-4">
-                <button className="px-8 py-3 border rounded-md dark:border-zinc-800">
-                    Resume
-                </button>
-                <button className="px-8 py-3 border rounded-md dark:border-zinc-800">
-                    LinkedIn
-                </button>
+                <a
+                    href="https://firebasestorage.googleapis.com/v0/b/jirald.appspot.com/o/Jirald%20Laurea%20Calusay.pdf?alt=media&token=234978fa-80d5-4a1e-b5a2-ce29a1cad57d"
+                    target="_blank"
+                    className="flex items-center px-6 py-3 space-x-1 text-blue-600 border rounded-md dark:text-blue-500 dark:border-zinc-800"
+                >
+                    <p>Resume</p>
+                    <Icon
+                        icon="ic:baseline-open-in-new"
+                        width={20}
+                        height={20}
+                    />
+                </a>
+
+                <a
+                    href="https://linkedin.com/in/jirald-calusay-064b09220"
+                    target="_blank"
+                    className="flex items-center px-6 py-3 space-x-1 text-blue-600 border rounded-md dark:text-blue-500 dark:border-zinc-800"
+                >
+                    <p>LinkedIn</p>
+                    <Icon
+                        icon="ic:baseline-open-in-new"
+                        width={20}
+                        height={20}
+                    />
+                </a>
             </div>
         </div>
     );
