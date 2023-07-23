@@ -5,7 +5,7 @@ const ProjectsCard = ({ imgSrc, name, description, link }: any) => {
     return (
         <div className="flex flex-col items-center mb-12 md:flex-row">
             <Image
-                className="mb-6 mr-0 border rounded-lg md:mb-0 md:mr-8 dark:shadow-none dark:border-none"
+                className="w-full mb-6 mr-0 border rounded-lg md:mb-0 md:mr-8 dark:shadow-none dark:border-none md:w-auto"
                 src={`/img/${imgSrc}`}
                 alt=""
                 width={400}
