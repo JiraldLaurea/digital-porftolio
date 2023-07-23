@@ -57,6 +57,18 @@ const Navbar = () => {
                                         >
                                             <RiSunLine size={18} />
                                         </button>
+                                        <div
+                                            onClick={() =>
+                                                setIsMenuOpened(true)
+                                            }
+                                            className="sm:hidden w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none border-zinc-700 hover:bg-zinc-800"
+                                        >
+                                            <FaBars
+                                                className="text-white"
+                                                width={25}
+                                                height={25}
+                                            />
+                                        </div>
                                     </div>
                                 ) : (
                                     <div className="flex items-center space-x-4">
@@ -66,6 +78,18 @@ const Navbar = () => {
                                         >
                                             <RiMoonFill size={18} />
                                         </button>
+                                        <div
+                                            onClick={() =>
+                                                setIsMenuOpened(true)
+                                            }
+                                            className="sm:hidden  w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none hover:bg-slate-100"
+                                        >
+                                            <FaBars
+                                                className=""
+                                                width={25}
+                                                height={25}
+                                            />
+                                        </div>
                                     </div>
                                 )}
                             </>
@@ -87,45 +111,53 @@ const Navbar = () => {
                                 Jirald
                             </h1>
                         </Link>
-                        {theme === "dark" ? (
-                            <div className="flex items-center space-x-4">
-                                <button
-                                    className="p-2 transition-colors border rounded-lg border-zinc-700 hover:bg-zinc-800"
-                                    onClick={() => setTheme("light")}
-                                >
-                                    <RiSunLine size={18} />
-                                </button>
-                                <div
-                                    onClick={() => setIsMenuOpened(false)}
-                                    className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none border-zinc-700 hover:bg-zinc-800"
-                                >
-                                    <Icon
-                                        icon="ic:baseline-close"
-                                        className="text-white"
-                                        width={25}
-                                        height={25}
-                                    />
-                                </div>
-                            </div>
-                        ) : (
-                            <div className="flex items-center space-x-4">
-                                <button
-                                    className="p-2 transition-colors border rounded-lg hover:bg-slate-100"
-                                    onClick={() => setTheme("dark")}
-                                >
-                                    <RiMoonFill size={18} />
-                                </button>
-                                <div
-                                    onClick={() => setIsMenuOpened(false)}
-                                    className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none hover:bg-slate-100"
-                                >
-                                    <Icon
-                                        icon="ic:baseline-close"
-                                        width={25}
-                                        height={25}
-                                    />
-                                </div>
-                            </div>
+                        {isClient === true && (
+                            <>
+                                {theme === "dark" ? (
+                                    <div className="flex items-center space-x-4">
+                                        <button
+                                            className="p-2 transition-colors border rounded-lg border-zinc-700 hover:bg-zinc-800"
+                                            onClick={() => setTheme("light")}
+                                        >
+                                            <RiSunLine size={18} />
+                                        </button>
+                                        <div
+                                            onClick={() =>
+                                                setIsMenuOpened(false)
+                                            }
+                                            className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none border-zinc-700 hover:bg-zinc-800"
+                                        >
+                                            <Icon
+                                                icon="ic:baseline-close"
+                                                className="text-white"
+                                                width={25}
+                                                height={25}
+                                            />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="flex items-center space-x-4">
+                                        <button
+                                            className="p-2 transition-colors border rounded-lg hover:bg-slate-100"
+                                            onClick={() => setTheme("dark")}
+                                        >
+                                            <RiMoonFill size={18} />
+                                        </button>
+                                        <div
+                                            onClick={() =>
+                                                setIsMenuOpened(false)
+                                            }
+                                            className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none hover:bg-slate-100"
+                                        >
+                                            <Icon
+                                                icon="ic:baseline-close"
+                                                width={25}
+                                                height={25}
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+                            </>
                         )}
                     </div>
                     <div className="flex flex-col items-center px-4 text-center">
