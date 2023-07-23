@@ -1,5 +1,6 @@
 import Experience from "./components/Experience";
 import HeroSection from "./components/HeroSection";
+import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import type { Metadata } from "next";
 
@@ -14,6 +15,7 @@ export default function Home() {
             <HeroSection />
             <Experience />
             <Skills />
+            <Projects />
         </div>
     );
 }

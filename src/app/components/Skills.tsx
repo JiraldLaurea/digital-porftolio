@@ -1,16 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import SkillsGrid from "./SkillsGrid";
+import Wrapper from "./Wrapper";
 
 const Skills = () => {
     return (
-        <div
-            id="skills"
-            className="text-center flex flex-col justify-center min-h-[calc(100vh-68.4px)] bg-white dark:bg-zinc-900 py-14 border-b dark:border-b-zinc-800"
-        >
-            <h1 className="mb-8 text-xl font-light tracking-[6px] uppercase">
-                Skills
-            </h1>
+        <Wrapper id="skills" title="skills">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <SkillsGrid imgSrc="skills_react.svg" text="Reactjs" />
                 <div className="dark:hidden">
@@ -45,7 +40,7 @@ const Skills = () => {
                     <SkillsGrid imgSrc="skills_vercelDark.svg" text="Vercel" />
                 </div>
             </div>
-        </div>
+        </Wrapper>
     );
 };
 
