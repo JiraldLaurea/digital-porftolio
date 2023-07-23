@@ -3,6 +3,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "next-themes";
+import dynamic from "next/dynamic";
+
+const NoSSR = dynamic(() => import("./components/Navbar"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
 

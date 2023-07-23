@@ -6,7 +6,7 @@ const HeroSection = () => {
     return (
         <div
             id="home"
-            className="flex flex-col justify-center h-[calc(100vh-68.4px)] bg-white dark:bg-zinc-900  border-b dark:border-b-zinc-800"
+            className="flex flex-col justify-center h-[calc(100vh-68.4px)] bg-white dark:bg-zinc-900   border-b dark:border-b-zinc-800"
         >
             <div className="mb-8 text-center">
                 <h1 className="mb-4 text-6xl font-bold">Hi, I'm Jirald!</h1>

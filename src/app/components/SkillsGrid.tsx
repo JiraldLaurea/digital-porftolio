@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -10,6 +11,7 @@ const SkillsGrid = ({ imgSrc, text }: any) => {
                 alt=""
                 width={40}
                 height={40}
+                onLoadingComplete={(e) => console.log("TEST", e)}
             />
             <p>{text}</p>
         </div>
