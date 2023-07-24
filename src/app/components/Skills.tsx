@@ -8,6 +8,7 @@ const Skills = () => {
         <Wrapper id="skills" title="skills">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <SkillsGrid imgSrc="skills_react.svg" text="Reactjs" />
+                <SkillsGrid imgSrc="skills_reactRedux.svg" text="React Redux" />
                 <div className="dark:hidden">
                     <SkillsGrid imgSrc="skills_nextjsLight.svg" text="Nextjs" />
                 </div>

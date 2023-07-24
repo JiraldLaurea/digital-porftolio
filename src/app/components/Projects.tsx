@@ -15,6 +15,11 @@ const Projects = () => {
     ];
 
     const technologies2 = ["skills_react.svg", "skills_firebase.svg"];
+    const technologies3 = [
+        "skills_react.svg",
+        "skills_reactRedux.svg",
+        "skills_firebase.svg",
+    ];
 
     return (
         <Wrapper id="projects" title="projects">
@@ -33,6 +38,13 @@ const Projects = () => {
                 description="A mobile-responsive website with Google login authentication that enables users to post texts, images, or videos similar to Facebook."
                 link="https://facebook-clone-dfe01.web.app"
                 technologies={technologies2}
+            />
+            <ProjectsCard
+                imgSrc="projects_discord-clone.png"
+                name="Discord Clone"
+                description="A mobile-responsive website with Google login authentication that enables users create a channel where they can chat with another user."
+                link="https://discord-clone-84659.web.app"
+                technologies={technologies3}
             />
             <ProjectsCard
                 imgSrc="projects_airbnb-clone.png"

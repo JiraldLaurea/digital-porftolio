@@ -18,7 +18,7 @@ const ProjectsCard = ({
     return (
         <div className="flex flex-col items-center mb-12 md:flex-row">
             <Image
-                className="w-full mb-6 mr-0 border rounded-lg md:mb-0 md:mr-8 dark:shadow-none dark:border-none md:w-[450px]"
+                className="w-full mb-6 mr-0 border rounded-lg md:mb-0 md:mr-8 dark:shadow-none dark:border-transparent md:w-[450px]"
                 src={`/img/${imgSrc}`}
                 alt=""
                 width={450}
@@ -28,7 +28,7 @@ const ProjectsCard = ({
                 <h1 className="mb-2 text-xl font-semibold">{name}</h1>
                 <p>{description}</p>
                 <div className="mt-4 mb-6 text-zinc-600 dark:text-zinc-300">
-                    <p className="mb-2 text-sm uppercase">Tech used</p>
+                    <p className="mb-2 text-sm uppercase">Tech stack</p>
                     {isClient == true && (
                         <div className="flex items-center">
                             {technologies?.map((technology: any, idx: any) => (
