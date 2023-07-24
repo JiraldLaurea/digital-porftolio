@@ -91,18 +91,7 @@ const Navbar = () => {
             </div>
             {isMenuOpened && (
                 <div className="fixed top-0 z-10 w-full h-screen bg-white dark:bg-zinc-900">
-                    <div className="h-[68.4px]  flex items-center px-4 justify-between border-b dark:border-b-zinc-800">
-                        <Link
-                            offset={-68}
-                            smooth
-                            duration={500}
-                            to="home"
-                            onClick={() => setIsMenuOpened(false)}
-                        >
-                            <h1 className="text-xl font-bold cursor-pointer">
-                                Jirald
-                            </h1>
-                        </Link>
+                    <div className="h-[68.4px]  flex items-center px-4 justify-end border-b dark:border-b-zinc-800">
                         {isClient === true && (
                             <>
                                 {theme === "dark" ? (

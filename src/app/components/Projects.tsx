@@ -42,7 +42,7 @@ const Projects = () => {
             <ProjectsCard
                 imgSrc="projects_discord-clone.png"
                 name="Discord Clone"
-                description="A mobile-responsive website with Google login authentication that enables users create a channel where they can chat with another user."
+                description="A mobile-responsive website with Google login authentication that enables users to create a channel where they can chat with another user."
                 link="https://discord-clone-84659.web.app"
                 technologies={technologies3}
             />
