@@ -16,13 +16,14 @@ const ProjectsCard = ({
     }, []);
 
     return (
-        <div className="flex flex-col items-center mb-12 md:flex-row">
+        <div className="flex flex-col items-start mb-12 md:flex-row">
             <Image
-                className="w-full mb-6 mr-0 border rounded-lg md:mb-0 md:mr-8 dark:shadow-none dark:border-transparent md:w-[450px]"
+                className="w-full mb-6 mr-0 border rounded-lg md:mb-0 md:mr-6 dark:shadow-none dark:border-transparent md:w-[450px]"
                 src={`/img/${imgSrc}`}
                 alt=""
                 width={450}
                 height={450}
+                unoptimized
             />
             <div className="w-full text-left">
                 <h1 className="mb-2 text-xl font-semibold">{name}</h1>
