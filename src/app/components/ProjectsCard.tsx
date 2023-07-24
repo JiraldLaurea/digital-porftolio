@@ -1,7 +1,20 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const ProjectsCard = ({ imgSrc, name, description, link }: any) => {
+const ProjectsCard = ({
+    imgSrc,
+    name,
+    description,
+    link,
+    technologies,
+}: any) => {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     return (
         <div className="flex flex-col items-center mb-12 md:flex-row">
             <Image
@@ -12,8 +25,24 @@ const ProjectsCard = ({ imgSrc, name, description, link }: any) => {
                 height={450}
             />
             <div className="w-full text-left">
-                <h1 className="mb-2 text-2xl font-semibold">{name}</h1>
-                <p className="mb-6">{description}</p>
+                <h1 className="mb-2 text-xl font-semibold">{name}</h1>
+                <p>{description}</p>
+                <div className="mt-4 mb-6 text-zinc-600 dark:text-zinc-300">
+                    <p className="mb-2 text-sm uppercase">Tech used</p>
+                    {isClient == true && (
+                        <div className="flex items-center">
+                            {technologies?.map((technology: any, idx: any) => (
+                                <Image
+                                    className="mr-2 dark:shadow-none"
+                                    src={`/img/${technology}`}
+                                    alt=""
+                                    width={30}
+                                    height={30}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
                 <a href={link} target="_blank">
                     <button className="w-full px-5 py-2 text-white bg-blue-600 rounded-md md:w-auto">
                         Visit
