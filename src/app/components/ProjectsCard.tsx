@@ -33,6 +33,7 @@ const ProjectsCard = ({
                         <div className="flex items-center">
                             {technologies?.map((technology: any, idx: any) => (
                                 <Image
+                                    key={idx}
                                     className="mr-2 dark:shadow-none"
                                     src={`/img/${technology}`}
                                     alt=""
