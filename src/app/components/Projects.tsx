@@ -22,7 +22,7 @@ const Projects = () => {
     ];
 
     return (
-        <Wrapper id="projects" title="projects">
+        <Wrapper id="projects" title="Projects" subtitle="What I've built" last>
             <ProjectsCard
                 imgSrc="projects_google-clone.png"
                 name="Google Clone"

@@ -5,8 +5,12 @@ import Wrapper from "./Wrapper";
 
 const Experience = () => {
     return (
-        <Wrapper id="experience" title="experience">
-            <div className="flex flex-col justify-center space-y-6 md:space-x-6 md:flex-row md:space-y-0">
+        <Wrapper
+            id="experience"
+            title="Experience"
+            subtitle="Where I've worked with"
+        >
+            <div className="grid grid-cols-1 space-y-6 md:grid-cols-2 md:space-x-6 md:space-y-0">
                 <ExperienceCard
                     imgSrc="exp_cpu.png"
                     job="Computer Laboratory Assistant"

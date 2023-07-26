@@ -7,8 +7,7 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
 const Navbar = () => {
-    const { systemTheme, theme, setTheme }: any = useTheme();
-    // const currentTheme = theme === "system" ? systemTheme : theme;
+    const { theme, setTheme }: any = useTheme();
     const [isMenuOpened, setIsMenuOpened] = useState(false);
     const [isClient, setIsClient] = useState(false);
 
@@ -25,9 +24,9 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="sticky top-0 flex justify-center py-4 bg-white border-b border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
+            <div className="sticky top-0 flex justify-center h-[68.4px] bg-white border-b border-zinc-200 dark:bg-zinc-950 dark:border-zinc-800">
                 <div className="flex items-center justify-between w-full max-w-5xl px-4">
-                    <div className="flex items-center text-sm sm:space-x-6">
+                    <div className="flex items-center text-sm">
                         {navItems.map((navItem, idx) => {
                             return (
                                 <Link
@@ -37,7 +36,7 @@ const Navbar = () => {
                                     to={navItem.page}
                                     key={idx}
                                 >
-                                    <p className="hidden cursor-pointer select-none sm:block">
+                                    <p className="hidden px-4 py-2 transition-colors rounded-md cursor-pointer select-none dark:hover:bg-zinc-900 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-white text-zinc-500 hover:text-zinc-950 sm:block">
                                         {navItem.label}
                                     </p>
                                 </Link>
@@ -47,16 +46,16 @@ const Navbar = () => {
                     {isClient === true && (
                         <>
                             {theme === "dark" ? (
-                                <div className="flex items-center space-x-4">
+                                <div className="flex items-center space-x-2">
                                     <button
-                                        className="p-2 transition-colors border rounded-lg border-zinc-700 hover:bg-zinc-800"
+                                        className="p-2 transition-colors border rounded-md border-zinc-700 hover:bg-zinc-900"
                                         onClick={() => setTheme("light")}
                                     >
                                         <RiSunLine size={18} />
                                     </button>
                                     <div
                                         onClick={() => setIsMenuOpened(true)}
-                                        className="sm:hidden w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none border-zinc-700 hover:bg-zinc-800"
+                                        className="sm:hidden w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none border-zinc-700 hover:bg-zinc-900"
                                     >
                                         <FaBars
                                             className="text-white"
@@ -66,16 +65,16 @@ const Navbar = () => {
                                     </div>
                                 </div>
                             ) : (
-                                <div className="flex items-center space-x-4">
+                                <div className="flex items-center space-x-2">
                                     <button
-                                        className="p-2 transition-colors border rounded-lg hover:bg-slate-100"
+                                        className="p-2 transition-colors border rounded-md hover:bg-zinc-100"
                                         onClick={() => setTheme("dark")}
                                     >
                                         <RiMoonFill size={18} />
                                     </button>
                                     <div
                                         onClick={() => setIsMenuOpened(true)}
-                                        className="sm:hidden  w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none hover:bg-slate-100"
+                                        className="sm:hidden  w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-100"
                                     >
                                         <FaBars
                                             className=""
@@ -90,14 +89,14 @@ const Navbar = () => {
                 </div>
             </div>
             {isMenuOpened && (
-                <div className="fixed top-0 z-10 w-full h-screen bg-white dark:bg-zinc-900">
-                    <div className="h-[68.4px]  flex items-center px-4 justify-end border-b dark:border-b-zinc-800">
+                <div className="fixed top-0 z-10 w-full h-screen bg-white dark:bg-zinc-950">
+                    <div className="h-[68.4px] flex items-center px-4 justify-end border-b dark:border-b-zinc-800">
                         {isClient === true && (
                             <>
                                 {theme === "dark" ? (
-                                    <div className="flex items-center space-x-4">
+                                    <div className="flex items-center space-x-2">
                                         <button
-                                            className="p-2 transition-colors border rounded-lg border-zinc-700 hover:bg-zinc-800"
+                                            className="p-2 transition-colors border rounded-md border-zinc-700 hover:bg-zinc-900"
                                             onClick={() => setTheme("light")}
                                         >
                                             <RiSunLine size={18} />
@@ -106,7 +105,7 @@ const Navbar = () => {
                                             onClick={() =>
                                                 setIsMenuOpened(false)
                                             }
-                                            className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none border-zinc-700 hover:bg-zinc-800"
+                                            className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none border-zinc-700 hover:bg-zinc-900"
                                         >
                                             <Icon
                                                 icon="ic:baseline-close"
@@ -117,9 +116,9 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="flex items-center space-x-4">
+                                    <div className="flex items-center space-x-2">
                                         <button
-                                            className="p-2 transition-colors border rounded-lg hover:bg-slate-100"
+                                            className="p-2 transition-colors border rounded-md hover:bg-zinc-100"
                                             onClick={() => setTheme("dark")}
                                         >
                                             <RiMoonFill size={18} />
@@ -128,7 +127,7 @@ const Navbar = () => {
                                             onClick={() =>
                                                 setIsMenuOpened(false)
                                             }
-                                            className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-lg cursor-pointer select-none hover:bg-slate-100"
+                                            className="w-[35.6px] h-[35.6px] justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-100"
                                         >
                                             <Icon
                                                 icon="ic:baseline-close"
@@ -141,7 +140,7 @@ const Navbar = () => {
                             </>
                         )}
                     </div>
-                    <div className="flex flex-col items-center px-4 text-center">
+                    <div className="flex pb-[68.4px] flex-col items-center justify-center h-full text-center">
                         {navItems.map((navItem, idx) => {
                             return (
                                 <Link
@@ -150,7 +149,9 @@ const Navbar = () => {
                                     duration={500}
                                     to={navItem.page}
                                     key={idx}
-                                    className="w-full py-4 border-b cursor-pointer dark:border-b-zinc-800"
+                                    className={`w-full py-4 border-b cursor-pointer dark:border-y-zinc-800 ${
+                                        idx == 0 && "border-t"
+                                    }`}
                                     onClick={() => setIsMenuOpened(false)}
                                 >
                                     <p>{navItem.label}</p>

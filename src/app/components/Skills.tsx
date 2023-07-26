@@ -5,8 +5,8 @@ import Wrapper from "./Wrapper";
 
 const Skills = () => {
     return (
-        <Wrapper id="skills" title="skills">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <Wrapper id="skills" title="Skills" subtitle="Where I'm good at">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <SkillsGrid imgSrc="skills_react.svg" text="Reactjs" />
                 <SkillsGrid imgSrc="skills_reactRedux.svg" text="React Redux" />
                 <div className="dark:hidden">

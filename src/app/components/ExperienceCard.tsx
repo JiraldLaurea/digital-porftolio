@@ -11,8 +11,8 @@ const ExperienceCard = ({
     noTask2,
 }: any) => {
     return (
-        <div className="px-8 py-12 border md:max-w-xs rounded-xl dark:border-zinc-800">
-            <div className="flex flex-col mb-8">
+        <div className="px-8 py-10 bg-white border rounded-md md:max-w-full dark:border-zinc-800 dark:bg-zinc-950">
+            <div className="flex flex-col items-center mb-8">
                 <Image
                     className="rounded-full"
                     src={`/img/${imgSrc}`}
@@ -22,14 +22,16 @@ const ExperienceCard = ({
                 />
             </div>
             <div className="text-left">
-                <h2 className="text-lg font-semibold">{job}</h2>
-                <h3 className="text-sm">{company}</h3>
-                <p className="mt-4 text-sm uppercase text-zinc-600 dark:text-zinc-300">
-                    {date}
-                </p>
+                <div className="text-center">
+                    <h2 className="mb-1 text-xl font-bold">{job}</h2>
+                    <h3 className="text-sm">{company}</h3>
+                    <p className="mt-4 text-sm uppercase text-zinc-600 dark:text-zinc-300">
+                        {date}
+                    </p>
+                </div>
                 <hr className="my-4 dark:border-zinc-800" />
 
-                <ul className="space-y-2 text-sm list-disc list-inside">
+                <ul className="space-y-2 list-disc list-inside">
                     <li>{task1}</li>
                     {noTask2 ? <></> : <li>{task2}</li>}
                 </ul>

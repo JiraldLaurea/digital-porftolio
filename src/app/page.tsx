@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <div className="max-w-5xl px-4 mx-auto">
+        <div className="mx-auto dark:bg-zinc-950">
             <HeroSection />
             <Experience />
             <Skills />
