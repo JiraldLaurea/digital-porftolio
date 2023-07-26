@@ -23,14 +23,13 @@ const ExperienceCard = ({
             </div>
             <div className="text-left">
                 <div className="text-center">
-                    <h2 className="mb-1 text-xl font-bold">{job}</h2>
-                    <h3 className="text-sm">{company}</h3>
-                    <p className="mt-4 text-sm uppercase text-zinc-600 dark:text-zinc-300">
+                    <h2 className="mb-1 text-2xl font-bold">{job}</h2>
+                    <h3 className="">{company}</h3>
+                    <p className="mt-4 text-sm uppercase text-zinc-500 dark:text-zinc-400">
                         {date}
                     </p>
                 </div>
                 <hr className="my-4 dark:border-zinc-800" />
-
                 <ul className="space-y-2 list-disc list-inside">
                     <li>{task1}</li>
                     {noTask2 ? <></> : <li>{task2}</li>}
