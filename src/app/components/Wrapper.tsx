@@ -4,8 +4,8 @@ const Wrapper = (props: any) => {
     return (
         <div
             id={props.id}
-            className={`text-center flex flex-col justify-center items-center min-h-[calc(100vh-68.4px)] bg-zinc-100 dark:bg-zinc-900 py-14 mb-3 ${
-                props.last && "mb-0"
+            className={`text-center flex flex-col justify-center items-center min-h-[calc(100vh-68.4px)] bg-zinc-100 dark:bg-zinc-900 py-14 ${
+                props.last ? "mb-0" : "mb-3"
             }`}
         >
             <div className="flex flex-col items-center mb-12">
