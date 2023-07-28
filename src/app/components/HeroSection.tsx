@@ -9,10 +9,10 @@ const HeroSection = () => {
             className="flex flex-col justify-center h-[calc(100vh-68.4px)] bg-zinc-50 dark:bg-zinc-900 px-4 mb-2"
         >
             <div className="mb-8 text-center">
-                <h1 className="pb-1 mb-3 text-6xl font-bold text-transparent md:text-7xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 ">
+                <h1 className="pb-1 mb-3 text-5xl font-bold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 ">
                     Jirald Calusay
                 </h1>
-                <h3 className="mb-6 text-4xl font-bold md:text-5xl">
+                <h3 className="mb-6 text-3xl font-bold sm:text-5xl">
                     Aspiring web developer
                 </h3>
                 <div className="flex justify-center">
