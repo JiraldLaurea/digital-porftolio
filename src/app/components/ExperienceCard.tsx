@@ -17,8 +17,8 @@ const ExperienceCard = ({
                     className="rounded-full"
                     src={`/img/${imgSrc}`}
                     alt=""
-                    width={80}
-                    height={80}
+                    width={110}
+                    height={110}
                 />
             </div>
             <div className="text-left">

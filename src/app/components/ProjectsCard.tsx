@@ -16,7 +16,7 @@ const ProjectsCard = ({
     }, []);
 
     return (
-        <div className="flex flex-col-reverse items-start p-6 mb-6 bg-white border rounded-md dark:border-zinc-800 md:flex-row dark:bg-zinc-950">
+        <div className="flex flex-col-reverse items-center p-6 mb-6 bg-white border rounded-md dark:border-zinc-800 md:flex-row dark:bg-zinc-950">
             <div className="w-full text-left">
                 <h1 className="mb-2 text-2xl font-bold">{name}</h1>
                 <p className="">{description}</p>
