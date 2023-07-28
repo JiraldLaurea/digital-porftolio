@@ -10,7 +10,7 @@ const Experience = () => {
             title="Experience"
             subtitle="Where I've worked with"
         >
-            <div className="grid grid-cols-1 space-y-6 md:grid-cols-2 md:space-x-6 md:space-y-0">
+            <div className="grid grid-cols-1 space-y-6 md:grid-cols-2 md:flex md:justify-center md:space-x-6 md:space-y-0">
                 <ExperienceCard
                     imgSrc="exp_cpu.png"
                     job="Computer Laboratory Assistant"

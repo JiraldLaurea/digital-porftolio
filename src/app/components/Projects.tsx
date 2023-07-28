@@ -22,37 +22,39 @@ const Projects = () => {
     ];
 
     return (
-        <Wrapper id="projects" title="Projects" subtitle="What I've built" last>
-            <ProjectsCard
-                imgSrc="projects_google-clone.png"
-                name="Google Clone"
-                description="A mobile-responsive website that allows
+        <Wrapper id="projects" title="Projects" subtitle="What I've built">
+            <div className="space-y-6">
+                <ProjectsCard
+                    imgSrc="projects_google-clone.png"
+                    name="Google Clone"
+                    description="A mobile-responsive website that allows
                 users to search for terms and display the links of the
                 results similar to Google Search."
-                link="https://zandell-google-clone-2.vercel.app"
-                technologies={technologies1}
-            />
-            <ProjectsCard
-                imgSrc="projects_facebook-clone.png"
-                name="Facebook Clone"
-                description="A mobile-responsive website with Google login authentication that enables users to post texts, images, or videos similar to Facebook."
-                link="https://facebook-clone-dfe01.web.app"
-                technologies={technologies2}
-            />
-            <ProjectsCard
-                imgSrc="projects_discord-clone.png"
-                name="Discord Clone"
-                description="A mobile-responsive website with Google login authentication that enables users to create a channel where they can chat with another user."
-                link="https://discord-clone-84659.web.app"
-                technologies={technologies3}
-            />
-            <ProjectsCard
-                imgSrc="projects_airbnb-clone.png"
-                name="Airbnb Clone"
-                description="A mobile-responsive website with calendar and date functionality."
-                link="https://zandell-airbnb-clone.vercel.app"
-                technologies={technologies1}
-            />
+                    link="https://zandell-google-clone-2.vercel.app"
+                    technologies={technologies1}
+                />
+                <ProjectsCard
+                    imgSrc="projects_facebook-clone.png"
+                    name="Facebook Clone"
+                    description="A mobile-responsive website with Google login authentication that enables users to post texts, images, or videos similar to Facebook."
+                    link="https://facebook-clone-dfe01.web.app"
+                    technologies={technologies2}
+                />
+                <ProjectsCard
+                    imgSrc="projects_discord-clone.png"
+                    name="Discord Clone"
+                    description="A mobile-responsive website with Google login authentication that enables users to create a channel where they can chat with another user."
+                    link="https://discord-clone-84659.web.app"
+                    technologies={technologies3}
+                />
+                <ProjectsCard
+                    imgSrc="projects_airbnb-clone.png"
+                    name="Airbnb Clone"
+                    description="A mobile-responsive website with calendar and date functionality."
+                    link="https://zandell-airbnb-clone.vercel.app"
+                    technologies={technologies1}
+                />
+            </div>
         </Wrapper>
     );
 };

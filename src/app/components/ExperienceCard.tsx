@@ -11,7 +11,7 @@ const ExperienceCard = ({
     noTask2,
 }: any) => {
     return (
-        <div className="px-8 py-10 bg-white border rounded-md md:max-w-full dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="px-8 py-10 bg-white border rounded-md md:max-w-sm dark:border-zinc-800 dark:bg-zinc-950">
             <div className="flex flex-col items-center mb-8">
                 <Image
                     className="rounded-full"
