@@ -6,7 +6,7 @@ const HeroSection = () => {
     return (
         <div
             id="home"
-            className="flex flex-col justify-center h-[calc(100vh-68.4px)] bg-zinc-50 dark:bg-zinc-900 px-4 mb-2"
+            className="flex flex-col justify-center h-[calc(100vh-68.4px)] bg-zinc-50 dark:bg-[#1E263A] px-4"
         >
             <div className="mb-8 text-center">
                 <h1 className="pb-1 mb-3 text-5xl font-bold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 ">
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <a
                     href="https://linkedin.com/in/jirald-calusay-064b09220"
                     target="_blank"
-                    className="flex items-center px-6 py-3 space-x-1 text-blue-600 transition-colors bg-white border rounded-md hover:border-blue-500 dark:hover:border-blue-600 dark:bg-zinc-950 dark:text-blue-500 dark:border-zinc-800"
+                    className="flex items-center px-6 py-3 space-x-1 text-blue-600 transition-colors ease-in bg-white border rounded-md hover:border-blue-500 dark:hover:border-blue-600 dark:bg-transparent dark:text-blue-500 dark:border-zinc-500 dark:border-opacity-50"
                 >
                     <p>LinkedIn</p>
                 </a>

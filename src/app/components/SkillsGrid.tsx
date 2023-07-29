@@ -4,7 +4,7 @@ import React from "react";
 
 const SkillsGrid = ({ imgSrc, text }: any) => {
     return (
-        <div className="flex items-center h-full p-5 bg-white border rounded-md dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="flex items-center h-full py-6 px-8 100 bg-white shadow-custom-sm dark:border-transparent rounded-md dark:shadow-xl  dark:bg-[#2A3247]">
             <Image
                 className="mr-4 dark:shadow-none"
                 src={`/img/${imgSrc}`}
