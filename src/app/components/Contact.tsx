@@ -50,13 +50,6 @@ const Contact = () => {
                                 className="cursor-pointer"
                             />
                         </a>
-
-                        <Icon
-                            width={45}
-                            height={45}
-                            icon="ic:baseline-facebook"
-                            className="cursor-pointer"
-                        />
                     </div>
                 </div>
             </div>
