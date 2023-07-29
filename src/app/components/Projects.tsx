@@ -22,7 +22,11 @@ const Projects = () => {
     ];
 
     return (
-        <Wrapper id="projects" title="Projects" subtitle="What I've built">
+        <Wrapper
+            id="projects"
+            title="Projects"
+            subtitle="Websites I've developed."
+        >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <ProjectsCard
                     imgSrc="projects_google-clone.png"

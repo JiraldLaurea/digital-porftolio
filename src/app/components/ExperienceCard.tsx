@@ -9,6 +9,7 @@ const ExperienceCard = ({
     task1,
     task2,
     noTask2,
+    tasks,
 }: any) => {
     return (
         <div className="px-8 py-10 bg-white rounded-md shadow-custom md:max-w-xs dark:shadow-xl  dark:border-zinc-800 dark:bg-[#2A3247]">
@@ -30,10 +31,11 @@ const ExperienceCard = ({
                         {date}
                     </p>
                 </div>
-                <ul className="space-y-2 list-disc list-inside text-zinc-600 dark:text-zinc-300">
-                    <li>{task1}</li>
-                    {noTask2 ? <></> : <li>{task2}</li>}
-                </ul>
+                <div className="space-y-2 list-disc list-inside text-zinc-600 dark:text-zinc-300">
+                    {tasks.map((task: any, idx: any) => (
+                        <p key={idx}>- {task}</p>
+                    ))}
+                </div>
             </div>
         </div>
     );

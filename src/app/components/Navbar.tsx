@@ -141,8 +141,8 @@ const Navbar = () => {
                             </>
                         )}
                     </div>
-                    <div className="flex pb-[68.4px] flex-col items-center h-full bg-zinc-50 px-4 py-8 dark:bg-[#1E263A]">
-                        <div className="flex flex-col w-full pl-4 rounded-md bg-white dark:bg-[#2A3247] shadow-custom dark:shadow-xl">
+                    <div className="flex pb-[68.4px] flex-col items-center h-full bg-zinc-50 px-4 dark:bg-[#1E263A]">
+                        <div className="flex flex-col w-full pl-4 my-auto rounded-md bg-white dark:bg-[#2A3247] shadow-custom dark:shadow-xl">
                             {navItems.map((navItem, idx) => {
                                 return (
                                     <Link

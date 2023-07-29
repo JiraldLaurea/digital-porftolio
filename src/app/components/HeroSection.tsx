@@ -9,18 +9,16 @@ const HeroSection = () => {
             className="flex flex-col justify-center h-[calc(100vh-68.4px)] bg-zinc-50 dark:bg-[#1E263A] px-4"
         >
             <div className="mb-8 text-center">
-                <h1 className="pb-1 mb-3 text-5xl font-bold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 ">
+                <h1 className="pb-1 mb-3 text-5xl font-extrabold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
                     Jirald Calusay
                 </h1>
                 <h3 className="mb-6 text-3xl font-bold sm:text-5xl">
                     Aspiring web developer
                 </h3>
-                <div className="flex justify-center">
-                    <p className="max-w-lg">
-                        I'm a Computer Science Graduate from Central Philippine
-                        University with a passion in web development.
-                    </p>
-                </div>
+                <p className="max-w-lg mx-auto text-lg font-light sm:text-xl">
+                    Passionate about developing user-friendly websites and
+                    creating seamless user experiences.
+                </p>
             </div>
             <div className="flex justify-center space-x-4">
                 <a
@@ -30,7 +28,6 @@ const HeroSection = () => {
                 >
                     <p>Resume</p>
                 </a>
-
                 <a
                     href="https://linkedin.com/in/jirald-calusay-064b09220"
                     target="_blank"

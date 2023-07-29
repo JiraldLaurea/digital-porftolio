@@ -10,7 +10,7 @@ const Wrapper = (props: any) => {
                 <p className="mb-2 text-4xl font-bold md:text-5xl w-fit">
                     {props.title}
                 </p>
-                <p className="text-xl font-light md:text-2xl text-zinc-500 dark:text-zinc-400">
+                <p className="text-xl font-light md:text-2xl text-zinc-600 dark:text-zinc-300">
                     {props.subtitle}
                 </p>
             </div>

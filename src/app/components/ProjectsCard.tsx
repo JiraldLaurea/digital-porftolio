@@ -31,8 +31,8 @@ const ProjectsCard = ({
                     <p className="text-zinc-600 dark:text-zinc-300">
                         {description}
                     </p>
-                    <div className="mt-6 mb-10 text-zinc-600 dark:text-zinc-300">
-                        <p className="mb-2 text-sm font-light uppercase">
+                    <div className="mt-6 mb-10">
+                        <p className="mb-2 text-sm font-light uppercase text-zinc-600 dark:text-zinc-300">
                             Tech stack
                         </p>
                         {isClient == true && (
