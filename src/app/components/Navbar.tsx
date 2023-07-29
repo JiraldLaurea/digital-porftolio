@@ -91,7 +91,7 @@ const Navbar = () => {
             </div>
             {isMenuOpened && (
                 <div className="fixed top-0 z-10 w-full h-screen bg-white dark:bg-[#2A3247]">
-                    <div className="h-[68.4px] z-20 flex items-center px-4 justify-end shadow-sm border-b dark:border-b-transparent dark:shadow-md">
+                    <div className="h-[68.4px] relative z-20 flex items-center px-4 justify-end shadow-sm border-b dark:border-b-transparent dark:shadow-md">
                         {isClient === true && (
                             <>
                                 {theme === "dark" ? (
