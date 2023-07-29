@@ -54,6 +54,13 @@ const Projects = () => {
                     link="https://zandell-airbnb-clone.vercel.app"
                     technologies={technologies1}
                 />
+                <ProjectsCard
+                    imgSrc="projects_tesla-clone.png"
+                    name="Tesla Clone"
+                    description="A mobile-responsive website with scroll snapping functionality."
+                    link="https://zandell-tesla-clone.vercel.app"
+                    technologies={technologies1}
+                />
             </div>
         </Wrapper>
     );
