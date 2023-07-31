@@ -22,7 +22,7 @@ const HeroSection = () => {
             </div>
             <div className="flex justify-center space-x-4">
                 <a
-                    href="https://firebasestorage.googleapis.com/v0/b/jirald.appspot.com/o/Jirald%20Laurea%20Calusay.pdf?alt=media&token=234978fa-80d5-4a1e-b5a2-ce29a1cad57d"
+                    href="https://firebasestorage.googleapis.com/v0/b/jirald.appspot.com/o/Jirald%20Calusay.pdf?alt=media&token=ebad1621-84d8-4024-b5eb-cfc6528810bd"
                     target="_blank"
                     className="flex items-center px-6 py-3 space-x-1 text-white transition-colors bg-blue-500 rounded-md hover:bg-blue-600 dark:hover:bg-blue-600 dark:bg-blue-700 dark:text-white dark:border-transparent"
                 >
