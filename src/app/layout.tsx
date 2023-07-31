@@ -15,8 +15,12 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${inter.className} dark:bg-zinc-900 bg-white`}>
-                <ThemeProvider enableSystem={true} attribute="class">
+            <body className={`${inter.className} dark:bg-[#1E263A] bg-zinc-50`}>
+                <ThemeProvider
+                    enableSystem={true}
+                    attribute="class"
+                    disableTransitionOnChange
+                >
                     <Navbar />
                     {children}
                 </ThemeProvider>

@@ -9,7 +9,16 @@ import { Icon } from "@iconify/react";
 const Navbar = () => {
     const { theme, setTheme }: any = useTheme();
     const [isMenuOpened, setIsMenuOpened] = useState(false);
+    const [show, setShow] = useState(false);
     const [isClient, setIsClient] = useState(false);
+
+    // useEffect(() => {
+    //     window.addEventListener("scroll", () => {
+    //         if (window.scrollY > 10) {
+    //             setShow(true);
+    //         } else setShow(false);
+    //     });
+    // }, []);
 
     useEffect(() => {
         setIsClient(true);
@@ -25,7 +34,9 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-b border-zinc-200 dark:bg-[#2A3247] dark:border-b-transparent shadow-sm dark:shadow-md">
+            <div
+                className={`sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-b border-zinc-200 dark:bg-[#2A3247] dark:border-b-transparent shadow-sm dark:shadow-md`}
+            >
                 <div className="flex items-center justify-between w-full max-w-6xl px-4">
                     <div className="flex items-center space-x-6 text-sm">
                         {navItems.map((navItem, idx) => {
@@ -141,8 +152,8 @@ const Navbar = () => {
                             </>
                         )}
                     </div>
-                    <div className="flex pb-[68.4px] flex-col items-center h-full bg-zinc-50 px-4 dark:bg-[#1E263A]">
-                        <div className="flex flex-col w-full pl-4 my-auto rounded-md bg-white dark:bg-[#2A3247] shadow-custom dark:shadow-xl">
+                    <div className="flex pb-[68.4px] flex-col items-center h-full bg-zinc-50 px-4 dark:bg-[#1E263A] py-4">
+                        <div className="flex flex-col w-full pl-4 rounded-md bg-white dark:bg-[#2A3247] shadow-custom dark:shadow-xl">
                             {navItems.map((navItem, idx) => {
                                 return (
                                     <Link
@@ -151,7 +162,7 @@ const Navbar = () => {
                                         duration={500}
                                         to={navItem.page}
                                         key={idx}
-                                        className={`w-full py-4 border-b cursor-pointer dark:border-y-zinc-500 dark:border-opacity-50 ${
+                                        className={`w-full text-sm py-4 border-b cursor-pointer dark:border-y-zinc-500 dark:border-opacity-50 ${
                                             idx == 4 && "border-none"
                                         }`}
                                         onClick={() => setIsMenuOpened(false)}
