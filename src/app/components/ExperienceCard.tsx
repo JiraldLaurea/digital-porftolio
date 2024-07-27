@@ -12,7 +12,7 @@ const ExperienceCard = ({
     tasks,
 }: any) => {
     return (
-        <div className="px-8 py-10 bg-white rounded-md shadow-custom md:max-w-xs dark:shadow-xl  dark:border-zinc-800 dark:bg-[#2A3247]">
+        <div className="px-8 py-10 bg-white rounded-md shadow-custom dark:shadow-xl  dark:border-zinc-800 dark:bg-[#2A3247]">
             <div className="flex flex-col items-center mb-8">
                 <Image
                     className=""
@@ -33,7 +33,7 @@ const ExperienceCard = ({
                 </div>
                 <div className="space-y-2 list-disc list-inside text-zinc-600 dark:text-zinc-300">
                     {tasks.map((task: any, idx: any) => (
-                        <p key={idx}>- {task}</p>
+                        <p key={idx}>• {task}</p>
                     ))}
                 </div>
             </div>

@@ -13,7 +13,7 @@ const HeroSection = () => {
                     Jirald Calusay
                 </h1>
                 <h3 className="mb-6 text-3xl font-bold sm:text-5xl">
-                    Aspiring web developer
+                    Jr. R&D Engineer
                 </h3>
                 <p className="max-w-lg mx-auto text-lg font-light sm:text-xl">
                     Passionate about developing user-friendly websites and
@@ -22,7 +22,7 @@ const HeroSection = () => {
             </div>
             <div className="flex justify-center space-x-4">
                 <a
-                    href="https://firebasestorage.googleapis.com/v0/b/jirald.appspot.com/o/Resume_Jirald_Calusay.pdf?alt=media&token=8a990efa-b15d-48a6-b1da-3f2448fe4f02"
+                    href="https://firebasestorage.googleapis.com/v0/b/digital-portfolio-a7967.appspot.com/o/Resume_JiraldCalusay.pdf?alt=media&token=ed5829a6-c257-4b80-bcab-a4cd726dc715"
                     target="_blank"
                     className="flex items-center px-6 py-3 space-x-1 text-white transition-colors bg-blue-500 rounded-md hover:bg-blue-600 dark:hover:bg-blue-600 dark:bg-blue-700 dark:text-white dark:border-transparent"
                 >
@@ -31,7 +31,7 @@ const HeroSection = () => {
                 <a
                     href="https://linkedin.com/in/jirald-calusay-064b09220"
                     target="_blank"
-                    className="flex items-center px-6 py-3 space-x-1 text-blue-600 transition-colors ease-in bg-white border rounded-md hover:border-blue-500 dark:hover:border-blue-600 dark:bg-transparent dark:text-blue-500 dark:border-zinc-500 dark:border-opacity-50"
+                    className="flex items-center px-6 py-3 space-x-1 text-blue-600 transition-colors ease-in bg-white border rounded-md hover:border-blue-500 dark:hover:border-blue-600 dark:bg-transparent dark:text-blue-500 dark:border-slate-500 dark:border-opacity-50"
                 >
                     <p>LinkedIn</p>
                 </a>

@@ -4,7 +4,9 @@ const Wrapper = (props: any) => {
     return (
         <div
             id={props.id}
-            className={`text-center flex flex-col justify-center items-center min-h-[calc(100vh-68.4px)] bg-zinc-50 dark:bg-[#1E263A] py-14 `}
+            className={`text-center flex flex-col ${
+                props.isNotCentered ? "" : "justify-center"
+            } items-center min-h-[calc(100vh-68.4px)] bg-zinc-50 dark:bg-[#1E263A] py-14 `}
         >
             <div className="flex flex-col items-center mb-12">
                 <p className="mb-2 text-4xl font-bold md:text-5xl w-fit">

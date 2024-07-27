@@ -17,6 +17,10 @@ module.exports = {
                 custom: "0 3px 6px 3px rgba(0,0,0,0.06)",
                 "custom-sm": "0 3px 6px 2px rgba(0,0,0,0.06)",
             },
+            screens: {
+                xs: "492px",
+                // => @media (min-width: 640px) { ... }
+            },
         },
     },
     plugins: [],

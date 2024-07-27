@@ -38,9 +38,9 @@ const ProjectsCard = ({
                         {isClient == true && (
                             <div className="flex items-center">
                                 {technologies?.map(
-                                    (technology: any, idx: any) => (
+                                    (technology: any, index: any) => (
                                         <Image
-                                            key={idx}
+                                            key={index}
                                             className="mr-2"
                                             src={`/img/${technology}`}
                                             alt=""
