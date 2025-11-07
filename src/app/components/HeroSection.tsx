@@ -13,7 +13,7 @@ const HeroSection = () => {
                     Jirald Calusay
                 </h1>
                 <h3 className="mb-6 text-3xl font-bold sm:text-5xl">
-                    Jr. R&D Engineer
+                    Assistant R&D Engineer
                 </h3>
                 <p className="max-w-lg mx-auto text-lg font-light sm:text-xl">
                     Passionate about developing user-friendly websites and

@@ -17,6 +17,11 @@ module.exports = {
                 custom: "0 3px 6px 3px rgba(0,0,0,0.06)",
                 "custom-sm": "0 3px 6px 2px rgba(0,0,0,0.06)",
             },
+            fontFamily: {
+                sans: ["Inter Tight", "ui-sans-serif"], // Override the default sans-serif stack
+                serif: ["AnotherCustomFont", "ui-serif"], // Override the default serif stack
+                heading: ["CustomHeadingFont", "sans-serif"], // Add a new custom font family
+            },
             screens: {
                 xs: "492px",
                 // => @media (min-width: 640px) { ... }
