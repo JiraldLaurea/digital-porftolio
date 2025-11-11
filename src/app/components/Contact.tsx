@@ -18,7 +18,7 @@ const Contact = () => {
                         <ContactDetail
                             icon="ic:outline-phone-iphone"
                             header="Phone"
-                            detail="09942340078"
+                            detail="09614073159"
                         />
                         <ContactDetail
                             icon="ic:baseline-email"
