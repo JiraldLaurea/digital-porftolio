@@ -3,6 +3,9 @@ import React from "react";
 import { Icon } from "@iconify/react";
 
 const HeroSection = () => {
+    const resumeLink =
+        "https://firebasestorage.googleapis.com/v0/b/digital-portfolio-a7967.appspot.com/o/Resume_JiraldCalusay.pdf?alt=media&token=c339f7c9-dd98-43b4-b7e1-1a4c1399e7c5";
+
     return (
         <div
             id="home"
@@ -22,7 +25,7 @@ const HeroSection = () => {
             </div>
             <div className="flex justify-center space-x-4">
                 <a
-                    href="https://firebasestorage.googleapis.com/v0/b/digital-portfolio-a7967.appspot.com/o/Resume_JiraldCalusay.pdf?alt=media&token=ed5829a6-c257-4b80-bcab-a4cd726dc715"
+                    href={resumeLink}
                     target="_blank"
                     className="flex items-center px-6 py-3 space-x-1 text-white transition-colors bg-blue-500 rounded-md hover:bg-blue-600 dark:hover:bg-blue-600 dark:bg-blue-700 dark:text-white dark:border-transparent"
                 >
