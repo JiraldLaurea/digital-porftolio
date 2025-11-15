@@ -12,22 +12,13 @@ interface Skill {
 }
 
 interface SkillsData {
-    Programming: Skill[];
     Frontend: Skill[];
-    "Backend/Database": Skill[];
+    Backend: Skill[];
+    Programming: Skill[];
     Tools: Skill[];
 }
 
 const skillsData: SkillsData = {
-    Programming: [
-        { imgSrc: "skills_kotlin.svg", text: "Kotlin" },
-        { imgSrc: "skills_html.svg", text: "HTML" },
-        { imgSrc: "skills_css.svg", text: "CSS" },
-        { imgSrc: "skills_javascript.svg", text: "Javascript" },
-        { imgSrc: "skills_typescript.svg", text: "Typescript" },
-        { imgSrc: "skills_python.svg", text: "Python" },
-        { imgSrc: "skills_csharp.svg", text: "C#" },
-    ],
     Frontend: [
         { imgSrc: "skills_react.svg", text: "Reactjs" },
         { imgSrc: "skills_reactRedux.svg", text: "React Redux" },
@@ -40,10 +31,19 @@ const skillsData: SkillsData = {
         { imgSrc: "skills_tailwindcss.svg", text: "Tailwind CSS" },
         { imgSrc: "skills_materialUI.svg", text: "MaterialUI" },
     ],
-    "Backend/Database": [
+    Backend: [
         { imgSrc: "skills_nodejs.svg", text: "Nodejs" },
         { imgSrc: "skills_mysql.svg", text: "MySQL" },
         { imgSrc: "skills_firebase.svg", text: "Firebase" },
+    ],
+    Programming: [
+        { imgSrc: "skills_kotlin.svg", text: "Kotlin" },
+        { imgSrc: "skills_html.svg", text: "HTML" },
+        { imgSrc: "skills_css.svg", text: "CSS" },
+        { imgSrc: "skills_javascript.svg", text: "Javascript" },
+        { imgSrc: "skills_typescript.svg", text: "Typescript" },
+        { imgSrc: "skills_python.svg", text: "Python" },
+        { imgSrc: "skills_csharp.svg", text: "C#" },
     ],
     Tools: [
         {
@@ -77,7 +77,7 @@ const Skills: React.FC = () => {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
             />
-            <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 ">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3">
                 {skills.map((skill, index) => (
                     <SkillsGrid
                         key={index}
