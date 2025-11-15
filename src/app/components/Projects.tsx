@@ -111,7 +111,13 @@ const Projects = () => {
                 setActiveTab={setActiveTab}
                 isProjects
             />
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div
+                className={`justify-center  ${
+                    activeTab === 0
+                        ? "grid gap-6"
+                        : "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+                }`}
+            >
                 {projects.map((project, index) => (
                     <ProjectsCard
                         key={index}
