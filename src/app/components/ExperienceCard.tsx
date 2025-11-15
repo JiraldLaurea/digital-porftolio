@@ -18,8 +18,8 @@ const ExperienceCard = ({
                     className=""
                     src={`/img/${imgSrc}`}
                     alt=""
-                    width={110}
-                    height={110}
+                    width={150}
+                    height={150}
                     unoptimized
                 />
             </div>
