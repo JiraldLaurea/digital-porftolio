@@ -28,7 +28,7 @@ const Contact = () => {
                         <ContactDetail
                             icon="mdi:location"
                             header="Location"
-                            detail="Santa Barbara, Iloilo"
+                            detail="Makati, Metro Manila, Philippines"
                         />
                     </div>
                     <div className="flex items-center justify-center space-x-8">
