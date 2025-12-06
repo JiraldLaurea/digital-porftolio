@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 
 const HeroSection = () => {
     const resumeLink =
-        "https://firebasestorage.googleapis.com/v0/b/digital-portfolio-a7967.appspot.com/o/Jirald_Calusay_CV.pdf?alt=media&token=105af040-0acc-44fe-8d28-3d52ab10f5c3";
+        "https://firebasestorage.googleapis.com/v0/b/digital-portfolio-a7967.appspot.com/o/Jirald_Calusay_CV.pdf?alt=media&token=c83bd953-8e77-4979-a587-55b4c0f93283";
 
     return (
         <div
