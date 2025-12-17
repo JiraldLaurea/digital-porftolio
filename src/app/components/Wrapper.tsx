@@ -24,7 +24,7 @@ const Wrapper = ({
                 isAlternate
                     ? "bg-white dark:bg-dark-primary1"
                     : "bg-gray-50 dark:bg-dark-primary2"
-            }`}
+            } ${isContact && "justify-center"}`}
         >
             <div className="flex flex-col w-full max-w-6xl px-4 mb-8 ">
                 <p className="mb-2 text-4xl font-bold md:text-5xl w-fit">
@@ -36,7 +36,7 @@ const Wrapper = ({
                     {subtitle}
                 </p>
             </div>
-            <div className={`w-full max-w-6xl px-4 `}>{children}</div>
+            <div className={`w-full max-w-6xl px-4`}>{children}</div>
         </div>
     );
 };

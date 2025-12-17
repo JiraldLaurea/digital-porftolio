@@ -32,7 +32,7 @@ const Navbar = ({ showButtons }: any) => {
     return (
         <>
             <div
-                className={`sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-r-4 border-indigo-500  dark:bg-[#1E263A] dark:border-zinc-700`}
+                className={`sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-b dark:bg-[#1E263A] dark:border-zinc-700`}
             >
                 <div className="flex items-center justify-between w-full max-w-6xl px-4">
                     <div className="flex items-center space-x-6 text-sm">
@@ -80,7 +80,7 @@ const Navbar = ({ showButtons }: any) => {
                                 {theme === "dark" ? (
                                     <div className="flex items-center space-x-2">
                                         <button
-                                            className="w-[49.33px] h-[49.33px] flex justify-center items-center transition-colors ease-in border rounded-md border-zinc-500 border-opacity-50 hover:bg-[#161c2b]"
+                                            className="w-[49.33px] h-[49.33px] flex justify-center items-center transition-colors ease-in border rounded-md border-zinc-700 border-opacity-50 hover:bg-[#161c2b]"
                                             onClick={() => setTheme("light")}
                                         >
                                             <RiSunLine size={18} />
@@ -101,7 +101,7 @@ const Navbar = ({ showButtons }: any) => {
                                 ) : (
                                     <div className="flex items-center space-x-2">
                                         <button
-                                            className="p-2 transition-colors ease-in border rounded-md hover:bg-zinc-100"
+                                            className="w-[49.33px] h-[49.33px] flex justify-center transition-colors ease-in border items-center rounded-md hover:bg-zinc-100"
                                             onClick={() => setTheme("dark")}
                                         >
                                             <RiMoonFill size={18} />

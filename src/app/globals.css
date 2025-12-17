@@ -1,13 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap")
+layer(utilities); */
 
 @import "tailwindcss";
 
-@import "tailwindcss/preflight";
-@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
 
 @theme {
     --font-roboto: "Inter Tight", sans-serif;
     --color-dark-primary1: #1e263a;
-    /* --color-dark-primary2: #1c2235;
-    --shadow-TEST: 0 35px 35px rgba(0, 0, 0, 0.25); */
+    --color-dark-primary2: #1c2235;
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 }

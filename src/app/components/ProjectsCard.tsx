@@ -16,10 +16,10 @@ const ProjectsCard = ({
     }, []);
 
     return (
-        <div className="flex flex-col bg-white rounded-md dark:border-transparent border dark:border-zinc-800 dark:bg-[#2A3247]">
+        <div className="flex flex-col bg-white rounded-md border dark:border-zinc-800 dark:bg-[#2A3247]">
             <div className="border-b dark:border-zinc-700">
                 <Image
-                    className="object-cover w-full rounded-t-md border-transparent h-[300px] dark:brightness-90"
+                    className="object-cover w-full rounded-t-md border-transparent dark:brightness-90"
                     src={`/img/${imgSrc}`}
                     alt=""
                     width={450}
@@ -27,12 +27,12 @@ const ProjectsCard = ({
                     quality={100}
                 />
             </div>
-            <div className="flex flex-col justify-between flex-grow w-full p-4 text-left">
+            <div className="flex flex-col justify-between grow w-full p-4 text-left">
                 <div>
                     <h1 className="mb-2 text-xl font-medium">{name}</h1>
-                    <p className="text-zinc-300">{description}</p>
+                    <p className="dark:text-zinc-300">{description}</p>
                     <div className="mt-6 mb-10">
-                        <p className="mb-2 text-sm font-light uppercase text-zinc-300">
+                        <p className="mb-2 text-sm font-light uppercase dark:text-zinc-300">
                             Tech stack
                         </p>
                         {isClient == true && (

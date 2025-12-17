@@ -16,7 +16,7 @@ const HeroSection = ({ buttonsRef }: any) => {
         >
             <div className="flex items-center justify-between w-full max-w-4xl mb-8 text-left">
                 <div>
-                    <h1 className="pb-1 mb-3 text-5xl font-extrabold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
+                    <h1 className="pb-1 mb-3 text-5xl font-extrabold text-transparent sm:text-7xl bg-clip-text bg-linear-to-r from-cyan-500 to-blue-500">
                         Jirald Calusay
                     </h1>
                     <h3 className="mb-6 text-3xl font-bold sm:text-5xl">

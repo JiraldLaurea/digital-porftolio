@@ -18,8 +18,8 @@ const Button = ({ link, text, isResume, isSmaller }: ButtonProps) => {
                     isSmaller ? "py-3" : "py-3"
                 }  space-x-1 rounded-md transition-colors  ${
                 isResume
-                    ? "text-white bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-600 dark:bg-blue-700 dark:text-white dark:border-transparent"
-                    : "text-blue-600 bg-white border hover:border-blue-500 dark:hover:border-blue-600 dark:bg-transparent dark:text-blue-500 dark:border-zinc-500 dark:border-opacity-50"
+                    ? "text-white bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-700 dark:bg-blue-600 dark:text-white dark:border-transparent"
+                    : "text-blue-500 bg-white border hover:border-blue-500 dark:hover:border-blue-500 dark:bg-transparent dark:text-blue-500 dark:border-zinc-700 dark:border-opacity-50"
             }`}
         >
             <p>{text}</p>

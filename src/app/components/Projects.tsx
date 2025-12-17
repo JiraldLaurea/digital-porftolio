@@ -21,11 +21,13 @@ interface ProjectsData {
 const Projects = () => {
     const { theme }: any = useTheme();
 
+    // Technologies used in projects
+
     const technologies1 = [
         "skills_react.svg",
-        "skills_nextjsDark.svg",
+        theme == "dark" ? "skills_nextjsDark.svg" : "skills_nextjsLight.svg",
         "skills_tailwindcss.svg",
-        "skills_vercelDark.svg",
+        theme == "dark" ? "skills_vercelDark.svg" : "skills_vercelLight.svg",
     ];
 
     const technologies2 = ["skills_react.svg", "skills_firebase.svg"];
