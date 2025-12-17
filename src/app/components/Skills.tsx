@@ -37,13 +37,13 @@ const skillsData: SkillsData = {
         { imgSrc: "skills_firebase.svg", text: "Firebase" },
     ],
     Programming: [
-        { imgSrc: "skills_kotlin.svg", text: "Kotlin" },
-        { imgSrc: "skills_html.svg", text: "HTML" },
-        { imgSrc: "skills_css.svg", text: "CSS" },
         { imgSrc: "skills_javascript.svg", text: "Javascript" },
         { imgSrc: "skills_typescript.svg", text: "Typescript" },
-        { imgSrc: "skills_python.svg", text: "Python" },
+        { imgSrc: "skills_html.svg", text: "HTML" },
+        { imgSrc: "skills_css.svg", text: "CSS" },
         { imgSrc: "skills_csharp.svg", text: "C#" },
+        { imgSrc: "skills_kotlin.svg", text: "Kotlin" },
+        { imgSrc: "skills_python.svg", text: "Python" },
     ],
     Tools: [
         {
@@ -70,7 +70,7 @@ const Skills: React.FC = () => {
             id="skills"
             title="Skills"
             subtitle="Technologies and frameworks I have knowledge of."
-            isNotCentered
+            isAlternate
         >
             <Tabs
                 categories={categories}

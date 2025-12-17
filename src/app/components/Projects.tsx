@@ -23,9 +23,9 @@ const Projects = () => {
 
     const technologies1 = [
         "skills_react.svg",
-        theme == "dark" ? "skills_nextjsDark.svg" : "skills_nextjsLight.svg",
+        "skills_nextjsDark.svg",
         "skills_tailwindcss.svg",
-        theme == "dark" ? "skills_vercelDark.svg" : "skills_vercelLight.svg",
+        "skills_vercelDark.svg",
     ];
 
     const technologies2 = ["skills_react.svg", "skills_firebase.svg"];
@@ -37,7 +37,7 @@ const Projects = () => {
     const technologies4 = [
         "skills_react.svg",
         "skills_materialUI.svg",
-        theme == "dark" ? "skills_vercelDark.svg" : "skills_vercelLight.svg",
+        "skills_vercelDark.svg",
     ];
 
     const projectsData: ProjectsData = {
@@ -109,12 +109,11 @@ const Projects = () => {
                 categories={categories}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
-                isProjects
             />
             <div
                 className={`justify-center  ${
                     activeTab === 0
-                        ? "grid gap-6"
+                        ? "grid gap-6 grid-cols-3"
                         : "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
                 }`}
             >

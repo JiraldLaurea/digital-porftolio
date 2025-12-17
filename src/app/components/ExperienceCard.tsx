@@ -1,41 +1,30 @@
 import React from "react";
-import Image from "next/image";
+
+type ExperienceCardProps = {
+    project: string;
+    date: string;
+    task1?: string;
+    task2?: string;
+    task3?: string;
+};
 
 const ExperienceCard = ({
-    imgSrc,
-    job,
-    company,
+    project,
     date,
     task1,
     task2,
-    noTask2,
-    tasks,
-}: any) => {
+    task3,
+}: ExperienceCardProps) => {
     return (
-        <div className="px-8 py-10 bg-white rounded-md shadow-custom dark:shadow-xl  dark:border-zinc-800 dark:bg-[#2A3247]">
-            <div className="flex flex-col items-center mb-8">
-                <Image
-                    className=""
-                    src={`/img/${imgSrc}`}
-                    alt=""
-                    width={150}
-                    height={150}
-                    unoptimized
-                />
+        <div className="dark:bg-[#2A3247] border bg-white p-8 space-y-4 rounded-md dark:border-zinc-800">
+            <div>
+                <h2 className="text-xl font-medium">{project}</h2>
+                <h3 className="text-zinc-600 dark:text-zinc-300">{date}</h3>
             </div>
-            <div className="text-left">
-                <div className="mb-8 text-center">
-                    <h2 className="mb-1 text-2xl font-bold">{job}</h2>
-                    <h3 className="">{company}</h3>
-                    <p className="mt-4 text-sm uppercase text-zinc-600 dark:text-zinc-300">
-                        {date}
-                    </p>
-                </div>
-                <div className="space-y-2 list-disc list-inside text-zinc-600 dark:text-zinc-300">
-                    {tasks.map((task: any, idx: any) => (
-                        <p key={idx}>• {task}</p>
-                    ))}
-                </div>
+            <div className="pl-3 space-y-3">
+                <p>{task1}</p>
+                {task2 && <p>{task2}</p>}
+                {task3 && <p>{task3}</p>}
             </div>
         </div>
     );

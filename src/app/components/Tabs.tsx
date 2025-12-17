@@ -1,24 +1,25 @@
 import React from "react";
 
-interface TabsProps {
+type TabsProps = {
     categories: string[];
     activeTab: number;
     setActiveTab: (index: number) => void;
     isProjects?: boolean;
-}
+    isAlternate?: boolean;
+};
 
-const Tabs: React.FC<TabsProps> = ({
+const Tabs = ({
     categories,
     activeTab,
     setActiveTab,
-    isProjects,
-}) => (
-    <div
-        className={`flex overflow-x-auto justify-normal ${
-            isProjects ? "justify-center" : "xs:justify-center"
-        }`}
-    >
-        <div className="flex p-2 mb-12 space-x-2 overflow-x-auto border rounded-full w-fit border-slate-300 dark:border-slate-600">
+    isAlternate,
+}: TabsProps) => (
+    <div className={`flex overflow-x-auto justify-normal`}>
+        <div
+            className={`flex p-2 mb-6 space-x-2 overflow-x-auto border dark:border-zinc-700 rounded-full w-fit ${
+                isAlternate ? "border-zinc-600" : "border"
+            } `}
+        >
             {categories.map((category, index) => (
                 <button
                     key={index}

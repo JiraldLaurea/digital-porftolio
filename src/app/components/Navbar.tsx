@@ -5,20 +5,17 @@ import { Link } from "react-scroll/modules";
 import { FaBars } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import Button from "./Button";
 
-const Navbar = () => {
+const Navbar = ({ showButtons }: any) => {
     const { theme, setTheme }: any = useTheme();
     const [isMenuOpened, setIsMenuOpened] = useState(false);
     const [show, setShow] = useState(false);
     const [isClient, setIsClient] = useState(false);
 
-    // useEffect(() => {
-    //     window.addEventListener("scroll", () => {
-    //         if (window.scrollY > 10) {
-    //             setShow(true);
-    //         } else setShow(false);
-    //     });
-    // }, []);
+    const resumeLink =
+        "https://drive.google.com/file/d/1w-ep7j_ZsZbAQHgd_KyecjXKQGjdwqWR/view?usp=drive_link";
+    const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
 
     useEffect(() => {
         setIsClient(true);
@@ -35,7 +32,7 @@ const Navbar = () => {
     return (
         <>
             <div
-                className={`sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-b border-zinc-200 dark:bg-[#2A3247] dark:border-b-transparent shadow-sm dark:shadow-md`}
+                className={`sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-r-4 border-indigo-500  dark:bg-[#1E263A] dark:border-zinc-700`}
             >
                 <div className="flex items-center justify-between w-full max-w-6xl px-4">
                     <div className="flex items-center space-x-6 text-sm">
@@ -55,49 +52,77 @@ const Navbar = () => {
                             );
                         })}
                     </div>
-                    {isClient === true && (
-                        <>
-                            {theme === "dark" ? (
-                                <div className="flex items-center space-x-2">
-                                    <button
-                                        className="p-2 transition-colors ease-in border rounded-md border-zinc-500 border-opacity-50 hover:bg-[#1E263A]"
-                                        onClick={() => setTheme("light")}
-                                    >
-                                        <RiSunLine size={18} />
-                                    </button>
-                                    <div
-                                        onClick={() => setIsMenuOpened(true)}
-                                        className="sm:hidden w-[35.6px] ease-in h-[35.6px] justify-center border-zinc-500 border-opacity-50 flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-[#1E263A]"
-                                    >
-                                        <FaBars
-                                            className="text-white"
-                                            width={25}
-                                            height={25}
-                                        />
+
+                    <div className="flex items-center space-x-3">
+                        <div
+                            aria-hidden={!showButtons} // accessibility hint
+                            className={`flex space-x-3 items-center transition-all duration-200 ease-out ${
+                                showButtons
+                                    ? "opacity-100"
+                                    : "opacity-0  pointer-events-none"
+                            }`}
+                        >
+                            <Button
+                                link={resumeLink}
+                                text="Resume"
+                                isResume
+                                isSmaller={false}
+                            />
+                            <Button
+                                link={linkedInLink}
+                                text="LinkedIn"
+                                isResume={false}
+                                isSmaller={false}
+                            />
+                        </div>
+                        {isClient === true && (
+                            <>
+                                {theme === "dark" ? (
+                                    <div className="flex items-center space-x-2">
+                                        <button
+                                            className="w-[49.33px] h-[49.33px] flex justify-center items-center transition-colors ease-in border rounded-md border-zinc-500 border-opacity-50 hover:bg-[#161c2b]"
+                                            onClick={() => setTheme("light")}
+                                        >
+                                            <RiSunLine size={18} />
+                                        </button>
+                                        <div
+                                            onClick={() =>
+                                                setIsMenuOpened(true)
+                                            }
+                                            className="sm:hidden w-[35.6px] ease-in h-[35.6px] justify-center border-zinc-500 border-opacity-50 flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-[#1E263A]"
+                                        >
+                                            <FaBars
+                                                className="text-white"
+                                                width={25}
+                                                height={25}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            ) : (
-                                <div className="flex items-center space-x-2">
-                                    <button
-                                        className="p-2 transition-colors ease-in border rounded-md hover:bg-zinc-100"
-                                        onClick={() => setTheme("dark")}
-                                    >
-                                        <RiMoonFill size={18} />
-                                    </button>
-                                    <div
-                                        onClick={() => setIsMenuOpened(true)}
-                                        className="sm:hidden  w-[35.6px] h-[35.6px] ease-in justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-100"
-                                    >
-                                        <FaBars
-                                            className=""
-                                            width={25}
-                                            height={25}
-                                        />
+                                ) : (
+                                    <div className="flex items-center space-x-2">
+                                        <button
+                                            className="p-2 transition-colors ease-in border rounded-md hover:bg-zinc-100"
+                                            onClick={() => setTheme("dark")}
+                                        >
+                                            <RiMoonFill size={18} />
+                                        </button>
+                                        <div
+                                            onClick={() =>
+                                                setIsMenuOpened(true)
+                                            }
+                                            className="sm:hidden  w-[35.6px] h-[35.6px] ease-in justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-100"
+                                        >
+                                            <FaBars
+                                                className=""
+                                                width={25}
+                                                height={25}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </>
-                    )}
+                                )}
+                            </>
+                        )}
+                    </div>
                 </div>
             </div>
             {isMenuOpened && (
