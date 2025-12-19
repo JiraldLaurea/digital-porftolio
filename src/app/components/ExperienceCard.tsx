@@ -1,31 +1,33 @@
-import React from "react";
+import TechStack from "./TechStack";
+import { Tech, Task } from "../Types/index";
 
 type ExperienceCardProps = {
     project: string;
     date: string;
-    task1?: string;
-    task2?: string;
-    task3?: string;
+    tasks?: Task[];
+    techs?: Tech[];
 };
 
 const ExperienceCard = ({
     project,
     date,
-    task1,
-    task2,
-    task3,
+    tasks,
+    techs,
 }: ExperienceCardProps) => {
     return (
-        <div className="dark:bg-[#2A3247] border bg-white p-8 space-y-4 rounded-md dark:border-zinc-800">
+        <div className="dark:bg-[#2A3247] border bg-white p-7 space-y-5 rounded-md dark:border-zinc-700 flex flex-col">
             <div>
-                <h2 className="text-xl font-medium">{project}</h2>
-                <h3 className="text-zinc-600 dark:text-zinc-300">{date}</h3>
+                <h2 className="text-lg font-medium">{project}</h2>
+                <h3 className="text-sm text-zinc-600 dark:text-zinc-300">
+                    {date}
+                </h3>
             </div>
-            <div className="pl-3 space-y-3">
-                <p>{task1}</p>
-                {task2 && <p>{task2}</p>}
-                {task3 && <p>{task3}</p>}
+            <div className="space-y-2">
+                {tasks?.map((task, index) => (
+                    <p key={index}>{task.description}</p>
+                ))}
             </div>
+            <TechStack techs={techs} />
         </div>
     );
 };

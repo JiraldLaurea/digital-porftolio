@@ -3,17 +3,12 @@ import Image from "next/image";
 import ExperienceCard from "./ExperienceCard";
 import Wrapper from "./Wrapper";
 import ExperienceJob from "./ExperienceJob";
+import { useTheme } from "next-themes";
 
 const Experience = () => {
-    const tasksGsoFullStackWebDev = [
-        "Developed the frontend and backend of a website that contains statistical reports of wastes and profiles from various barangays in Iloilo.",
-    ];
+    const { theme, setTheme }: any = useTheme();
 
-    const tasksAWSAsstRNDEngineer = [
-        "Developed several softwares for clients from Japan.",
-    ];
-
-    //    <div className="bg-[#2A344B]"></div>
+    console.log("ASDAKSJDNSKDJN", theme);
 
     return (
         <Wrapper
@@ -28,34 +23,121 @@ const Experience = () => {
                 date="October 2023 - Present"
                 isFirst
             />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <ExperienceCard
                     project="Property Management System Migration"
                     date="August 2024 - October 2025"
-                    task1="• API development, bug fixing, documentation,
-                        integration testing, evidence creation."
-                    task2="• Worked on a migration converting a desktop PMS to a
-                        web application."
-                    task3="• Tech: Typescript, C#, React.js, Node.js,
-                        Oracle/PL/SQL."
+                    tasks={[
+                        {
+                            description:
+                                "• API development, bug fixing, documentation, integration testing, evidence creation.",
+                        },
+                        {
+                            description:
+                                "• Worked on a migration converting a desktop PMS to a web application.",
+                        },
+                    ]}
+                    techs={[
+                        {
+                            imgSrc: "skills_react.svg",
+                            techName: "React",
+                        },
+                        {
+                            imgSrc: "skills_typescript.svg",
+                            techName: "TypeScript",
+                        },
+                        {
+                            imgSrc: "skills_nodejs.svg",
+                            techName: "Node.js",
+                        },
+                        {
+                            imgSrc: "skills_csharp.svg",
+                            techName: "C#",
+                        },
+                        {
+                            imgSrc: "skills_sql.svg",
+                            techName: "Sql",
+                        },
+                        {
+                            imgSrc: "skills_oracle.svg",
+                            techName: "Oracle",
+                        },
+                    ]}
                 />
                 <ExperienceCard
                     project="BOSCH-UBICOM-ODX Offshore"
                     date="July 2024 - August 2024"
-                    task1="• Web development for offshore clients."
-                    task2="• Tech: JavaScript, React.js, Node.js."
+                    tasks={[
+                        {
+                            description:
+                                "• Web development for offshore clients.",
+                        },
+                    ]}
+                    techs={[
+                        {
+                            imgSrc: "skills_react.svg",
+                            techName: "React",
+                        },
+                        {
+                            imgSrc: "skills_javascript.svg",
+                            techName: "JavaScript",
+                        },
+                        {
+                            imgSrc: "skills_nodejs.svg",
+                            techName: "Node.js",
+                        },
+                    ]}
                 />
                 <ExperienceCard
                     project="JATCO-UBICOM Web Recipe"
                     date="May 2024 - July 2024"
-                    task1="• Mobile development & Figma design for BLE-enabled promo app."
-                    task2="• Tech: C#, Xamarin."
+                    tasks={[
+                        {
+                            description:
+                                "• Mobile development & Figma design for BLE-enabled promo app.",
+                        },
+                    ]}
+                    techs={[
+                        {
+                            imgSrc: "skills_csharp.svg",
+                            techName: "C#",
+                        },
+                        {
+                            imgSrc: "skills_xamarin.svg",
+                            techName: "Xamarin",
+                        },
+                        {
+                            imgSrc: "skills_figma.svg",
+                            techName: "Figma",
+                        },
+                    ]}
                 />
                 <ExperienceCard
                     project="JRC Cell Coverage Development"
                     date="March 2024 - April 2024"
-                    task1="• Developer for web platform."
-                    task2="• Tech: JavaScript, JQuery, DynamoDB, Node.js, Git."
+                    tasks={[{ description: "• Developer for web platform." }]}
+                    techs={[
+                        {
+                            imgSrc: "skills_javascript.svg",
+                            techName: "JavaScript",
+                        },
+                        {
+                            imgSrc: "skills_jquery.svg",
+                            techName: "JQuery",
+                        },
+                        {
+                            imgSrc: "skills_dynamodb.svg",
+                            techName: "DynamoDB",
+                        },
+                        {
+                            imgSrc: "skills_nodejs.svg",
+                            techName: "Node.js",
+                        },
+                        {
+                            imgSrc: "skills_git.svg",
+                            techName: "Git",
+                        },
+                    ]}
                 />
             </div>
             <ExperienceJob
@@ -69,8 +151,38 @@ const Experience = () => {
                 <ExperienceCard
                     project="Barangay Solid Waste Management System"
                     date="Feb 2023 - May 2023"
-                    task1="• Full-stack developer for statistical waste reporting system."
-                    task2="• Tech: React.js, Next.js, Node.js, Firebase, MySQL. "
+                    tasks={[
+                        {
+                            description:
+                                "• Full-stack developer for statistical waste reporting system.",
+                        },
+                    ]}
+                    techs={[
+                        {
+                            imgSrc: "skills_react.svg",
+                            techName: "React.js",
+                        },
+                        {
+                            imgSrc: `${
+                                theme === "dark"
+                                    ? "skills_nextjsDark.svg"
+                                    : "skills_nextjsLight.svg"
+                            }`,
+                            techName: "Next.js",
+                        },
+                        {
+                            imgSrc: "skills_nodejs.svg",
+                            techName: "Node.js",
+                        },
+                        {
+                            imgSrc: "skills_firebase.svg",
+                            techName: "Firebase",
+                        },
+                        {
+                            imgSrc: "skills_mysql.svg",
+                            techName: "MySQL",
+                        },
+                    ]}
                 />
             </div>
         </Wrapper>
