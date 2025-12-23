@@ -1,56 +1,53 @@
 "use client";
-import React, { useState } from "react";
-import Wrapper from "./Wrapper";
-import ProjectsCard from "./ProjectsCard";
 import { useTheme } from "next-themes";
+import { useState } from "react";
+import { Tech } from "../Types/index";
+import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
+import Wrapper from "./Wrapper";
 
 interface Project {
     imgSrc: string;
     name: string;
     description: string;
     link: string;
-    technologies: string[];
+    techs: Tech[];
 }
 
 interface ProjectsData {
-    Work: Project[];
+    Professional: Project[];
     Personal: Project[];
 }
 
 const Projects = () => {
     const { theme }: any = useTheme();
 
-    // Technologies used in projects
-
-    const technologies1 = [
-        "skills_react.svg",
-        theme == "dark" ? "skills_nextjsDark.svg" : "skills_nextjsLight.svg",
-        "skills_tailwindcss.svg",
-        theme == "dark" ? "skills_vercelDark.svg" : "skills_vercelLight.svg",
-    ];
-
-    const technologies2 = ["skills_react.svg", "skills_firebase.svg"];
-    const technologies3 = [
-        "skills_react.svg",
-        "skills_reactRedux.svg",
-        "skills_firebase.svg",
-    ];
-    const technologies4 = [
-        "skills_react.svg",
-        "skills_materialUI.svg",
-        "skills_vercelDark.svg",
-    ];
-
     const projectsData: ProjectsData = {
-        Work: [
+        Professional: [
             {
                 imgSrc: "projects_pareto-chart.png",
                 name: "Chart Creation Tool",
                 description:
                     "Allows users to create charts(Fishbone & Pareto).",
                 link: "https://pareto-chart.vercel.app/",
-                technologies: technologies4,
+                techs: [
+                    {
+                        imgSrc: "skills_react.svg",
+                        techName: "React",
+                    },
+                    {
+                        imgSrc: "skills_materialUI.svg",
+                        techName: "MaterialUI",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_vercelDark.svg"
+                                : "skills_vercelLight.svg"
+                        }`,
+                        techName: "Vercel",
+                    },
+                ],
             },
         ],
         Personal: [
@@ -60,7 +57,32 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website that allows users to search for terms and display the links of the results similar to Google Search.",
                 link: "https://zandell-google-clone-2.vercel.app",
-                technologies: technologies1,
+                techs: [
+                    {
+                        imgSrc: "skills_react.svg",
+                        techName: "React",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_nextjsDark.svg"
+                                : "skills_nextjsLight.svg"
+                        }`,
+                        techName: "Next.js",
+                    },
+                    {
+                        imgSrc: "skills_tailwindcss.svg",
+                        techName: "Tailwind CSS",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_vercelDark.svg"
+                                : "skills_vercelLight.svg"
+                        }`,
+                        techName: "Vercel",
+                    },
+                ],
             },
             {
                 imgSrc: "projects_facebook-clone.png",
@@ -68,7 +90,16 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website with Google login authentication that enables users to post texts, images, or videos similar to Facebook.",
                 link: "https://facebook-clone-dfe01.web.app",
-                technologies: technologies2,
+                techs: [
+                    {
+                        imgSrc: "skills_react.svg",
+                        techName: "React",
+                    },
+                    {
+                        imgSrc: "skills_firebase.svg",
+                        techName: "Firebase",
+                    },
+                ],
             },
             {
                 imgSrc: "projects_discord-clone.png",
@@ -76,7 +107,20 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website with Google login authentication that enables users to create a channel where they can chat with another user.",
                 link: "https://discord-clone-84659.web.app",
-                technologies: technologies3,
+                techs: [
+                    {
+                        imgSrc: "skills_react.svg",
+                        techName: "React",
+                    },
+                    {
+                        imgSrc: "skills_reactRedux.svg",
+                        techName: "React Redux",
+                    },
+                    {
+                        imgSrc: "skills_firebase.svg",
+                        techName: "Firebase",
+                    },
+                ],
             },
             {
                 imgSrc: "projects_airbnb-clone.png",
@@ -84,7 +128,32 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website with calendar and date functionality.",
                 link: "https://zandell-airbnb-clone.vercel.app",
-                technologies: technologies1,
+                techs: [
+                    {
+                        imgSrc: "skills_react.svg",
+                        techName: "React",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_nextjsDark.svg"
+                                : "skills_nextjsLight.svg"
+                        }`,
+                        techName: "Next.js",
+                    },
+                    {
+                        imgSrc: "skills_tailwindcss.svg",
+                        techName: "Tailwind CSS",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_vercelDark.svg"
+                                : "skills_vercelLight.svg"
+                        }`,
+                        techName: "Vercel",
+                    },
+                ],
             },
             {
                 imgSrc: "projects_tesla-clone.png",
@@ -92,7 +161,32 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website with scroll snapping functionality.",
                 link: "https://zandell-tesla-clone.vercel.app",
-                technologies: technologies1,
+                techs: [
+                    {
+                        imgSrc: "skills_react.svg",
+                        techName: "React",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_nextjsDark.svg"
+                                : "skills_nextjsLight.svg"
+                        }`,
+                        techName: "Next.js",
+                    },
+                    {
+                        imgSrc: "skills_tailwindcss.svg",
+                        techName: "Tailwind CSS",
+                    },
+                    {
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_vercelDark.svg"
+                                : "skills_vercelLight.svg"
+                        }`,
+                        techName: "Vercel",
+                    },
+                ],
             },
         ],
     };
@@ -101,35 +195,24 @@ const Projects = () => {
     const categories = Object.keys(projectsData) as (keyof ProjectsData)[];
     const projects = projectsData[categories[activeTab]];
 
+    console.log("categories", categories[0]);
+
     return (
         <Wrapper
             id="projects"
             title="Projects"
-            subtitle="Websites I've developed."
+            subtitle="Websites I've built"
+            isFullHeight
+            isCentered
+            isPoject
         >
             <Tabs
                 categories={categories}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
+                isProjects
             />
-            <div
-                className={`justify-center  ${
-                    activeTab === 0
-                        ? "grid gap-6 grid-cols-3"
-                        : "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-                }`}
-            >
-                {projects.map((project, index) => (
-                    <ProjectsCard
-                        key={index}
-                        imgSrc={project.imgSrc}
-                        name={project.name}
-                        description={project.description}
-                        link={project.link}
-                        technologies={project.technologies}
-                    />
-                ))}
-            </div>
+            <ProjectsCarousel projects={projects} categories={categories} />
         </Wrapper>
     );
 };

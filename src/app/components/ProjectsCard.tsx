@@ -1,63 +1,59 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import { Tech } from "../Types/index";
+import TechStack from "./TechStack";
+
+type ProjectsCardProps = {
+    imgSrc: string;
+    name: string;
+    description: string;
+    link: string;
+    techs?: Tech[];
+};
 
 const ProjectsCard = ({
     imgSrc,
     name,
     description,
     link,
-    technologies,
-}: any) => {
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
+    techs,
+}: ProjectsCardProps) => {
+    // 160 x 90
     return (
-        <div className="flex flex-col bg-white rounded-md border dark:border-zinc-800 dark:bg-[#2A3247]">
-            <div className="border-b dark:border-zinc-700">
-                <Image
-                    className="object-cover w-full rounded-t-md border-transparent dark:brightness-90"
-                    src={`/img/${imgSrc}`}
-                    alt=""
-                    width={450}
-                    height={450}
-                    quality={100}
-                />
-            </div>
-            <div className="flex flex-col justify-between grow w-full p-4 text-left">
-                <div>
-                    <h1 className="mb-2 text-xl font-medium">{name}</h1>
-                    <p className="dark:text-zinc-300">{description}</p>
-                    <div className="mt-6 mb-10">
-                        <p className="mb-2 text-sm font-light uppercase dark:text-zinc-300">
-                            Tech stack
-                        </p>
-                        {isClient == true && (
-                            <div className="flex items-center">
-                                {technologies?.map(
-                                    (technology: any, index: any) => (
-                                        <Image
-                                            key={index}
-                                            className="mr-2"
-                                            src={`/img/${technology}`}
-                                            alt=""
-                                            width={30}
-                                            height={30}
-                                        />
-                                    )
-                                )}
-                            </div>
-                        )}
-                    </div>
+        <div className="flex flex-col w-full h-full p-4 bg-white md:flex-row dark:border-zinc-700 dark:bg-primary1-dark">
+            <div className="">
+                <div className="relative w-full border rounded-md md:h-70 md:w-70 lg:w-90 lg2:h-auto lg2:w-110 aspect-video dark:border-zinc-700">
+                    <Image
+                        src={`/img/${imgSrc}`}
+                        alt=""
+                        fill
+                        className="object-cover rounded-md"
+                        quality={100}
+                    />
                 </div>
-                <a href={link} target="_blank" className="w-fit">
-                    <button className="w-full px-5 py-2 text-white transition-colors rounded-md hover:bg-blue-600  bg-blue-700 md:w-auto">
-                        Visit
-                    </button>
-                </a>
+            </div>
+            <div className="flex flex-col pt-4 space-y-2 text-left md:pl-4 grow">
+                <div>
+                    <p className="mb-2 font-medium lg:text-lg">{name}</p>
+                    <p className="text-sm lg:text-base">{description}</p>
+                </div>
+
+                <div className="grow">
+                    <TechStack techs={techs} />
+                </div>
+
+                <div className="flex space-x-2 text-sm lg:text-base">
+                    <a href={link} target="_blank" className="w-full md:w-fit">
+                        <button className="w-full h-10 px-4 text-white transition-colors rounded-md lg:h-12 lg:px-6 md:w-fit bg-accent dark:bg-accent-dark dark:hover:bg-accent-hovered-dark hover:bg-accent-hovered">
+                            Visit Page
+                        </button>
+                    </a>
+                    <a href={link} target="_blank" className="w-full md:w-fit">
+                        <button className="w-full h-10 px-4 transition-colors border rounded-md lg:h-12 lg:px-6 md:w-fit hover:bg-gray-100 hover:dark:bg-primary3-dark dark:border-zinc-700 ">
+                            Source Code
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     );
