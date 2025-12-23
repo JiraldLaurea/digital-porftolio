@@ -1,6 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap")
-layer(utilities); */
-
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -13,9 +11,41 @@ layer(utilities); */
 }
 
 @theme {
-    --font-roboto: "Inter Tight", sans-serif;
-    --color-dark-primary1: #1e263a;
-    --color-dark-primary2: #1c2235;
+    --font-inter: "Inter", sans-serif;
+    --font-inter-tight: "Inter Tight", sans-serif;
+
+    --color-accent: #ff262a;
+    --color-accent-dark: #ff262a;
+    /* --color-accent: #2b7fff; */
+    --color-accent-hovered: #d8272a;
+    --color-accent-hovered-dark: #d8272a;
+    /* --color-accent-hovered: #155dfc; */
+
+    --color-primary-text: #000000;
+    --color-secondary-text: #71717b;
+
+    /* --color-accent-dark: #2b7fff; */
+
+    /* --color-accent-hovered-dark: #155dfc; */
+
+    --color-primary-text-dark: #ffffff;
+    --color-secondary-text-dark: #9f9fa9;
+
+    --color-primary1: #ffffff;
+    --color-primary2: #f9fafb;
+    --color-primary3: #f9fafb;
+    --color-primary4: #f9fafb;
+    --color-primary5: #d1d5dc;
+    --color-primary6: #99a1af;
+
+    --color-primary1-dark: #222327;
+    --color-primary2-dark: #1d1e22;
+    --color-primary3-dark: #2d2f34;
+    --color-primary4-dark: #28292e;
+    --color-primary5-dark: #36383f;
+    --color-primary6-dark: #525660;
+
+    --breakpoint-lg2: 70rem;
 }
 
 @layer base {
