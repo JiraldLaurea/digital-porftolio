@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Wrapper from "./Wrapper";
-import { Icon } from "@iconify/react";
+
 import ContactDetail from "./ContactDetail";
 
 const Contact = () => {
@@ -9,11 +9,11 @@ const Contact = () => {
         <Wrapper
             id="contact"
             title="Contact"
-            subtitle="Let's work together."
-            isContact
+            subtitle="Let's work together"
             isAlternate
+            isContact
         >
-            <div className="mb-12 space-y-8">
+            <div className="space-y-8">
                 <ContactDetail
                     icon="ic:outline-phone-iphone"
                     header="Phone"
@@ -29,32 +29,6 @@ const Contact = () => {
                     header="Location"
                     detail="Makati, Metro Manila, Philippines"
                 />
-            </div>
-            <div className="flex items-center space-x-8">
-                <a
-                    href="https://www.linkedin.com/in/jirald-calusay-064b09220"
-                    target="_blank"
-                    className="flex items-center space-x-1"
-                >
-                    <Icon
-                        icon="mdi:linkedin"
-                        className="w-10 h-10 cursor-pointer"
-                    />
-                    <p>LinkedIn</p>
-                </a>
-                <a
-                    href="https://github.com/JiraldLaurea"
-                    target="_blank"
-                    className="flex items-center space-x-1"
-                >
-                    <Icon
-                        width={40}
-                        height={40}
-                        icon="mdi:github"
-                        className="cursor-pointer"
-                    />
-                    <p>Github</p>
-                </a>
             </div>
         </Wrapper>
     );
