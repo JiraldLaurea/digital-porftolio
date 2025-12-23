@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Head from "./head";
+import Footer from "./components/Footer";
 
 export default function Home() {
     const [buttonsVisible, setButtonsVisible] = useState(true);
@@ -28,7 +29,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="mx-auto dark:bg-zinc-950">
+        <div className="mx-auto dark:bg-primary1dark font-inter-tight">
             <Head />
             <Navbar showButtons={!buttonsVisible} />
             <HeroSection buttonsRef={buttonsRef} />
@@ -36,6 +37,7 @@ export default function Home() {
             <Skills />
             <Projects />
             <Contact />
+            <Footer />
         </div>
     );
 }
