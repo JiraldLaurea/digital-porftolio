@@ -1,24 +1,46 @@
 "use client";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { FaBars } from "react-icons/fa";
 import { RiMoonFill, RiSunLine } from "react-icons/ri";
 import { Link } from "react-scroll/modules";
-import { FaBars } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import { Icon } from "@iconify/react";
 import Button from "./Button";
 
 const Navbar = ({ showButtons }: any) => {
     const { theme, setTheme }: any = useTheme();
     const [isMenuOpened, setIsMenuOpened] = useState(false);
-    const [show, setShow] = useState(false);
-    const [isClient, setIsClient] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const resumeLink =
         "https://drive.google.com/file/d/1w-ep7j_ZsZbAQHgd_KyecjXKQGjdwqWR/view?usp=drive_link";
     const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
 
+    const SM_BREAKPOINT = 640;
+
     useEffect(() => {
-        setIsClient(true);
+        const mediaQuery = window.matchMedia(`(min-width: ${SM_BREAKPOINT}px)`);
+
+        const handleChange = (e: MediaQueryListEvent) => {
+            if (e.matches) {
+                // Screen is now >= sm
+                setIsMenuOpened(false);
+            }
+        };
+
+        // Run once on mount
+        if (mediaQuery.matches) {
+            setIsMenuOpened(false);
+        }
+
+        mediaQuery.addEventListener("change", handleChange);
+
+        return () => {
+            mediaQuery.removeEventListener("change", handleChange);
+        };
     }, []);
 
     const navItems = [
@@ -32,16 +54,17 @@ const Navbar = ({ showButtons }: any) => {
     return (
         <>
             <div
-                className={`sticky top-0 z-10 flex justify-center h-[68.4px] bg-white border-b dark:bg-[#1E263A] dark:border-zinc-700`}
+                className={`sticky top-0 z-100 flex justify-center h-16 bg-white border-b dark:bg-primary1-dark dark:border-zinc-700`}
             >
                 <div className="flex items-center justify-between w-full max-w-6xl px-4">
                     <div className="flex items-center space-x-6 text-sm">
                         {navItems.map((navItem, idx) => {
                             return (
                                 <Link
-                                    offset={-68}
+                                    offset={idx === 0 ? -64 : -63}
+                                    // offset={-63}
                                     smooth
-                                    duration={500}
+                                    duration={300}
                                     to={navItem.page}
                                     key={idx}
                                 >
@@ -53,150 +76,78 @@ const Navbar = ({ showButtons }: any) => {
                         })}
                     </div>
 
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                         <div
                             aria-hidden={!showButtons} // accessibility hint
-                            className={`flex space-x-3 items-center transition-all duration-200 ease-out ${
-                                showButtons
+                            className={`flex space-x-2 items-center transition-colors duration-200 ${
+                                showButtons || isMenuOpened
                                     ? "opacity-100"
-                                    : "opacity-0  pointer-events-none"
+                                    : "opacity-0 pointer-events-none"
                             }`}
                         >
                             <Button
                                 link={resumeLink}
                                 text="Resume"
                                 isResume
-                                isSmaller={false}
+                                isSmaller
                             />
                             <Button
                                 link={linkedInLink}
                                 text="LinkedIn"
-                                isResume={false}
-                                isSmaller={false}
+                                isSmaller
                             />
                         </div>
-                        {isClient === true && (
-                            <>
-                                {theme === "dark" ? (
-                                    <div className="flex items-center space-x-2">
-                                        <button
-                                            className="w-[49.33px] h-[49.33px] flex justify-center items-center transition-colors ease-in border rounded-md border-zinc-700 border-opacity-50 hover:bg-[#161c2b]"
-                                            onClick={() => setTheme("light")}
-                                        >
-                                            <RiSunLine size={18} />
-                                        </button>
-                                        <div
-                                            onClick={() =>
-                                                setIsMenuOpened(true)
-                                            }
-                                            className="sm:hidden w-[35.6px] ease-in h-[35.6px] justify-center border-zinc-500 border-opacity-50 flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-[#1E263A]"
-                                        >
-                                            <FaBars
-                                                className="text-white"
-                                                width={25}
-                                                height={25}
-                                            />
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="flex items-center space-x-2">
-                                        <button
-                                            className="w-[49.33px] h-[49.33px] flex justify-center transition-colors ease-in border items-center rounded-md hover:bg-zinc-100"
-                                            onClick={() => setTheme("dark")}
-                                        >
-                                            <RiMoonFill size={18} />
-                                        </button>
-                                        <div
-                                            onClick={() =>
-                                                setIsMenuOpened(true)
-                                            }
-                                            className="sm:hidden  w-[35.6px] h-[35.6px] ease-in justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-100"
-                                        >
-                                            <FaBars
-                                                className=""
-                                                width={25}
-                                                height={25}
-                                            />
-                                        </div>
-                                    </div>
-                                )}
-                            </>
-                        )}
+                        {mounted ? (
+                            <div className="flex items-center">
+                                <button
+                                    className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-md dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary3-dark"
+                                    onClick={() => {
+                                        theme === "dark"
+                                            ? setTheme("light")
+                                            : setTheme("dark");
+                                    }}
+                                >
+                                    {theme === "dark" ? (
+                                        <RiSunLine size={18} />
+                                    ) : (
+                                        <RiMoonFill size={18} />
+                                    )}
+                                </button>
+                                <div
+                                    onClick={() =>
+                                        setIsMenuOpened(!isMenuOpened)
+                                    }
+                                    className="flex items-center justify-center w-10 h-10 ml-2 transition-colors ease-in border border-opacity-50 rounded-md cursor-pointer select-none sm:hidden dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary3-dark"
+                                >
+                                    <FaBars
+                                        className=""
+                                        width={25}
+                                        height={25}
+                                    />
+                                </div>
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </div>
             {isMenuOpened && (
-                <div className="fixed top-0 z-10 w-full h-screen bg-white dark:bg-[#2A3247]">
-                    <div className="h-[68.4px] relative z-20 flex items-center px-4 justify-end shadow-sm border-b dark:border-b-transparent dark:shadow-md">
-                        {isClient === true && (
-                            <>
-                                {theme === "dark" ? (
-                                    <div className="flex items-center space-x-2">
-                                        <button
-                                            className="p-2 transition-colors ease-in border rounded-md  hover:bg-[#1E263A] border-zinc-500 border-opacity-50"
-                                            onClick={() => setTheme("light")}
-                                        >
-                                            <RiSunLine size={18} />
-                                        </button>
-                                        <div
-                                            onClick={() =>
-                                                setIsMenuOpened(false)
-                                            }
-                                            className="w-[35.6px] h-[35.6px] ease-in justify-center flex border-zinc-500 border-opacity-50 items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-900"
-                                        >
-                                            <Icon
-                                                icon="ic:baseline-close"
-                                                className="text-white"
-                                                width={25}
-                                                height={25}
-                                            />
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="flex items-center space-x-2">
-                                        <button
-                                            className="p-2 transition-colors ease-in border rounded-md hover:bg-zinc-100"
-                                            onClick={() => setTheme("dark")}
-                                        >
-                                            <RiMoonFill size={18} />
-                                        </button>
-                                        <div
-                                            onClick={() =>
-                                                setIsMenuOpened(false)
-                                            }
-                                            className="w-[35.6px] h-[35.6px] ease-in justify-center flex items-center transition-colors border rounded-md cursor-pointer select-none hover:bg-zinc-100"
-                                        >
-                                            <Icon
-                                                icon="ic:baseline-close"
-                                                width={25}
-                                                height={25}
-                                            />
-                                        </div>
-                                    </div>
-                                )}
-                            </>
-                        )}
-                    </div>
-                    <div className="flex pb-[68.4px] flex-col items-center h-full bg-zinc-50 px-4 dark:bg-[#1E263A] py-4">
-                        <div className="flex flex-col w-full pl-4 rounded-md bg-white dark:bg-[#2A3247] shadow-custom dark:shadow-xl">
-                            {navItems.map((navItem, idx) => {
-                                return (
-                                    <Link
-                                        offset={-68}
-                                        smooth
-                                        duration={500}
-                                        to={navItem.page}
-                                        key={idx}
-                                        className={`w-full text-sm py-4 border-b cursor-pointer dark:border-y-zinc-500 dark:border-opacity-50 ${
-                                            idx == 4 && "border-none"
-                                        }`}
-                                        onClick={() => setIsMenuOpened(false)}
-                                    >
-                                        <p>{navItem.label}</p>
-                                    </Link>
-                                );
-                            })}
-                        </div>
+                <div className="fixed w-full h-screen bg-white z-100 top-16 dark:bg-primary1-dark">
+                    <div className="flex flex-col items-center h-full px-4 py-4 space-y-4 bg-primary1 dark:bg-primary1-dark">
+                        {navItems.map((navItem, idx) => {
+                            return (
+                                <Link
+                                    offset={idx === 0 ? -64 : -63}
+                                    smooth
+                                    duration={500}
+                                    to={navItem.page}
+                                    key={idx}
+                                    className={`w-full rounded-md text-sm px-4 py-4 bg-primary3 dark:bg-primary3-dark border cursor-pointer dark:border-zinc-700`}
+                                    onClick={() => setIsMenuOpened(false)}
+                                >
+                                    <p>{navItem.label}</p>
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             )}
