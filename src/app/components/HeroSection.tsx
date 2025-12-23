@@ -109,9 +109,9 @@ const HeroSection = ({ buttonsRef }: any) => {
                     <Image
                         src={`/img/avatar2.jpg`}
                         alt=""
-                        layout="fill"
                         className="object-contain"
-                    />
+                        fill
+                        sizes="100vw" />
                 </div>
             </div>
         </div>

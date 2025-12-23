@@ -26,9 +26,10 @@ const ProjectsCard = ({
                     <Image
                         src={`/img/${imgSrc}`}
                         alt=""
-                        fill
                         className="object-cover rounded-md"
                         quality={100}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </div>
             </div>

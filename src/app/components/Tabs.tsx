@@ -1,5 +1,3 @@
-import React from "react";
-
 type TabsProps = {
     categories: string[];
     activeTab: number;
@@ -12,7 +10,6 @@ const Tabs = ({
     categories,
     activeTab,
     setActiveTab,
-    isProjects,
     isAlternate,
 }: TabsProps) => (
     <div className={`flex justify-center overflow-x-auto`}>
@@ -22,7 +19,10 @@ const Tabs = ({
             } `}
         >
             {categories.map((category, index) => (
-                <div className="flex flex-col items-center space-y-1.5">
+                <div
+                    key={index}
+                    className="flex flex-col items-center space-y-1.5"
+                >
                     <button
                         key={index}
                         className={`transition-colors rounded-md hover:bg-zinc-100 dark:hover:bg-primary3-dark ${

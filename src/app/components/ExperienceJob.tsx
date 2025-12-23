@@ -38,7 +38,10 @@ const ExperienceJob = ({
                     width={hasNoBackground ? 80 : 50}
                     height={hasNoBackground ? 80 : 50}
                     unoptimized
-                />
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
             </div>
             <div className="flex flex-col">
                 <h2 className="text-xl font-medium">{job}</h2>
