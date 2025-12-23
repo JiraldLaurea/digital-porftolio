@@ -195,8 +195,6 @@ const Projects = () => {
     const categories = Object.keys(projectsData) as (keyof ProjectsData)[];
     const projects = projectsData[categories[activeTab]];
 
-    console.log("categories", categories[0]);
-
     return (
         <Wrapper
             id="projects"
