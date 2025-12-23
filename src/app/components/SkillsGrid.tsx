@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { Skill } from "../Types/index";
+import SkillsLevel from "./SkillsLevel";
 
-const SkillsGrid = ({ imgSrc, darkModeImgSrc, text }: any) => {
+const SkillsGrid = ({ imgSrc, techName, level, mounted }: Skill) => {
     return (
-        <div className="flex items-center h-full py-6 px-8 100 bg-white border dark:border-zinc-700 rounded-md dark:bg-[#2A3247]">
-            {darkModeImgSrc && (
-                <>
-                    <div className="relative w-10 h-10 mr-4 dark:hidden">
+        <>
+            {mounted ? (
+                <div className="flex flex-col items-center h-full px-4 py-4 border rounded-md 100 bg-primary4 dark:border-zinc-700 dark:bg-primary4-dark">
+                    <div className={`relative w-10 h-10 mb-2`}>
                         <Image
                             src={`/img/${imgSrc}`}
                             alt=""
@@ -15,30 +17,13 @@ const SkillsGrid = ({ imgSrc, darkModeImgSrc, text }: any) => {
                             objectFit="contain"
                         />
                     </div>
-                    <div className="relative hidden w-10 h-10 mr-4 dark:block">
-                        <Image
-                            src={`/img/${darkModeImgSrc}`}
-                            alt=""
-                            layout="fill"
-                            objectFit="contain"
-                        />
-                    </div>
-                </>
-            )}
-
-            {!darkModeImgSrc && (
-                <div className="relative w-10 h-10 mr-4">
-                    <Image
-                        src={`/img/${imgSrc}`}
-                        alt=""
-                        layout="fill"
-                        objectFit="contain"
-                    />
+                    <p className="font-medium">{techName}</p>
+                    <SkillsLevel level={level} />
                 </div>
+            ) : (
+                <div className="w-full border rounded-md h-45 bg-primary4 dark:bg-primary4-dark animate-pulse dark:border-zinc-700" />
             )}
-
-            <p>{text}</p>
-        </div>
+        </>
     );
 };
 
