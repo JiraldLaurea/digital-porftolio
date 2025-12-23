@@ -19,29 +19,35 @@ const ExperienceJob = ({
     hasNoBackground,
 }: ExperienceJobProps) => {
     return (
-        <div className={`flex items-center gap-4 ${isFirst ? "mb-6" : "my-6"}`}>
+        <div
+            className={`flex border dark:border-zinc-700 bg-white dark:bg-primary1-dark rounded-t-md  p-6 py-4 items-center gap-2 ${
+                isFirst ? "" : "mt-6"
+            }`}
+        >
             <div
-                className={` rounded-full ${
+                className={`rounded-full ${
                     hasNoBackground
                         ? "p-0 bg-transparent"
-                        : "p-6 bg-white border"
+                        : "h-20 w-20 flex items-center justify-center bg-white border"
                 }`}
             >
                 <Image
                     className=""
                     src={`/img/${imgSrc}`}
                     alt=""
-                    width={hasNoBackground ? 128 : 80}
-                    height={hasNoBackground ? 128 : 80}
+                    width={hasNoBackground ? 80 : 50}
+                    height={hasNoBackground ? 80 : 50}
                     unoptimized
                 />
             </div>
             <div className="flex flex-col">
-                <h2 className="text-3xl font-medium">{job}</h2>
-                <p className="text-lg text-zinc-600 dark:text-zinc-300">
+                <h2 className="text-xl font-medium">{job}</h2>
+                <p className=" text-zinc-600 dark:text-secondary-text-dark">
                     {company}
                 </p>
-                <p className="text-zinc-600 dark:text-zinc-300">{date}</p>
+                <p className="text-sm text-zinc-600 dark:text-secondary-text-dark">
+                    {date}
+                </p>
             </div>
         </div>
     );

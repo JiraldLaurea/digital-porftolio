@@ -6,6 +6,7 @@ type ExperienceCardProps = {
     date: string;
     tasks?: Task[];
     techs?: Tech[];
+    isLast?: boolean;
 };
 
 const ExperienceCard = ({
@@ -13,9 +14,14 @@ const ExperienceCard = ({
     date,
     tasks,
     techs,
+    isLast,
 }: ExperienceCardProps) => {
     return (
-        <div className="dark:bg-[#2A3247] border bg-white p-7 space-y-5 rounded-md dark:border-zinc-700 flex flex-col">
+        <div
+            className={`flex flex-col p-6 space-y-5 bg-white border border-t-0 dark:bg-primary1-dark dark:border-zinc-700 ${
+                isLast && "rounded-b-md"
+            }`}
+        >
             <div>
                 <h2 className="text-lg font-medium">{project}</h2>
                 <h3 className="text-sm text-zinc-600 dark:text-zinc-300">

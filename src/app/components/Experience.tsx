@@ -1,20 +1,16 @@
-import React from "react";
-import Image from "next/image";
-import ExperienceCard from "./ExperienceCard";
-import Wrapper from "./Wrapper";
-import ExperienceJob from "./ExperienceJob";
 import { useTheme } from "next-themes";
+import ExperienceCard from "./ExperienceCard";
+import ExperienceJob from "./ExperienceJob";
+import Wrapper from "./Wrapper";
 
 const Experience = () => {
     const { theme, setTheme }: any = useTheme();
-
-    console.log("ASDAKSJDNSKDJN", theme);
 
     return (
         <Wrapper
             id="experience"
             title="Experience"
-            subtitle="My work experience journey."
+            subtitle="My Professional Experience"
         >
             <ExperienceJob
                 imgSrc="exp_aws.png"
@@ -23,7 +19,7 @@ const Experience = () => {
                 date="October 2023 - Present"
                 isFirst
             />
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1">
                 <ExperienceCard
                     project="Property Management System Migration"
                     date="August 2024 - October 2025"
@@ -138,6 +134,7 @@ const Experience = () => {
                             techName: "Git",
                         },
                     ]}
+                    isLast
                 />
             </div>
             <ExperienceJob
@@ -147,7 +144,7 @@ const Experience = () => {
                 date="February 2023 - May 2023"
                 hasNoBackground
             />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <ExperienceCard
                     project="Barangay Solid Waste Management System"
                     date="Feb 2023 - May 2023"
@@ -183,6 +180,7 @@ const Experience = () => {
                             techName: "MySQL",
                         },
                     ]}
+                    isLast
                 />
             </div>
         </Wrapper>
