@@ -57,12 +57,12 @@ const HeroSection = ({ buttonsRef }: any) => {
             className="flex py-10 flex-col text-center md:text-left  justify-center items-center max-h-192 min-h-fit h-[calc(100vh-64px)] bg-primary1 dark:bg-primary1-dark px-4"
         >
             <div className="flex flex-col-reverse items-center justify-between w-full md:px-10 lg:px-12 md:flex-row lg:max-w-5xl">
-                <div className="space-y-6 sm:mr-4">
+                <div className="space-y-4 sm:space-y-6 sm:mr-4">
                     <div>
-                        <h1 className="mb-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-6xl">
+                        <h1 className="mb-2 text-2xl font-semibold leading-tight xs:text-3xl sm:mb-4 sm:text-4xl lg:text-6xl">
                             Jirald Calusay
                         </h1>
-                        <div className="flex items-center justify-center text-2xl font-extrabold xs:text-4xl sm:text-5xl md:justify-start lg:text-7xl">
+                        <div className="flex items-center justify-center text-3xl font-extrabold xs:text-4xl sm:text-5xl md:justify-start lg:text-7xl">
                             <h3 className="text-hero dark:text-hero-dark">
                                 <motion.span
                                     key={text}
