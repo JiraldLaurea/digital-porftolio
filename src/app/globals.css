@@ -46,6 +46,7 @@
     --color-primary5-dark: #36383f;
     --color-primary6-dark: #525660;
 
+    --breakpoint-xxs: 24rem;
     --breakpoint-xs: 28rem;
     --breakpoint-lg2: 70rem;
 }
