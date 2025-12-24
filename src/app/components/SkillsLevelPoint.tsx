@@ -19,7 +19,7 @@ const SkillsLevelPoint = ({ level, order }: SkillsLevelPointProps) => {
                                       "bg-blue-500 dark:bg-blue-600") ||
                                   (level == 3 &&
                                       "bg-green-500 dark:bg-green-600")
-                              } bg-blue-500`
+                              }`
                             : "dark:bg-primary5-dark bg-gray-300"
                     }`}
                 >
