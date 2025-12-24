@@ -54,15 +54,15 @@ const HeroSection = ({ buttonsRef }: any) => {
     return (
         <div
             id="home"
-            className="flex py-10 flex-col text-center md:text-left  justify-center items-center max-h-192 min-h-fit h-[calc(100vh-64px)] bg-primary1 dark:bg-primary1-dark px-4"
+            className="flex py-10 flex-col text-center md:text-left justify-center items-center max-h-192 min-h-fit h-[calc(100vh-64px)] bg-primary1 dark:bg-primary1-dark px-4"
         >
-            <div className="flex flex-col-reverse items-center justify-between w-full md:px-10 lg:px-12 md:flex-row lg:max-w-5xl">
+            <div className="flex flex-col-reverse items-center justify-center w-full lg:justify-between md:px-0 lg:px-6 md:flex-row lg:max-w-5xl">
                 <div className="space-y-4 sm:space-y-6 sm:mr-4">
                     <div>
-                        <h1 className="mb-2 text-2xl font-semibold leading-tight xs:text-3xl sm:mb-4 sm:text-4xl lg:text-6xl">
+                        <h1 className="mb-2 text-2xl font-semibold leading-tight xxs:text-3xl xs:text-4xl sm:mb-4 sm:text-5xl lg:text-6xl">
                             Jirald Calusay
                         </h1>
-                        <div className="flex items-center justify-center text-3xl font-extrabold xs:text-4xl sm:text-5xl md:justify-start lg:text-7xl">
+                        <div className="flex items-center justify-center text-3xl xxs:text-4xl font-extrabold xs:text-[44px] sm:text-[52px] md:justify-start lg:text-7xl">
                             <h3 className="text-hero dark:text-hero-dark">
                                 <motion.span
                                     key={text}
@@ -100,9 +100,9 @@ const HeroSection = ({ buttonsRef }: any) => {
                     </div>
                 </div>
 
-                <div className="relative flex-none mb-4 overflow-hidden border rounded-full md:mb-0 w-30 h-30 sm:w-44 sm:h-44 lg:w-56 lg:h-56 dark:border-zinc-700">
+                <div className="relative flex-none w-40 h-40 mb-4 overflow-hidden border rounded-full md:mb-0 sm:w-48 sm:h-48 lg:w-58 lg:h-58 dark:border-zinc-700">
                     <Image
-                        src={`/img/avatar2.jpg`}
+                        src={`/img/profile_1.png`}
                         alt=""
                         className="object-contain"
                         fill
