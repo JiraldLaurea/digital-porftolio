@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { Icon } from "@iconify/react";
-import Button from "./Button";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Button from "./Button";
 
 const HeroSection = ({ buttonsRef }: any) => {
     const resumeLink =
@@ -58,13 +57,13 @@ const HeroSection = ({ buttonsRef }: any) => {
             className="flex py-10 flex-col text-center md:text-left  justify-center items-center max-h-192 min-h-fit h-[calc(100vh-64px)] bg-primary1 dark:bg-primary1-dark px-4"
         >
             <div className="flex flex-col-reverse items-center justify-between w-full md:px-10 lg:px-12 md:flex-row lg:max-w-5xl">
-                <div className="mr-4 space-y-6">
+                <div className="space-y-6 sm:mr-4">
                     <div>
                         <h1 className="mb-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-6xl">
                             Jirald Calusay
                         </h1>
-                        <div className="flex items-center justify-center text-4xl font-extrabold sm:text-5xl md:justify-start lg:text-7xl">
-                            <h3 className="text-accent dark:text-accent-dark">
+                        <div className="flex items-center justify-center text-2xl font-extrabold xs:text-4xl sm:text-5xl md:justify-start lg:text-7xl">
+                            <h3 className="text-hero dark:text-hero-dark">
                                 <motion.span
                                     key={text}
                                     initial={{ opacity: 1 }}
@@ -94,14 +93,10 @@ const HeroSection = ({ buttonsRef }: any) => {
                     </p>
                     <div
                         ref={buttonsRef}
-                        className="flex justify-center space-x-4 md:justify-start"
+                        className="flex justify-center space-x-2 sm:space-x-4 md:justify-start"
                     >
-                        <Button link={resumeLink} text="Resume" isResume />
-                        <Button
-                            link={linkedInLink}
-                            text="LinkedIn"
-                            isResume={false}
-                        />
+                        <Button link={resumeLink} text="Resume" isPrimary />
+                        <Button link={linkedInLink} text="LinkedIn" />
                     </div>
                 </div>
 
@@ -111,7 +106,9 @@ const HeroSection = ({ buttonsRef }: any) => {
                         alt=""
                         className="object-contain"
                         fill
-                        sizes="100vw" />
+                        priority
+                        sizes="100vw"
+                    />
                 </div>
             </div>
         </div>
