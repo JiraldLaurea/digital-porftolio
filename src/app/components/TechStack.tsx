@@ -22,7 +22,7 @@ const TechStack = ({ techs }: TechStackProps) => {
                 {techs?.map((tech, index) => (
                     <React.Fragment key={index}>
                         {mounted ? (
-                            <div className="flex items-center h-8 px-2 border rounded-md lg:h-10 lg:px-3 bg-gray-50 dark:bg-primary3-dark dark:border-zinc-700">
+                            <div className="flex items-center h-8 px-2 border rounded-md bg-primary3 lg:h-10 lg:px-3 dark:bg-primary3-dark dark:border-zinc-700">
                                 <div className="relative w-4.5 h-4.5 mr-2 lg:w-6 lg:h-6">
                                     <Image
                                         src={`/img/${tech.imgSrc}`}
@@ -39,7 +39,7 @@ const TechStack = ({ techs }: TechStackProps) => {
                                 </p>
                             </div>
                         ) : (
-                            <div className="w-20 h-10 border rounded-md bg-gray-50 dark:bg-primary3-dark dark:border-zinc-700 animate-pulse" />
+                            <div className="w-20 h-10 border rounded-md bg-primary3 dark:bg-primary3-dark dark:border-zinc-700 animate-pulse" />
                         )}
                     </React.Fragment>
                 ))}
