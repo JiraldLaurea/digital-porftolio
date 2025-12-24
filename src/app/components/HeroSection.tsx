@@ -100,7 +100,7 @@ const HeroSection = ({ buttonsRef }: any) => {
                     </div>
                 </div>
 
-                <div className="relative flex-none mb-4 overflow-hidden border rounded-full md:mb-0 w-30 h-30 sm:w-44 sm:h-44 lg:w-56 lg:h-56 dark:border-0">
+                <div className="relative flex-none mb-4 overflow-hidden border rounded-full md:mb-0 w-30 h-30 sm:w-44 sm:h-44 lg:w-56 lg:h-56 dark:border-zinc-700">
                     <Image
                         src={`/img/avatar2.jpg`}
                         alt=""
