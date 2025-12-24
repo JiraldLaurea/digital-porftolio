@@ -23,12 +23,14 @@ const ExperienceCard = ({
             }`}
         >
             <div>
-                <h2 className="font-medium sm:text-lg">{project}</h2>
-                <h3 className="text-sm text-zinc-600 dark:text-zinc-300">
+                <h2 className="text-sm font-medium sm:text-base md:text-lg">
+                    {project}
+                </h2>
+                <h3 className="text-xs xs:text-sm text-zinc-600 dark:text-secondary-text-dark">
                     {date}
                 </h3>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 text-sm sm:text-base">
                 {tasks?.map((task, index) => (
                     <p key={index}>{task.description}</p>
                 ))}
