@@ -29,7 +29,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="mx-auto dark:bg-primary1dark font-inter-tight">
+        <div className="mx-auto font-inter-tight">
             <Head />
             <Navbar showButtons={!buttonsVisible} />
             <HeroSection buttonsRef={buttonsRef} />
