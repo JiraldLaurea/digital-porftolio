@@ -39,7 +39,7 @@ const TechStack = ({ techs }: TechStackProps) => {
                                 </p>
                             </div>
                         ) : (
-                            <div className="w-20 h-10 border rounded-md bg-primary3 dark:bg-primary3-dark dark:border-zinc-700 animate-pulse" />
+                            <div className="w-20 h-8 border rounded-md lg:h-10 bg-primary3 dark:bg-primary3-dark dark:border-zinc-700 animate-pulse" />
                         )}
                     </React.Fragment>
                 ))}
