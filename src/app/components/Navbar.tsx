@@ -2,7 +2,8 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
-import { RiMoonFill, RiSunLine } from "react-icons/ri";
+import { RiSunLine } from "react-icons/ri";
+import { RxMoon } from "react-icons/rx";
 import { Link } from "react-scroll/modules";
 import Button from "./Button";
 
@@ -56,8 +57,8 @@ const Navbar = ({ showButtons }: any) => {
             <div
                 className={`sticky top-0 z-100 flex justify-center h-16 bg-white border-b dark:bg-primary1-dark dark:border-zinc-700`}
             >
-                <div className="flex items-center justify-between w-full max-w-6xl px-4">
-                    <div className="flex items-center space-x-6 text-sm">
+                <div className="flex items-center justify-end w-full max-w-6xl px-4 sm:justify-between">
+                    <div className="items-center hidden space-x-6 text-sm sm:flex">
                         {navItems.map((navItem, idx) => {
                             return (
                                 <Link
@@ -68,7 +69,7 @@ const Navbar = ({ showButtons }: any) => {
                                     to={navItem.page}
                                     key={idx}
                                 >
-                                    <p className="hidden transition-colors rounded-md cursor-pointer select-none dark:text-zinc-400 dark:hover:text-white text-zinc-500 hover:text-zinc-950 sm:block">
+                                    <p className="transition-colors rounded-md cursor-pointer select-none dark:text-secondary-text-dark dark:hover:text-white text-zinc-500 hover:text-black">
                                         {navItem.label}
                                     </p>
                                 </Link>
@@ -78,8 +79,7 @@ const Navbar = ({ showButtons }: any) => {
 
                     <div className="flex items-center space-x-2">
                         <div
-                            aria-hidden={!showButtons} // accessibility hint
-                            className={`flex space-x-2 items-center transition-colors duration-200 ${
+                            className={`flex space-x-2 items-center transition-all ${
                                 showButtons || isMenuOpened
                                     ? "opacity-100"
                                     : "opacity-0 pointer-events-none"
@@ -88,7 +88,7 @@ const Navbar = ({ showButtons }: any) => {
                             <Button
                                 link={resumeLink}
                                 text="Resume"
-                                isResume
+                                isPrimary
                                 isSmaller
                             />
                             <Button
@@ -100,7 +100,7 @@ const Navbar = ({ showButtons }: any) => {
                         {mounted ? (
                             <div className="flex items-center">
                                 <button
-                                    className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-md dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary3-dark"
+                                    className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-md dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
                                     onClick={() => {
                                         theme === "dark"
                                             ? setTheme("light")
@@ -110,14 +110,14 @@ const Navbar = ({ showButtons }: any) => {
                                     {theme === "dark" ? (
                                         <RiSunLine size={18} />
                                     ) : (
-                                        <RiMoonFill size={18} />
+                                        <RxMoon size={18} />
                                     )}
                                 </button>
                                 <div
                                     onClick={() =>
                                         setIsMenuOpened(!isMenuOpened)
                                     }
-                                    className="flex items-center justify-center w-10 h-10 ml-2 transition-colors ease-in border border-opacity-50 rounded-md cursor-pointer select-none sm:hidden dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary3-dark"
+                                    className="flex items-center justify-center w-10 h-10 ml-2 transition-colors ease-in border border-opacity-50 rounded-md cursor-pointer select-none sm:hidden dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary-hovered-dark"
                                 >
                                     <FaBars
                                         className=""
