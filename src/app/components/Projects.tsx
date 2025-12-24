@@ -200,7 +200,6 @@ const Projects = () => {
             id="projects"
             title="Projects"
             subtitle="Websites I've built"
-            isFullHeight
             isCentered
             isPoject
         >
@@ -210,7 +209,7 @@ const Projects = () => {
                 setActiveTab={setActiveTab}
                 isProjects
             />
-            <ProjectsCarousel projects={projects} categories={categories} />
+            <ProjectsCarousel projects={projects} activeTab={activeTab} />
         </Wrapper>
     );
 };
