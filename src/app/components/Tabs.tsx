@@ -3,21 +3,13 @@ type TabsProps = {
     activeTab: number;
     setActiveTab: (index: number) => void;
     isProjects?: boolean;
-    isAlternate?: boolean;
 };
 
-const Tabs = ({
-    categories,
-    activeTab,
-    setActiveTab,
-    isAlternate,
-}: TabsProps) => (
-    <div className={`flex justify-center overflow-x-auto`}>
-        <div
-            className={`flex p-2 pb-0 mb-6 w-fit overflow-x-auto justify-center bg-primary1 border dark:border-zinc-700 dark:bg-primary1-dark rounded-md ${
-                isAlternate ? "border-zinc-600" : ""
-            } `}
-        >
+const Tabs = ({ categories, activeTab, setActiveTab }: TabsProps) => (
+    <div
+        className={`flex justify-center overflow-x-auto sm:text-base text-sm `}
+    >
+        <div className="flex p-2 pb-0 mb-6 overflow-x-auto border rounded-md bg-primary1 dark:border-zinc-700 dark:bg-primary1-dark">
             {categories.map((category, index) => (
                 <div
                     key={index}
@@ -25,7 +17,7 @@ const Tabs = ({
                 >
                     <button
                         key={index}
-                        className={`transition-colors rounded-md hover:bg-zinc-100 dark:hover:bg-primary3-dark ${
+                        className={`transition-colors rounded-md hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark ${
                             activeTab === index
                                 ? "dark:text-white"
                                 : "text-secondary-text dark:text-secondary-text-dark"
