@@ -11,6 +11,7 @@ interface Project {
     name: string;
     description: string;
     link: string;
+    sourceCode?: string;
     techs: Tech[];
 }
 
@@ -30,6 +31,7 @@ const Projects = () => {
                 description:
                     "Allows users to create charts(Fishbone & Pareto).",
                 link: "https://pareto-chart.vercel.app/",
+                sourceCode: "https://gitlab.com/Zandell/chart/tree/master",
                 techs: [
                     {
                         imgSrc: "skills_react.svg",
@@ -57,6 +59,7 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website that allows users to search for terms and display the links of the results similar to Google Search.",
                 link: "https://zandell-google-clone-2.vercel.app",
+                sourceCode: "https://github.com/JiraldLaurea/google-clone-2",
                 techs: [
                     {
                         imgSrc: "skills_react.svg",
@@ -128,6 +131,7 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website with calendar and date functionality.",
                 link: "https://zandell-airbnb-clone.vercel.app",
+                sourceCode: "https://github.com/JiraldLaurea/airbnb-clone",
                 techs: [
                     {
                         imgSrc: "skills_react.svg",
@@ -161,6 +165,7 @@ const Projects = () => {
                 description:
                     "A mobile-responsive website with scroll snapping functionality.",
                 link: "https://zandell-tesla-clone.vercel.app",
+                sourceCode: "https://github.com/JiraldLaurea/tesla-clone",
                 techs: [
                     {
                         imgSrc: "skills_react.svg",

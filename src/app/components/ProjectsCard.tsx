@@ -9,6 +9,7 @@ type ProjectsCardProps = {
     name: string;
     description: string;
     link: string;
+    sourceCode: string;
     techs?: Tech[];
 };
 
@@ -17,6 +18,7 @@ const ProjectsCard = ({
     name,
     description,
     link,
+    sourceCode,
     techs,
 }: ProjectsCardProps) => {
     // 160 x 90
@@ -46,7 +48,13 @@ const ProjectsCard = ({
 
                 <div className="flex space-x-2">
                     <Button link={link} text="Visit Page" isPrimary isSmaller />
-                    <Button link={link} text="Source Code" isSmaller />
+                    {sourceCode && (
+                        <Button
+                            link={sourceCode}
+                            text="Source Code"
+                            isSmaller
+                        />
+                    )}
                 </div>
             </div>
         </div>
