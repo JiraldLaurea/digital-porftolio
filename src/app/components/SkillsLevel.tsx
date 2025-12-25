@@ -12,7 +12,7 @@ const SkillsLevel = ({ level }: SkillsLevelProps) => {
                 <SkillsLevelPoint level={level} order={2} />
                 <SkillsLevelPoint level={level} order={3} />
             </div>
-            <div className="grid w-full grid-cols-3 text-sm text-zinc-400 dark:text-zinc-400">
+            <div className="grid w-full grid-cols-3 text-xs sm:text-sm text-zinc-400 dark:text-zinc-400">
                 <small
                     className={`text-left ${
                         level == 1 && "font-medium text-black dark:text-white"

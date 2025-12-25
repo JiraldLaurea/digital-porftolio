@@ -8,7 +8,7 @@ const SkillsLevelPoint = ({ level, order }: SkillsLevelPointProps) => {
         <>
             <div className="flex flex-col items-center justify-center">
                 <div
-                    className={`z-10 flex items-center justify-center p-2 rounded-full ${
+                    className={`z-10 flex items-center justify-center p-1 sm:p-2 rounded-full ${
                         order == 1 ||
                         (level >= 2 && order == 2) ||
                         (level == 3 && order == 3)
@@ -46,7 +46,7 @@ const SkillsLevelPoint = ({ level, order }: SkillsLevelPointProps) => {
             </div>
             {order < 3 && (
                 <div
-                    className={`w-full h-1 outline-4  ${
+                    className={`w-full h-1 outline-2 sm:outline-4  ${
                         (level >= 2 && order == 1) || (level == 3 && order == 2)
                             ? `dark:bg-blue-600  dark:outline-blue-600
                             ${
