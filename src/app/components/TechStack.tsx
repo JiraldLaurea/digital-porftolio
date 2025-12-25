@@ -18,7 +18,7 @@ const TechStack = ({ techs }: TechStackProps) => {
             <h3 className="mb-1 text-xs lg:text-sm text-zinc-600 dark:text-zinc-300">
                 Tech Stack
             </h3>
-            <div className="flex flex-wrap space-x-2 space-y-2">
+            <div className="flex flex-wrap gap-2">
                 {techs?.map((tech, index) => (
                     <React.Fragment key={index}>
                         {mounted ? (
