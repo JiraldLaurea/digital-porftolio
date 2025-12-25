@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
             },
             {
                 imgSrc: `${
-                    theme === "dark" && mounted
+                    theme === "dark"
                         ? "skills_nextjsDark.svg"
                         : "skills_nextjsLight.svg"
                 }`,
