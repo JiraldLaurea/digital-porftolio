@@ -13,6 +13,7 @@ const SkillsGrid = ({ imgSrc, techName, level, mounted }: Skill) => {
                             src={`/img/${imgSrc}`}
                             alt=""
                             fill
+                            quality={100}
                             sizes="100vw"
                             style={{
                                 objectFit: "contain",

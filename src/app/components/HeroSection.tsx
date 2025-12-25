@@ -106,8 +106,10 @@ const HeroSection = ({ buttonsRef }: any) => {
                         alt=""
                         className="object-contain"
                         fill
-                        priority
-                        sizes="100vw"
+                        preload
+                        quality={100}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                        loading="eager"
                     />
                 </div>
             </div>

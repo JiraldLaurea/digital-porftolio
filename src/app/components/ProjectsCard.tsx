@@ -32,7 +32,8 @@ const ProjectsCard = ({
                         className="object-cover rounded-md"
                         quality={100}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                        loading="eager"
                     />
                 </div>
             </div>
