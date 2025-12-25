@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
 
 // next.config.js
 const withPWA = require("next-pwa")({
@@ -8,5 +7,8 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
-    // other Next.js config options
+    // Merge your Next.js config here
+    images: {
+        qualities: [75, 100], // ✅ add allowed qualities
+    },
 });
