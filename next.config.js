@@ -7,8 +7,8 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
-    // Merge your Next.js config here
+    turbopack: {},
     images: {
-        qualities: [75, 100], // ✅ add allowed qualities
+        qualities: [75, 100],
     },
 });
