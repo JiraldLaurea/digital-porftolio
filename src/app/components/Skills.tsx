@@ -16,7 +16,6 @@ type SkillsData = {
 const Skills: React.FC = () => {
     const { theme }: any = useTheme();
     const [mounted, setMounted] = useState(false);
-    const [activeTab, setActiveTab] = useState(0);
 
     useEffect(() => {
         setMounted(true);
@@ -129,6 +128,7 @@ const Skills: React.FC = () => {
         ],
     };
 
+    const [activeTab, setActiveTab] = useState(0);
     const categories = Object.keys(skillsData) as (keyof SkillsData)[];
     const skills = skillsData[categories[activeTab]];
 
@@ -145,6 +145,7 @@ const Skills: React.FC = () => {
                 categories={categories}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
+                section="Skills"
             />
             <div className="grid grid-cols-1 gap-4 xxs:grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4">
                 {skills.map((skill, index) => (

@@ -213,6 +213,7 @@ const Projects = () => {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
                 isProjects
+                section="Projects"
             />
             <ProjectsCarousel projects={projects} activeTab={activeTab} />
         </Wrapper>

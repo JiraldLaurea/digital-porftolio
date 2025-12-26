@@ -26,11 +26,11 @@ const Experience = () => {
                     tasks={[
                         {
                             description:
-                                "• API development, bug fixing, documentation, integration testing, evidence creation.",
+                                "- API development, bug fixing, documentation, integration testing, evidence creation.",
                         },
                         {
                             description:
-                                "• Worked on a migration converting a desktop PMS to a web application.",
+                                "- Worked on a migration converting a desktop PMS to a web application.",
                         },
                     ]}
                     techs={[
@@ -66,7 +66,7 @@ const Experience = () => {
                     tasks={[
                         {
                             description:
-                                "• Web development for offshore clients.",
+                                "- Web development for offshore clients.",
                         },
                     ]}
                     techs={[
@@ -90,7 +90,7 @@ const Experience = () => {
                     tasks={[
                         {
                             description:
-                                "• Mobile development & Figma design for BLE-enabled promo app.",
+                                "- Mobile development & Figma design for BLE-enabled promo app.",
                         },
                     ]}
                     techs={[
@@ -111,7 +111,7 @@ const Experience = () => {
                 <ExperienceCard
                     project="JRC Cell Coverage Development"
                     date="March 2024 - April 2024"
-                    tasks={[{ description: "• Developer for web platform." }]}
+                    tasks={[{ description: "- Developer for web platform." }]}
                     techs={[
                         {
                             imgSrc: "skills_javascript.svg",
@@ -151,7 +151,7 @@ const Experience = () => {
                     tasks={[
                         {
                             description:
-                                "• Full-stack developer for statistical waste reporting system.",
+                                "- Full-stack developer for statistical waste reporting system.",
                         },
                     ]}
                     techs={[
