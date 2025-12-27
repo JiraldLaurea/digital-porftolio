@@ -23,8 +23,6 @@ module.exports = {
                 heading: ["CustomHeadingFont", "sans-serif"], // Add a new custom font family
             },
             screens: {
-                xs: "492px",
-                lg2: "1100px",
                 // => @media (min-width: 640px) { ... }
             },
         },

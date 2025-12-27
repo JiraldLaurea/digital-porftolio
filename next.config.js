@@ -12,6 +12,6 @@ const withPWA = require("next-pwa")({
 module.exports = withPWA({
     turbopack: {},
     images: {
-        qualities: [75, 100],
+        qualities: [100, 75, 50, 25],
     },
 });
