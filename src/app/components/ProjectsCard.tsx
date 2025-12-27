@@ -27,11 +27,11 @@ const ProjectsCard = memo(
     }: ProjectsCardProps) => {
         return (
             <div className="flex flex-col w-full h-full p-5 bg-white md:p-6 md:flex-row dark:border-zinc-700 dark:bg-primary1-dark">
-                <div className="relative flex-none w-full border rounded-md grow md:max-w-[325px] lg:max-w-lg md2:max-w-md lg2:max-w-150 aspect-video dark:border-zinc-700">
+                <div className="relative flex-none w-full border rounded-md grow md:max-w-81.25 lg:max-w-lg md2:max-w-md lg2:max-w-150 aspect-video dark:border-zinc-700">
                     <Image
                         src={`/img/${imgSrc}`}
                         alt=""
-                        className="object-cover rounded-md dark:bg-white"
+                        className="object-cover h-full rounded-md dark:bg-white"
                         quality={50}
                         priority={index === 0}
                         fill
