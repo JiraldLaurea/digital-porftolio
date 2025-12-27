@@ -1,11 +1,13 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+import { throttle } from "lodash";
+import debounce from "lodash/debounce";
 import { useTheme } from "next-themes";
-import { useEffect, useRef, useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { useCallback, useEffect, useState } from "react";
 import { RiSunLine } from "react-icons/ri";
 import { RxMoon } from "react-icons/rx";
-import { Link } from "react-scroll/modules";
+import { Link, scroller } from "react-scroll/modules";
 import Button from "./Button";
 
 type ActiveSource = "scroll" | "click";
@@ -14,21 +16,29 @@ const Navbar = ({ showButtons }: any) => {
     const { theme, setTheme }: any = useTheme();
     const [isMenuOpened, setIsMenuOpened] = useState(false);
     const [mounted, setMounted] = useState(false);
-    const [hoveredTab, setHoveredTab] = useState<number | null>(null);
     const [activeTab, setActiveTab] = useState<number>(0);
+    const [navItemSourceType, setNavItemSourceType] = useState<
+        "scrolled" | "clicked"
+    >("scrolled");
 
     const resumeLink =
         "https://drive.google.com/file/d/1w-ep7j_ZsZbAQHgd_KyecjXKQGjdwqWR/view?usp=drive_link";
     const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
     const SM_BREAKPOINT = 640;
 
-    const activeSourceRef = useRef<ActiveSource>("scroll");
+    const navItems = [
+        { label: "Home", page: "home" },
+        { label: "Experience", page: "experience" },
+        { label: "Skills", page: "skills" },
+        { label: "Projects", page: "projects" },
+        { label: "Contact", page: "contact" },
+    ];
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    // Closes menu when passing on a certain
+    // Closes menu when passing on a certain threshold
     useEffect(() => {
         const mediaQuery = window.matchMedia(`(min-width: ${SM_BREAKPOINT}px)`);
 
@@ -51,93 +61,78 @@ const Navbar = ({ showButtons }: any) => {
         };
     }, []);
 
-    useEffect(() => {
-        const sections = navItems.map((item) =>
-            document.getElementById(item.page)
-        );
+    // Throttled
+    const scrollBegin = useCallback(
+        throttle(() => setNavItemSourceType("clicked"), 300),
+        []
+    );
 
-        let lastActive = activeTab;
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (activeSourceRef.current !== "scroll") return;
-
-                // pick the section closest to top
-                const visibleEntries = entries.filter(
-                    (e) => e.intersectionRatio > 0
-                );
-                if (visibleEntries.length === 0) return;
-
-                const nearestEntry = visibleEntries.reduce((prev, curr) =>
-                    Math.abs(curr.boundingClientRect.top) <
-                    Math.abs(prev.boundingClientRect.top)
-                        ? curr
-                        : prev
-                );
-
-                const index = navItems.findIndex(
-                    (item) => item.page === nearestEntry.target.id
-                );
-                if (index !== -1) setActiveTab(index);
-            },
-            {
-                threshold: Array.from({ length: 101 }, (_, i) => i / 100),
-                rootMargin: "-40% 0px -40% 0px",
-            }
-        );
-
-        sections.forEach((section) => {
-            if (section) observer.observe(section);
-        });
-
-        return () => observer.disconnect();
-    }, []);
+    // Debounced
+    const scrollEnd = useCallback(
+        debounce(() => setNavItemSourceType("scrolled"), 500),
+        []
+    );
 
     useEffect(() => {
-        let rafId: number;
-        let lastY = window.scrollY;
-
-        const checkScrollEnd = () => {
-            const currentY = window.scrollY;
-
-            if (Math.abs(currentY - lastY) < 1) {
-                activeSourceRef.current = "scroll";
-            } else {
-                lastY = currentY;
-                rafId = requestAnimationFrame(checkScrollEnd);
-            }
-        };
-
-        window.addEventListener("scroll", () => {
-            if (activeSourceRef.current === "click") {
-                cancelAnimationFrame(rafId);
-                rafId = requestAnimationFrame(checkScrollEnd);
-            }
-        });
-
         return () => {
-            cancelAnimationFrame(rafId);
-            window.removeEventListener("scroll", () => {});
+            scrollBegin.cancel(); // cancel pending throttled calls
         };
-    }, []);
+    }, [scrollBegin]);
 
-    const navItems = [
-        { label: "Home", page: "home" },
-        { label: "Experience", page: "experience" },
-        { label: "Skills", page: "skills" },
-        { label: "Projects", page: "projects" },
-        { label: "Contact", page: "contact" },
-    ];
+    useEffect(() => {
+        return () => {
+            scrollEnd.cancel();
+        };
+    }, [scrollEnd]);
 
-    const transition: any = {
-        type: "tween",
-        ease: "easeOut",
-        duration: 0.15,
+    const handleNavItemClick = (index: number, page: string) => {
+        scrollBegin();
+        setActiveTab(index);
+
+        scroller.scrollTo(page, {
+            duration: 300,
+            smooth: "easeInOutCubic",
+            offset: index === 0 ? -64 : -63,
+        });
+
+        scrollEnd();
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (navItemSourceType === "clicked") return;
+
+            const scrollPosition = window.scrollY + 150;
+            let currentIndex = 0;
+
+            navItems.forEach((item, index) => {
+                const section = document.getElementById(item.page);
+                if (!section) return;
+
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+
+                if (scrollPosition >= top && scrollPosition < top + height) {
+                    currentIndex = index;
+                }
+            });
+
+            if (currentIndex !== activeTab) {
+                setActiveTab(currentIndex);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [navItems]);
+
     const transitionUnderline: any = {
-        type: "tween",
-        duration: 0.15,
+        type: "spring",
+        stiffness: 2000,
+        damping: 100,
     };
 
     return (
@@ -150,55 +145,24 @@ const Navbar = ({ showButtons }: any) => {
                         {navItems.map((navItem, index) => {
                             return (
                                 <div key={index} className="relative">
-                                    <motion.button
-                                        onHoverStart={() =>
-                                            setHoveredTab(index)
+                                    <button
+                                        onClick={() =>
+                                            handleNavItemClick(
+                                                index,
+                                                navItem.page
+                                            )
                                         }
-                                        onHoverEnd={() => setHoveredTab(null)}
                                     >
-                                        <Link
-                                            onClick={() => {
-                                                activeSourceRef.current =
-                                                    "click";
-                                                setActiveTab(index);
-                                            }}
-                                            offset={index === 0 ? -64 : -63}
-                                            to={navItem.page}
-                                            smooth
-                                            duration={400}
+                                        <p
+                                            className={`flex items-center justify-center h-10 px-4 transition-colors cursor-pointer select-none rounded-3xl dark:text-secondary-text-dark dark:hover:text-white hover:text-black ${
+                                                activeTab === index
+                                                    ? "dark:text-white"
+                                                    : "text-zinc-500"
+                                            }`}
                                         >
-                                            <p
-                                                className={`flex items-center justify-center h-10 px-4 transition-colors cursor-pointer select-none rounded-3xl dark:text-secondary-text-dark dark:hover:text-white  hover:text-black ${
-                                                    activeTab === index
-                                                        ? "dark:text-white"
-                                                        : "text-zinc-500"
-                                                }`}
-                                            >
-                                                {navItem.label}
-                                            </p>
-                                        </Link>
-                                    </motion.button>
-
-                                    <AnimatePresence>
-                                        {hoveredTab === index ? (
-                                            <motion.span
-                                                key={"hoverNavbar"}
-                                                layoutId={"hoverNavbar"}
-                                                className="absolute inset-0 hidden h-10 rounded-3xl sm:inline bg-primary-hovered dark:bg-primary-hovered-dark"
-                                                style={{ zIndex: -1 }}
-                                                initial={{
-                                                    opacity: 0,
-                                                }}
-                                                animate={{
-                                                    opacity: 1,
-                                                }}
-                                                exit={{
-                                                    opacity: 0,
-                                                }}
-                                                transition={transition}
-                                            />
-                                        ) : null}
-                                    </AnimatePresence>
+                                            {navItem.label}
+                                        </p>
+                                    </button>
 
                                     {activeTab === index && (
                                         <motion.span
@@ -212,7 +176,8 @@ const Navbar = ({ showButtons }: any) => {
                         })}
                     </div>
 
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center justify-between w-full space-x-2 md:justify-end">
+                        {/* Resume and LinkedIn Buttons */}
                         <div
                             className={`flex space-x-2 items-center transition-all ${
                                 showButtons || isMenuOpened
@@ -234,6 +199,7 @@ const Navbar = ({ showButtons }: any) => {
                                 isFromNavbar
                             />
                         </div>
+                        {/* Theme switcher and Menu Buttons */}
                         {mounted ? (
                             <div className="flex items-center">
                                 <button
@@ -256,11 +222,19 @@ const Navbar = ({ showButtons }: any) => {
                                     }
                                     className="flex items-center justify-center w-10 h-10 ml-2 transition-colors ease-in border border-opacity-50 rounded-full cursor-pointer select-none md:hidden dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary-hovered-dark"
                                 >
-                                    <FaBars
-                                        className=""
-                                        width={25}
-                                        height={25}
-                                    />
+                                    {isMenuOpened ? (
+                                        <Icon
+                                            icon="material-symbols:close-rounded"
+                                            width="25"
+                                            height="25"
+                                        />
+                                    ) : (
+                                        <Icon
+                                            icon="fa-solid:bars"
+                                            width="16"
+                                            height="16"
+                                        />
+                                    )}
                                 </div>
                             </div>
                         ) : null}
