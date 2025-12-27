@@ -75,7 +75,7 @@ const Projects = () => {
                     },
                     {
                         imgSrc: "skills_tailwindcss.svg",
-                        techName: "Tailwind CSS",
+                        techName: "Tailwind",
                     },
                     {
                         imgSrc: `${
@@ -147,7 +147,7 @@ const Projects = () => {
                     },
                     {
                         imgSrc: "skills_tailwindcss.svg",
-                        techName: "Tailwind CSS",
+                        techName: "Tailwind",
                     },
                     {
                         imgSrc: `${
@@ -181,7 +181,7 @@ const Projects = () => {
                     },
                     {
                         imgSrc: "skills_tailwindcss.svg",
-                        techName: "Tailwind CSS",
+                        techName: "Tailwind",
                     },
                     {
                         imgSrc: `${
@@ -205,15 +205,15 @@ const Projects = () => {
             id="projects"
             title="Projects"
             subtitle="Websites I've built"
-            isCentered
             isPoject
+            isCentered
         >
             <Tabs
                 categories={categories}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
-                isProjects
                 section="Projects"
+                isProject
             />
             <ProjectsCarousel projects={projects} activeTab={activeTab} />
         </Wrapper>

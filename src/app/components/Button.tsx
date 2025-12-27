@@ -3,20 +3,27 @@ type ButtonProps = {
     text: string;
     isPrimary?: boolean;
     isSmaller?: boolean;
+    isFromNavbar?: boolean;
 };
 
-const Button = ({ link, text, isPrimary, isSmaller }: ButtonProps) => {
+const Button = ({
+    link,
+    text,
+    isPrimary,
+    isSmaller,
+    isFromNavbar,
+}: ButtonProps) => {
     return (
         // text-blue-600
         <a
             href={link}
             target="_blank"
             className={`
-                flex items-center rounded-md transition-colors 
+                flex items-center justify-center rounded-3xl transition-colors 
                 ${
                     isSmaller
-                        ? "px-4 text-sm h-10"
-                        : "px-4 sm:px-6 h-10 text-sm sm:text-base sm:h-12"
+                        ? `text-sm h-10 ${isFromNavbar ? "px-5" : "lg:px-5"}`
+                        : "px-4 sm:px-7 h-10 text-sm sm:text-base sm:h-12"
                 } 
                 ${
                     isPrimary

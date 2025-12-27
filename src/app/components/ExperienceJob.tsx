@@ -19,7 +19,7 @@ const ExperienceJob = ({
 }: ExperienceJobProps) => {
     return (
         <div
-            className={`flex border dark:border-zinc-700 bg-white dark:bg-primary1-dark rounded-t-md p-4  sm:p-6 sm:py-4 items-center gap-2 ${
+            className={`flex border dark:border-zinc-700 bg-white dark:bg-primary1-dark rounded-t-3xl p-4  sm:p-6 sm:py-4 items-center gap-2 ${
                 isFirst ? "" : "mt-6"
             }`}
         >

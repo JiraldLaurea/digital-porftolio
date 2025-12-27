@@ -138,7 +138,6 @@ const Skills: React.FC = () => {
             title="Skills"
             subtitle="My Technical Expertise"
             isAlternate
-            isCentered
             isFullHeight
         >
             <Tabs
@@ -147,7 +146,7 @@ const Skills: React.FC = () => {
                 setActiveTab={setActiveTab}
                 section="Skills"
             />
-            <div className="grid grid-cols-1 gap-4 xxs:grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 xs:grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4">
                 {skills.map((skill, index) => (
                     <SkillsGrid
                         key={index}

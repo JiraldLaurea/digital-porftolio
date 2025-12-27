@@ -7,7 +7,7 @@ const SkillsGrid = ({ imgSrc, techName, level, mounted }: Skill) => {
     return (
         <>
             {mounted ? (
-                <div className="flex flex-col items-center justify-center px-2 border rounded-md h-34 sm:px-4 sm:h-44 100 bg-primary4 dark:border-zinc-700 dark:bg-primary4-dark">
+                <div className="flex flex-col items-center justify-center px-6 border rounded-3xl h-40 sm:px-6 sm:h-46.75 100 bg-primary4 dark:border-zinc-700 dark:bg-primary4-dark">
                     <div className={`relative w-7 h-7 sm:w-10 sm:h-10 mb-1.5`}>
                         <Image
                             src={`/img/${imgSrc}`}
@@ -24,7 +24,7 @@ const SkillsGrid = ({ imgSrc, techName, level, mounted }: Skill) => {
                     <SkillsLevel level={level} />
                 </div>
             ) : (
-                <div className="w-full border rounded-md h-34 sm:h-44 bg-primary4 dark:bg-primary4-dark animate-pulse dark:border-zinc-700" />
+                <div className="w-full border rounded-3xl h-40 sm:h-46.75 bg-primary4 dark:bg-primary4-dark animate-pulse dark:border-zinc-700" />
             )}
         </>
     );

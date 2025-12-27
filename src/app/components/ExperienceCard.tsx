@@ -19,7 +19,7 @@ const ExperienceCard = ({
     return (
         <div
             className={`flex flex-col p-4 sm:p-6 space-y-5 bg-white border border-t-0 dark:bg-primary1-dark dark:border-zinc-700 ${
-                isLast && "rounded-b-md"
+                isLast && "rounded-b-3xl"
             }`}
         >
             <div>

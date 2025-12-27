@@ -46,13 +46,13 @@ const ProjectsCarousel = ({ projects, activeTab }: ProjectsCarouselProps) => {
             <div className="relative">
                 <div
                     ref={emblaRef}
-                    className="relative overflow-hidden border rounded-md select-none dark:border-zinc-700"
+                    className="relative overflow-hidden border select-none h-full md:h-97.5 rounded-3xl dark:border-zinc-700"
                 >
                     {/* Carousel */}
-                    <div className="flex">
+                    <div className="flex h-full">
                         {projects.map((project, index) => (
                             <div key={index} className="flex-[0_0_100%]">
-                                <ProjectsCard {...project} />
+                                <ProjectsCard {...project} index={index} />
                             </div>
                         ))}
                     </div>
