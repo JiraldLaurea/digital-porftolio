@@ -93,7 +93,7 @@ const HeroSection = ({ buttonsRef }: any) => {
                     </p>
                     <div
                         ref={buttonsRef}
-                        className="flex justify-center space-x-2 sm:space-x-4 md:justify-start"
+                        className="flex justify-center space-x-2 sm:space-x-3 md:justify-start"
                     >
                         <Button link={resumeLink} text="Resume" isPrimary />
                         <Button link={linkedInLink} text="LinkedIn" />
