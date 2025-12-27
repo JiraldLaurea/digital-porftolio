@@ -1,12 +1,12 @@
 import Image from "next/image";
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Tech } from "../Types/index";
 
 type TechStackProps = {
     techs?: Tech[];
 };
 
-const TechStack = memo(({ techs }: TechStackProps) => {
+const TechStack = ({ techs }: TechStackProps) => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -46,6 +46,6 @@ const TechStack = memo(({ techs }: TechStackProps) => {
             </div>
         </div>
     );
-});
+};
 
 export default TechStack;
