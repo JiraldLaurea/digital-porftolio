@@ -54,7 +54,7 @@ const HeroSection = ({ buttonsRef }: any) => {
     return (
         <div
             id="home"
-            className="flex py-10 flex-col text-center md:text-left justify-center items-center max-h-192 min-h-fit h-[calc(100vh-64px)] bg-primary1 dark:bg-primary1-dark px-4"
+            className="flex py-10 flex-col text-center md:text-left justify-center items-center max-h-225 min-h-fit h-[calc(100vh-64px)] bg-primary1 dark:bg-primary1-dark px-4"
         >
             <div className="flex flex-col-reverse items-center justify-center w-full lg:justify-between md:px-0 lg:px-6 md:flex-row lg:max-w-5xl">
                 <div className="space-y-4 sm:space-y-6 sm:mr-4">
