@@ -34,7 +34,7 @@ const Wrapper = ({
             } 
             ${
                 isContact &&
-                "justify-center min-h-fit max-h-192 h-[calc(100vh-64px)]"
+                "justify-center min-h-fit max-h-225 h-[calc(100vh-64px)]"
             } 
             ${isFullHeight && "min-h-fit h-[calc(100vh-64px)] max-h-192"}
             ${isPoject && "px-4 sm:px-18"}`}
