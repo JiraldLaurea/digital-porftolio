@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Badge from "./Badge";
 
 type ExperienceJobProps = {
     imgSrc: string;
@@ -24,10 +25,10 @@ const ExperienceJob = ({
             }`}
         >
             <div
-                className={`rounded-full h-16 w-16 sm:h-20 sm:w-20 ${
+                className={`rounded-full h-14 w-14 sm:h-16 sm:w-16 ${
                     hasNoBackground
                         ? "p-0 bg-transparent"
-                        : "p-2 sm:p-4 sm:w-20 flex items-center justify-center bg-white border"
+                        : "p-2 sm:p-3 sm:w-16 flex items-center justify-center bg-white border"
                 }`}
             >
                 <div className="relative w-full h-full ">
@@ -41,14 +42,14 @@ const ExperienceJob = ({
                     />
                 </div>
             </div>
-            <div className="flex flex-col">
-                <h2 className="font-medium xs:text-lg sm:text-xl">{job}</h2>
-                <p className="text-xs xs:text-sm text-zinc-600 sm:text-base dark:text-secondary-text-dark">
-                    {company}
-                </p>
-                <p className="text-xs xs:text-sm text-zinc-600 dark:text-secondary-text-dark">
-                    {date}
-                </p>
+            <div className="flex items-center justify-between grow">
+                <div className="flex flex-col">
+                    <h2 className="font-medium sm:text-lg">{job}</h2>
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-secondary-text-dark">
+                        {company}
+                    </p>
+                </div>
+                <Badge text={date} />
             </div>
         </div>
     );

@@ -4,6 +4,7 @@ import { memo } from "react";
 import { Project } from "../Types/index";
 import Button from "./Button";
 import TechStack from "./TechStack";
+import Badge from "./Badge";
 
 const ProjectsCard = memo(
     ({
@@ -37,9 +38,7 @@ const ProjectsCard = memo(
                             <p className="text-base font-medium sm:text-lg">
                                 {name}
                             </p>
-                            <p className="px-4 py-1 text-sm font-medium border rounded-full text-zinc-600 dark:text-zinc-300 bg-primary3 dark:bg-primary3-dark dark:border-zinc-700 w-fit">
-                                {projectType}
-                            </p>
+                            <Badge text={projectType} />
                         </div>
                         <p className="text-sm sm:text-base">{description}</p>
                     </div>

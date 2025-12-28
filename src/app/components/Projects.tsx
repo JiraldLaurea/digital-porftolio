@@ -210,7 +210,7 @@ const Projects = () => {
         <Wrapper
             id="projects"
             title="Projects"
-            subtitle="Websites I've built"
+            subtitle="Apps I've built"
             isProject
             isCentered
         >

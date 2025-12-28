@@ -1,4 +1,5 @@
 import { Task, Tech } from "../Types/index";
+import Badge from "./Badge";
 import TechStack from "./TechStack";
 
 type ExperienceCardProps = {

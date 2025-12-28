@@ -139,7 +139,7 @@ const Experience = () => {
             </div>
             <ExperienceJob
                 imgSrc="exp_gso.png"
-                job="Full-stack Web Developer"
+                job="Fullstack Developer"
                 company="General Services Office Iloilo"
                 date="February 2023 - May 2023"
                 hasNoBackground
