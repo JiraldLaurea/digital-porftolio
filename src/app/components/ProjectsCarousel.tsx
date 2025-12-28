@@ -15,7 +15,7 @@ const ProjectsCarousel = memo(
         const [emblaRef, emblaApi] = useEmblaCarousel({
             loop: true,
             align: "center",
-            duration: 20,
+            duration: 25,
             watchDrag: projects.length > 1 ? true : false,
         });
         const [selectedIndex, setSelectedIndex] = useState(0);
@@ -55,7 +55,7 @@ const ProjectsCarousel = memo(
                         <div className="flex h-full">
                             {projects.map((project, index) => (
                                 <div key={index} className="flex-[0_0_100%]">
-                                    <ProjectsCard {...project} index={index} />
+                                    <ProjectsCard {...project} />
                                 </div>
                             ))}
                         </div>

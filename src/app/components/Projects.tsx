@@ -1,20 +1,10 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useMemo, useState } from "react";
-import { Tech } from "../Types/index";
+import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
-
-interface Project {
-    imgSrc: string;
-    name: string;
-    description: string;
-    link?: string;
-    sourceCode?: string;
-    figmaLink?: string;
-    techs?: Tech[];
-}
 
 interface ProjectsData {
     Professional: Project[];
@@ -28,6 +18,7 @@ const Projects = () => {
         () => ({
             Professional: [
                 {
+                    projectType: "Website",
                     imgSrc: "projects_pareto-chart.png",
                     name: "Chart Creation Tool",
                     description:
@@ -54,6 +45,7 @@ const Projects = () => {
                     ],
                 },
                 {
+                    projectType: "UI Design",
                     imgSrc: "projects_beacon_service_app.png",
                     name: "Beacon Service App UI",
                     description:
@@ -64,6 +56,43 @@ const Projects = () => {
             ],
             Personal: [
                 {
+                    projectType: "Website",
+                    imgSrc: "projects_digital-portfolio.png",
+                    name: "Digital Portfolio",
+                    description:
+                        "A personal digital portfolio showcasing my frontend development and UI/UX design projects built with modern tools and design principles.",
+                    link: "https://jiraldcalusay.vercel.app/",
+                    sourceCode:
+                        "https://github.com/JiraldLaurea/digital-porftolio",
+                    techs: [
+                        {
+                            imgSrc: "skills_react.svg",
+                            techName: "React",
+                        },
+                        {
+                            imgSrc: `${
+                                theme === "dark"
+                                    ? "skills_nextjsDark.svg"
+                                    : "skills_nextjsLight.svg"
+                            }`,
+                            techName: "Next.js",
+                        },
+                        {
+                            imgSrc: "skills_tailwindcss.svg",
+                            techName: "Tailwind",
+                        },
+                        {
+                            imgSrc: `${
+                                theme === "dark"
+                                    ? "skills_vercelDark.svg"
+                                    : "skills_vercelLight.svg"
+                            }`,
+                            techName: "Vercel",
+                        },
+                    ],
+                },
+                {
+                    projectType: "Website",
                     imgSrc: "projects_google-clone.png",
                     name: "Google Clone",
                     description:
@@ -99,6 +128,7 @@ const Projects = () => {
                     ],
                 },
                 {
+                    projectType: "Website",
                     imgSrc: "projects_facebook-clone.png",
                     name: "Facebook Clone",
                     description:
@@ -116,6 +146,7 @@ const Projects = () => {
                     ],
                 },
                 {
+                    projectType: "Website",
                     imgSrc: "projects_airbnb-clone.png",
                     name: "Airbnb Clone",
                     description:
@@ -150,6 +181,7 @@ const Projects = () => {
                     ],
                 },
                 {
+                    projectType: "UI Design",
                     imgSrc: "projects-mobile-grocery-app.png",
                     name: "Mobile Grocery App UI",
                     description:
@@ -158,6 +190,7 @@ const Projects = () => {
                         "https://www.figma.com/design/JUIEqvDWBVAbWPyUSeCbwJ/Grocery-App?node-id=0-1&t=Ob5OjP5AgPcuiwYH-1",
                 },
                 {
+                    projectType: "UI Design",
                     imgSrc: "projects_hotel_booking_app.png",
                     name: "Hotel Booking App UI",
                     description:
@@ -179,7 +212,7 @@ const Projects = () => {
             id="projects"
             title="Projects"
             subtitle="Websites I've built"
-            isPoject
+            isProject
             isCentered
         >
             <Tabs
