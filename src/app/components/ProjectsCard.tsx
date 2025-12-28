@@ -33,7 +33,7 @@ const ProjectsCard = memo(
                     <Image
                         src={`/img/${imgSrc}`}
                         alt=""
-                        className="object-cover h-full rounded-md dark:bg-white"
+                        className="object-cover h-full rounded-md"
                         quality={50}
                         priority={index === 0}
                         fill
