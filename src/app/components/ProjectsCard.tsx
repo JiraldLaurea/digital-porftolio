@@ -49,7 +49,7 @@ const ProjectsCard = memo(
 
                     <div
                         className={`grid mt-2 gap-2 sm:text-left lg:flex ${
-                            sourceCode ? "grid-cols-2" : "grid-cols-1"
+                            link && sourceCode ? "grid-cols-2" : "grid-cols-1"
                         }`}
                     >
                         {link && (

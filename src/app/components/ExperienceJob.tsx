@@ -43,13 +43,15 @@ const ExperienceJob = ({
                 </div>
             </div>
             <div className="flex items-center justify-between grow">
-                <div className="flex flex-col">
+                <div className="flex flex-col ">
                     <h2 className="font-medium sm:text-lg">{job}</h2>
                     <p className="text-xs sm:text-sm text-zinc-600 dark:text-secondary-text-dark">
                         {company}
                     </p>
+                    <h3 className="text-xs xs:text-sm text-zinc-600 dark:text-secondary-text-dark">
+                        {date}
+                    </h3>
                 </div>
-                <Badge text={date} />
             </div>
         </div>
     );
