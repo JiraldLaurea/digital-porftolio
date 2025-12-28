@@ -61,7 +61,6 @@ const Projects = () => {
                     name: "Digital Portfolio",
                     description:
                         "A personal digital portfolio showcasing my frontend development and UI/UX design projects built with modern tools and design principles.",
-                    link: "https://jiraldcalusay.vercel.app/",
                     sourceCode:
                         "https://github.com/JiraldLaurea/digital-porftolio",
                     techs: [
