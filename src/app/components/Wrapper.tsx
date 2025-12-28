@@ -5,7 +5,7 @@ type WrapperProps = {
     title: string;
     subtitle: string;
     isAlternate?: boolean;
-    isPoject?: boolean;
+    isProject?: boolean;
     isContact?: boolean;
     isCentered?: boolean;
     isFullHeight?: boolean;
@@ -17,7 +17,7 @@ const Wrapper = ({
     title,
     subtitle,
     isAlternate,
-    isPoject,
+    isProject,
     isContact,
     isCentered,
     isFullHeight,
@@ -37,7 +37,7 @@ const Wrapper = ({
                 "justify-center min-h-fit max-h-225 h-[calc(100vh-64px)]"
             } 
             ${isFullHeight && "min-h-fit h-[calc(100vh-64px)] max-h-192"}
-            ${isPoject && "px-4 sm:px-18"}`}
+            ${isProject && "px-4 sm:px-18"}`}
         >
             <div
                 className={`flex flex-col w-full max-w-6xl px-4 mb-8 ${
@@ -51,7 +51,7 @@ const Wrapper = ({
                     {subtitle}
                 </p>
             </div>
-            <div className={`w-full max-w-6xl  ${isPoject ? "px-0" : "px-4"}`}>
+            <div className={`w-full max-w-6xl  ${isProject ? "px-0" : "px-4"}`}>
                 {children}
             </div>
         </div>
