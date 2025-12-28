@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { memo } from "react";
-import { Project, Tech } from "../Types/index";
+import { Project } from "../Types/index";
 import Button from "./Button";
 import TechStack from "./TechStack";
 
@@ -40,9 +40,6 @@ const ProjectsCard = memo(
                             <p className="px-4 py-1 text-sm font-medium border rounded-full text-zinc-600 dark:text-zinc-300 bg-primary3 dark:bg-primary3-dark dark:border-zinc-700 w-fit">
                                 {projectType}
                             </p>
-                            {/* <p className="px-3 py-1 text-xs rounded-full sm:text-sm text-zinc-600 dark:text-red-500 bg-primary3 dark:bg-red-200 w-fit">
-                                {projectType}
-                            </p> */}
                         </div>
                         <p className="text-sm sm:text-base">{description}</p>
                     </div>
