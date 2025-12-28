@@ -40,6 +40,7 @@ const ProjectsCarousel = memo(
         useEffect(() => {
             if (!emblaApi) return;
 
+            emblaApi.scrollTo(0, true); // snap immediately
             setSelectedIndex(0);
         }, [activeTab, emblaApi]);
 

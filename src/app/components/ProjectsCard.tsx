@@ -9,8 +9,9 @@ type ProjectsCardProps = {
     imgSrc: string;
     name: string;
     description: string;
-    link: string;
-    sourceCode: string;
+    link?: string;
+    sourceCode?: string;
+    figmaLink?: string;
     techs?: Tech[];
     index: number;
 };
@@ -24,6 +25,7 @@ const ProjectsCard = memo(
         sourceCode,
         techs,
         index,
+        figmaLink,
     }: ProjectsCardProps) => {
         return (
             <div className="flex flex-col w-full h-full p-5 bg-white md:p-6 md:flex-row dark:border-zinc-700 dark:bg-primary1-dark">
@@ -54,17 +56,28 @@ const ProjectsCard = memo(
                             sourceCode ? "grid-cols-2" : "grid-cols-1"
                         }`}
                     >
-                        <Button
-                            link={link}
-                            text="Visit Page"
-                            isPrimary
-                            isSmaller
-                        />
+                        {link && (
+                            <Button
+                                link={link}
+                                text="Live Demo"
+                                isPrimary
+                                isSmaller
+                            />
+                        )}
+
                         {sourceCode && (
                             <Button
                                 link={sourceCode}
                                 text="Source Code"
                                 isSmaller
+                            />
+                        )}
+                        {figmaLink && (
+                            <Button
+                                link={figmaLink}
+                                text="Open in Figma"
+                                isSmaller
+                                isFigma
                             />
                         )}
                     </div>

@@ -10,9 +10,10 @@ interface Project {
     imgSrc: string;
     name: string;
     description: string;
-    link: string;
+    link?: string;
     sourceCode?: string;
-    techs: Tech[];
+    figmaLink?: string;
+    techs?: Tech[];
 }
 
 interface ProjectsData {
@@ -51,6 +52,14 @@ const Projects = () => {
                             techName: "Vercel",
                         },
                     ],
+                },
+                {
+                    imgSrc: "projects_beacon_service_app.png",
+                    name: "Beacon Service App UI",
+                    description:
+                        "A mobile service app UI designed to deliver location-based promotions by showing coupons and offers when users enter the vicinity of a BLE beacon.",
+                    figmaLink:
+                        "https://www.figma.com/design/1PgYCJAbYvft6CriicoMKI/Beacon-App?node-id=0-1&t=MtjCpUL5MIX5yprq-1",
                 },
             ],
             Personal: [
@@ -107,27 +116,6 @@ const Projects = () => {
                     ],
                 },
                 {
-                    imgSrc: "projects_discord-clone.png",
-                    name: "Discord Clone",
-                    description:
-                        "A mobile-responsive website with Google login authentication that enables users to create a channel where they can chat with another user.",
-                    link: "https://discord-clone-84659.web.app",
-                    techs: [
-                        {
-                            imgSrc: "skills_react.svg",
-                            techName: "React",
-                        },
-                        {
-                            imgSrc: "skills_reactRedux.svg",
-                            techName: "React Redux",
-                        },
-                        {
-                            imgSrc: "skills_firebase.svg",
-                            techName: "Firebase",
-                        },
-                    ],
-                },
-                {
                     imgSrc: "projects_airbnb-clone.png",
                     name: "Airbnb Clone",
                     description:
@@ -162,38 +150,20 @@ const Projects = () => {
                     ],
                 },
                 {
-                    imgSrc: "projects_tesla-clone.png",
-                    name: "Tesla Clone",
+                    imgSrc: "projects-mobile-grocery-app.png",
+                    name: "Mobile Grocery App UI",
                     description:
-                        "A mobile-responsive website with scroll snapping functionality.",
-                    link: "https://zandell-tesla-clone.vercel.app",
-                    sourceCode: "https://github.com/JiraldLaurea/tesla-clone",
-                    techs: [
-                        {
-                            imgSrc: "skills_react.svg",
-                            techName: "React",
-                        },
-                        {
-                            imgSrc: `${
-                                theme === "dark"
-                                    ? "skills_nextjsDark.svg"
-                                    : "skills_nextjsLight.svg"
-                            }`,
-                            techName: "Next.js",
-                        },
-                        {
-                            imgSrc: "skills_tailwindcss.svg",
-                            techName: "Tailwind",
-                        },
-                        {
-                            imgSrc: `${
-                                theme === "dark"
-                                    ? "skills_vercelDark.svg"
-                                    : "skills_vercelLight.svg"
-                            }`,
-                            techName: "Vercel",
-                        },
-                    ],
+                        "A mobile grocery shopping app UI focused on fast product discovery, clean layout, and smooth checkout flow.",
+                    figmaLink:
+                        "https://www.figma.com/design/JUIEqvDWBVAbWPyUSeCbwJ/Grocery-App?node-id=0-1&t=Ob5OjP5AgPcuiwYH-1",
+                },
+                {
+                    imgSrc: "projects_hotel_booking_app.png",
+                    name: "Hotel Booking App UI",
+                    description:
+                        "Mobile hotel booking application UI that allows users to search for accommodations, view hotel and room details, and complete bookings efficiently.",
+                    figmaLink:
+                        "https://www.figma.com/design/bdcgbe4gXuFaAyd6qSXqqc/Hotel-Booking-App?node-id=0-1&t=o7MKgzCAea1bYPuF-1",
                 },
             ],
         }),
