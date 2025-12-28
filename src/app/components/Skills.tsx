@@ -139,6 +139,7 @@ const Skills: React.FC = () => {
             subtitle="My Technical Expertise"
             isAlternate
             isFullHeight
+            isCentered
         >
             <Tabs
                 categories={categories}

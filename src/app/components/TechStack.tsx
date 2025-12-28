@@ -16,7 +16,7 @@ const TechStack = ({ techs }: TechStackProps) => {
     return (
         <div>
             {techs && (
-                <h3 className="mb-1 text-xs lg:text-sm text-zinc-600 dark:text-zinc-300">
+                <h3 className="mb-1 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
                     Tech Stack
                 </h3>
             )}

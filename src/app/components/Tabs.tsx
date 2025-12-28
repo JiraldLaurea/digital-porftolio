@@ -23,12 +23,12 @@ const Tabs = ({
 
     return (
         <div
-            className={`flex items-center mb-6  overflow-x-auto sm:text-base text-sm ${
-                isProject ? "justify-center" : "justify-start"
+            className={`flex items-center mb-6  sm:text-base text-sm ${
+                isProject ? "justify-center" : "justify-center"
             }`}
         >
-            <div className="flex p-2 border rounded-full bg-primary1 dark:border-zinc-700 dark:bg-primary1-dark">
-                <div className="z-0 flex items-center pb-0 overflow-x-auto overflow-y-hidden">
+            <div className="flex p-2 overflow-x-auto border rounded-full bg-primary1 dark:border-zinc-700 dark:bg-primary1-dark">
+                <div className="z-0 flex items-center overflow-y-hidden ">
                     {categories.map((category, index) => (
                         <div
                             key={index}
