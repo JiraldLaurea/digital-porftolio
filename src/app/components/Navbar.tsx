@@ -75,7 +75,7 @@ const Navbar = ({ showButtons }: any) => {
 
     useEffect(() => {
         return () => {
-            scrollBegin.cancel(); // cancel pending throttled calls
+            scrollBegin.cancel();
         };
     }, [scrollBegin]);
 
@@ -129,10 +129,10 @@ const Navbar = ({ showButtons }: any) => {
         };
     }, [navItems]);
 
-    const transitionUnderline: any = {
-        type: "spring",
-        stiffness: 2000,
-        damping: 100,
+    const transition: any = {
+        type: "tween",
+        ease: "easeOut",
+        duration: 0.15,
     };
 
     return (
@@ -168,7 +168,7 @@ const Navbar = ({ showButtons }: any) => {
                                         <motion.span
                                             layoutId="navbarUnderline"
                                             className="absolute w-[calc(100%-32px)] left-4 rounded-full right-0 bottom-0 h-0.5 bg-black dark:bg-white"
-                                            transition={transitionUnderline}
+                                            transition={transition}
                                         />
                                     )}
                                 </div>
