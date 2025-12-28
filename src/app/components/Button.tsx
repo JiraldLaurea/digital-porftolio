@@ -1,9 +1,12 @@
+import Image from "next/image";
+
 type ButtonProps = {
     link: string;
     text: string;
     isPrimary?: boolean;
     isSmaller?: boolean;
     isFromNavbar?: boolean;
+    isFigma?: boolean;
 };
 
 const Button = ({
@@ -12,6 +15,7 @@ const Button = ({
     isPrimary,
     isSmaller,
     isFromNavbar,
+    isFigma,
 }: ButtonProps) => {
     return (
         // text-blue-600
@@ -29,8 +33,23 @@ const Button = ({
                     isPrimary
                         ? "text-white bg-accent hover:bg-accent-hovered dark:hover:bg-accent-hovered-dark dark:bg-accent-dark"
                         : "border hover:bg-primary-hovered hover:dark:bg-primary-hovered-dark dark:border-zinc-700"
-                }`}
+                }
+                ${isFigma && "gap-2"}`}
         >
+            {isFigma && (
+                <div className={`relative w-5 h-5`}>
+                    <Image
+                        src={`/img/skills_figma.svg`}
+                        alt=""
+                        fill
+                        quality={100}
+                        sizes="100vw"
+                        style={{
+                            objectFit: "contain",
+                        }}
+                    />
+                </div>
+            )}
             <p>{text}</p>
         </a>
     );
