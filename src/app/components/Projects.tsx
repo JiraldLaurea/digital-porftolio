@@ -21,7 +21,7 @@ const Projects = () => {
             Professional: [
                 {
                     projectType: "Website",
-                    imgSrc: "projects_pareto-chart.png",
+                    imgSrc: "projects_pareto-chart.jpg",
                     name: "Chart Creation Tool",
                     description:
                         "Allows users to create charts(Fishbone & Pareto).",
@@ -50,7 +50,7 @@ const Projects = () => {
                 },
                 {
                     projectType: "UI Design",
-                    imgSrc: "projects_beacon_service_app.png",
+                    imgSrc: "projects_beacon_service_app.jpg",
                     name: "Beacon Service App UI",
                     description:
                         "A mobile service app UI designed to deliver location-based promotions by showing coupons and offers when users enter the vicinity of a BLE beacon.",
@@ -61,7 +61,7 @@ const Projects = () => {
             Personal: [
                 {
                     projectType: "Website",
-                    imgSrc: "projects_digital-portfolio.png",
+                    imgSrc: "projects_digital-portfolio.jpg",
                     name: "Digital Portfolio",
                     description:
                         "A personal digital portfolio showcasing my frontend development and UI/UX design projects built with modern tools and design principles.",
@@ -99,7 +99,7 @@ const Projects = () => {
                 },
                 {
                     projectType: "Website",
-                    imgSrc: "projects_google-clone.png",
+                    imgSrc: "projects_google-clone.jpg",
                     name: "Google Clone",
                     description:
                         "A mobile-responsive website that allows users to search for terms and display the links of the results similar to Google Search.",
@@ -138,7 +138,7 @@ const Projects = () => {
                 },
                 {
                     projectType: "Website",
-                    imgSrc: "projects_facebook-clone.png",
+                    imgSrc: "projects_facebook-clone.jpg",
                     name: "Facebook Clone",
                     description:
                         "A mobile-responsive website with Google login authentication that enables users to post texts, images, or videos similar to Facebook.",
@@ -156,7 +156,7 @@ const Projects = () => {
                 },
                 {
                     projectType: "Website",
-                    imgSrc: "projects_airbnb-clone.png",
+                    imgSrc: "projects_airbnb-clone.jpg",
                     name: "Airbnb Clone",
                     description:
                         "A mobile-responsive website with calendar and date functionality.",
@@ -194,7 +194,7 @@ const Projects = () => {
                 },
                 {
                     projectType: "UI Design",
-                    imgSrc: "projects-mobile-grocery-app.png",
+                    imgSrc: "projects-mobile-grocery-app.jpg",
                     name: "Mobile Grocery App UI",
                     description:
                         "A mobile grocery shopping app UI focused on fast product discovery, clean layout, and smooth checkout flow.",
@@ -203,7 +203,7 @@ const Projects = () => {
                 },
                 {
                     projectType: "UI Design",
-                    imgSrc: "projects_hotel_booking_app.png",
+                    imgSrc: "projects_hotel_booking_app.jpg",
                     name: "Hotel Booking App UI",
                     description:
                         "Mobile hotel booking application UI that allows users to search for accommodations, view hotel and room details, and complete bookings efficiently.",
