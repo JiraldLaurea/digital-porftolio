@@ -1,11 +1,11 @@
 "use client";
-import { Icon } from "@iconify/react";
+import { ContactDetails } from "../Types";
 
-const ContactDetail = ({ icon, header, detail }: any) => {
+const ContactDetail = ({ Icon, header, detail }: ContactDetails) => {
     return (
         <div className="flex items-center space-x-3">
             <div className="flex items-center justify-center text-white rounded-full w-9 h-9 sm:w-10 sm:h-10 bg-accent dark:bg-accent-dark">
-                <Icon className="w-5 h-5" icon={icon} />
+                <Icon size={18} />
             </div>
             <div className="text-left">
                 <p className="text-xs xs:text-sm text-zinc-600 dark:text-zinc-300">

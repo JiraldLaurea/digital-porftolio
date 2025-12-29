@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
-import Wrapper from "./Wrapper";
-
+import { FaLocationDot } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import { MdPhoneIphone } from "react-icons/md";
 import ContactDetail from "./ContactDetail";
+import Wrapper from "./Wrapper";
 
 const Contact = () => {
     return (
@@ -15,17 +16,17 @@ const Contact = () => {
         >
             <div className="space-y-8">
                 <ContactDetail
-                    icon="ic:outline-phone-iphone"
+                    Icon={MdPhoneIphone}
                     header="Phone"
                     detail="09614073159"
                 />
                 <ContactDetail
-                    icon="ic:baseline-email"
+                    Icon={IoMdMail}
                     header="Email"
                     detail="jiraldlaurea@gmail.com"
                 />
                 <ContactDetail
-                    icon="mdi:location"
+                    Icon={FaLocationDot}
                     header="Location"
                     detail="Makati, Metro Manila, Philippines"
                 />
