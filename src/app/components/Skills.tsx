@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { Skill } from "../Types/index";
+import TypescriptIcon from "./icons/TypescriptIcon";
 import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
@@ -83,6 +84,7 @@ const Skills: React.FC = () => {
                 level: 3,
             },
             {
+                Icon: TypescriptIcon,
                 imgSrc: "skills_typescript.svg",
                 techName: "Typescript",
                 level: 2,

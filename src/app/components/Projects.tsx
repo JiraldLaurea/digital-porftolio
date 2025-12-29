@@ -10,7 +10,7 @@ import MuiIcon from "./icons/MuiIcon";
 
 interface ProjectsData {
     Professional: Project[];
-    Personal: Project[];
+    "Side Projects": Project[];
 }
 
 const Projects = () => {
@@ -58,7 +58,7 @@ const Projects = () => {
                         "https://www.figma.com/design/1PgYCJAbYvft6CriicoMKI/Beacon-App?node-id=0-1&t=MtjCpUL5MIX5yprq-1",
                 },
             ],
-            Personal: [
+            "Side Projects": [
                 {
                     projectType: "Website",
                     imgSrc: "projects_digital-portfolio.jpg",
