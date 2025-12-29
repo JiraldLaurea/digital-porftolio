@@ -1,11 +1,12 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useMemo, useState } from "react";
-import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
+import { RiNextjsFill, RiTailwindCssFill, RiVercelFill } from "react-icons/ri";
 import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
+import MuiIcon from "./icons/MuiIcon";
 
 interface ProjectsData {
     Professional: Project[];
@@ -32,6 +33,7 @@ const Projects = () => {
                             techName: "React",
                         },
                         {
+                            Icon: MuiIcon,
                             imgSrc: "skills_materialUI.svg",
                             techName: "MaterialUI",
                         },
@@ -80,6 +82,7 @@ const Projects = () => {
                             techName: "Next.js",
                         },
                         {
+                            Icon: RiTailwindCssFill,
                             imgSrc: "skills_tailwindcss.svg",
                             techName: "Tailwind",
                         },
@@ -118,6 +121,7 @@ const Projects = () => {
                             techName: "Next.js",
                         },
                         {
+                            Icon: RiTailwindCssFill,
                             imgSrc: "skills_tailwindcss.svg",
                             techName: "Tailwind",
                         },
@@ -173,6 +177,7 @@ const Projects = () => {
                             techName: "Next.js",
                         },
                         {
+                            Icon: RiTailwindCssFill,
                             imgSrc: "skills_tailwindcss.svg",
                             techName: "Tailwind",
                         },
