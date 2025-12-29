@@ -31,6 +31,11 @@ export type Project = {
     index?: number;
 };
 
+export type ProjectsData = {
+    Professional: Project[];
+    "Side Projects": Project[];
+};
+
 export type ContactDetails = {
     Icon: IconType;
     header: string;

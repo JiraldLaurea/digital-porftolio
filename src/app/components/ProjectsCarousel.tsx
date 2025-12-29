@@ -3,10 +3,11 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { memo, useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { Project } from "../Types";
 import ProjectsCard from "./ProjectsCard";
 
 type ProjectsCarouselProps = {
-    projects: any[];
+    projects: Project[];
     activeTab: number;
 };
 

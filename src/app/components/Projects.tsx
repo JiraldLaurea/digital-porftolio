@@ -2,16 +2,11 @@
 import { useTheme } from "next-themes";
 import { useMemo, useState } from "react";
 import { RiNextjsFill, RiTailwindCssFill, RiVercelFill } from "react-icons/ri";
-import { Project } from "../Types/index";
+import { ProjectsData } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
 import { FirebaseIcon, MuiIcon, ReactIcon } from "./icons/Icons";
-
-interface ProjectsData {
-    Professional: Project[];
-    "Side Projects": Project[];
-}
 
 const Projects = () => {
     const { theme }: any = useTheme();
