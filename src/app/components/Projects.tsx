@@ -6,7 +6,7 @@ import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
-import MuiIcon from "./icons/MuiIcon";
+import { MuiIcon } from "./icons/Icons";
 
 interface ProjectsData {
     Professional: Project[];

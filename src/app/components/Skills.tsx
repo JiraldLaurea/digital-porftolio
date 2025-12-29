@@ -2,12 +2,21 @@
 import { useTheme } from "next-themes";
 import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import { FaAws } from "react-icons/fa6";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { Skill } from "../Types/index";
-import TypescriptIcon from "./icons/TypescriptIcon";
 import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
+import {
+    FlutterIcon,
+    JavascriptIcon,
+    MaterialUiIcon,
+    ReactIcon,
+    ReactReduxIcon,
+    TailwindIcon,
+    TypescriptIcon,
+} from "./icons/Icons";
 
 type SkillsData = {
     Frontend: Skill[];
@@ -22,6 +31,7 @@ const Skills: React.FC = () => {
     const skillsData: SkillsData = {
         Frontend: [
             {
+                Icon: ReactIcon,
                 imgSrc: "skills_react.svg",
                 techName: "Reactjs",
                 level: 3,
@@ -37,21 +47,25 @@ const Skills: React.FC = () => {
                 level: 2,
             },
             {
+                Icon: TailwindIcon,
                 imgSrc: "skills_tailwindcss.svg",
                 techName: "Tailwind CSS",
                 level: 3,
             },
             {
+                Icon: ReactReduxIcon,
                 imgSrc: "skills_reactRedux.svg",
                 techName: "React Redux",
                 level: 1,
             },
             {
+                Icon: MaterialUiIcon,
                 imgSrc: "skills_materialUI.svg",
                 techName: "MaterialUI",
                 level: 2,
             },
             {
+                Icon: FlutterIcon,
                 imgSrc: "skills_flutter.svg",
                 techName: "Flutter",
                 level: 1,
@@ -70,6 +84,7 @@ const Skills: React.FC = () => {
                 level: 2,
             },
             {
+                Icon: FaAws,
                 imgSrc: `${
                     theme === "dark" ? "skills_awsDark.png" : "skills_aws.svg"
                 }`,
@@ -79,6 +94,7 @@ const Skills: React.FC = () => {
         ],
         Programming: [
             {
+                Icon: JavascriptIcon,
                 imgSrc: "skills_javascript.svg",
                 techName: "Javascript",
                 level: 3,

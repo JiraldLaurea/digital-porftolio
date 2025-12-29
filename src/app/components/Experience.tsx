@@ -3,6 +3,7 @@ import { RiNextjsFill } from "react-icons/ri";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceJob from "./ExperienceJob";
 import Wrapper from "./Wrapper";
+import { NodejsIcon, ReactIcon, TypescriptIcon } from "./icons/Icons";
 
 const Experience = () => {
     const { theme }: any = useTheme();
@@ -36,14 +37,17 @@ const Experience = () => {
                     ]}
                     techs={[
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
                         {
+                            Icon: TypescriptIcon,
                             imgSrc: "skills_typescript.svg",
                             techName: "TypeScript",
                         },
                         {
+                            Icon: NodejsIcon,
                             imgSrc: "skills_nodejs.svg",
                             techName: "Node.js",
                         },
