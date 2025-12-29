@@ -6,7 +6,7 @@ import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
-import { MuiIcon } from "./icons/Icons";
+import { FirebaseIcon, MuiIcon, ReactIcon } from "./icons/Icons";
 
 interface ProjectsData {
     Professional: Project[];
@@ -29,6 +29,7 @@ const Projects = () => {
                     sourceCode: "https://gitlab.com/Zandell/chart/tree/master",
                     techs: [
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
@@ -69,6 +70,7 @@ const Projects = () => {
                         "https://github.com/JiraldLaurea/digital-porftolio",
                     techs: [
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
@@ -108,6 +110,7 @@ const Projects = () => {
                         "https://github.com/JiraldLaurea/google-clone-2",
                     techs: [
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
@@ -145,10 +148,12 @@ const Projects = () => {
                     link: "https://facebook-clone-dfe01.web.app",
                     techs: [
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
                         {
+                            Icon: FirebaseIcon,
                             imgSrc: "skills_firebase.svg",
                             techName: "Firebase",
                         },
@@ -164,6 +169,7 @@ const Projects = () => {
                     sourceCode: "https://github.com/JiraldLaurea/airbnb-clone",
                     techs: [
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
