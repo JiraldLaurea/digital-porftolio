@@ -1,9 +1,23 @@
 import { useTheme } from "next-themes";
+import { DiJqueryLogo, DiMysql } from "react-icons/di";
 import { RiNextjsFill } from "react-icons/ri";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceJob from "./ExperienceJob";
 import Wrapper from "./Wrapper";
-import { NodejsIcon, ReactIcon, TypescriptIcon } from "./icons/Icons";
+import {
+    CsharpIcon,
+    DynamoIcon,
+    FigmaIcon,
+    FirebaseIcon,
+    GitIcon,
+    JavascriptIcon,
+    NodejsIcon,
+    OracleIcon,
+    ReactIcon,
+    SqlIcon,
+    TypescriptIcon,
+    XamarinIcon,
+} from "./icons/Icons";
 
 const Experience = () => {
     const { theme }: any = useTheme();
@@ -52,14 +66,17 @@ const Experience = () => {
                             techName: "Node.js",
                         },
                         {
+                            Icon: CsharpIcon,
                             imgSrc: "skills_csharp.svg",
                             techName: "C#",
                         },
                         {
+                            Icon: SqlIcon,
                             imgSrc: "skills_sql.svg",
                             techName: "Sql",
                         },
                         {
+                            Icon: OracleIcon,
                             imgSrc: "skills_oracle.svg",
                             techName: "Oracle",
                         },
@@ -76,14 +93,17 @@ const Experience = () => {
                     ]}
                     techs={[
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React",
                         },
                         {
+                            Icon: JavascriptIcon,
                             imgSrc: "skills_javascript.svg",
                             techName: "JavaScript",
                         },
                         {
+                            Icon: NodejsIcon,
                             imgSrc: "skills_nodejs.svg",
                             techName: "Node.js",
                         },
@@ -100,14 +120,17 @@ const Experience = () => {
                     ]}
                     techs={[
                         {
+                            Icon: CsharpIcon,
                             imgSrc: "skills_csharp.svg",
                             techName: "C#",
                         },
                         {
+                            Icon: XamarinIcon,
                             imgSrc: "skills_xamarin.svg",
                             techName: "Xamarin",
                         },
                         {
+                            Icon: FigmaIcon,
                             imgSrc: "skills_figma.svg",
                             techName: "Figma",
                         },
@@ -119,22 +142,27 @@ const Experience = () => {
                     tasks={[{ description: "- Developer for web platform." }]}
                     techs={[
                         {
+                            Icon: JavascriptIcon,
                             imgSrc: "skills_javascript.svg",
                             techName: "JavaScript",
                         },
                         {
+                            Icon: DiJqueryLogo,
                             imgSrc: "skills_jquery.svg",
                             techName: "JQuery",
                         },
                         {
+                            Icon: DynamoIcon,
                             imgSrc: "skills_dynamodb.svg",
                             techName: "DynamoDB",
                         },
                         {
+                            Icon: NodejsIcon,
                             imgSrc: "skills_nodejs.svg",
                             techName: "Node.js",
                         },
                         {
+                            Icon: GitIcon,
                             imgSrc: "skills_git.svg",
                             techName: "Git",
                         },
@@ -161,6 +189,7 @@ const Experience = () => {
                     ]}
                     techs={[
                         {
+                            Icon: ReactIcon,
                             imgSrc: "skills_react.svg",
                             techName: "React.js",
                         },
@@ -174,14 +203,17 @@ const Experience = () => {
                             techName: "Next.js",
                         },
                         {
+                            Icon: NodejsIcon,
                             imgSrc: "skills_nodejs.svg",
                             techName: "Node.js",
                         },
                         {
+                            Icon: FirebaseIcon,
                             imgSrc: "skills_firebase.svg",
                             techName: "Firebase",
                         },
                         {
+                            Icon: DiMysql,
                             imgSrc: "skills_mysql.svg",
                             techName: "MySQL",
                         },

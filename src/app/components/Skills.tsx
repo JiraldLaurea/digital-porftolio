@@ -9,9 +9,17 @@ import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
 import {
+    CsharpIcon,
+    CssIcon,
+    FigmaIcon,
+    FirebaseIcon,
     FlutterIcon,
+    HtmlIcon,
     JavascriptIcon,
-    MaterialUiIcon,
+    KotlinIcon,
+    MuiIcon,
+    NodejsIcon,
+    PythonIcon,
     ReactIcon,
     ReactReduxIcon,
     TailwindIcon,
@@ -59,7 +67,7 @@ const Skills: React.FC = () => {
                 level: 1,
             },
             {
-                Icon: MaterialUiIcon,
+                Icon: MuiIcon,
                 imgSrc: "skills_materialUI.svg",
                 techName: "MaterialUI",
                 level: 2,
@@ -73,12 +81,14 @@ const Skills: React.FC = () => {
         ],
         Backend: [
             {
+                Icon: NodejsIcon,
                 imgSrc: "skills_nodejs.svg",
                 techName: "Nodejs",
                 level: 2,
             },
             { imgSrc: "skills_mysql.svg", techName: "MySQL", level: 2 },
             {
+                Icon: FirebaseIcon,
                 imgSrc: "skills_firebase.svg",
                 techName: "Firebase",
                 level: 2,
@@ -105,15 +115,32 @@ const Skills: React.FC = () => {
                 techName: "Typescript",
                 level: 2,
             },
-            { imgSrc: "skills_html.svg", techName: "HTML", level: 3 },
-            { imgSrc: "skills_css.svg", techName: "CSS", level: 3 },
-            { imgSrc: "skills_csharp.svg", techName: "C#", level: 2 },
             {
+                Icon: HtmlIcon,
+                imgSrc: "skills_html.svg",
+                techName: "HTML",
+                level: 3,
+            },
+            {
+                Icon: CssIcon,
+                imgSrc: "skills_css.svg",
+                techName: "CSS",
+                level: 3,
+            },
+            {
+                Icon: CsharpIcon,
+                imgSrc: "skills_csharp.svg",
+                techName: "C#",
+                level: 2,
+            },
+            {
+                Icon: KotlinIcon,
                 imgSrc: "skills_kotlin.svg",
                 techName: "Kotlin",
                 level: 1,
             },
             {
+                Icon: PythonIcon,
                 imgSrc: "skills_python.svg",
                 techName: "Python",
                 level: 1,
@@ -140,7 +167,12 @@ const Skills: React.FC = () => {
                 techName: "Vercel",
                 level: 2,
             },
-            { imgSrc: "skills_figma.svg", techName: "Figma", level: 3 },
+            {
+                Icon: FigmaIcon,
+                imgSrc: "skills_figma.svg",
+                techName: "Figma",
+                level: 3,
+            },
         ],
     };
 
