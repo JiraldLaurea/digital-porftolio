@@ -1,8 +1,8 @@
 "use client";
 
-import { Icon } from "@iconify/react";
 import useEmblaCarousel from "embla-carousel-react";
 import { memo, useEffect, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import ProjectsCard from "./ProjectsCard";
 
 type ProjectsCarouselProps = {
@@ -70,11 +70,7 @@ const ProjectsCarousel = memo(
                                 : "dark:hover:bg-primary-hovered-dark"
                         }`}
                     >
-                        <Icon
-                            icon="basil:caret-left-solid"
-                            width={30}
-                            height={30}
-                        />
+                        <FaChevronLeft size={16} />
                     </button>
                     <button
                         onClick={() => emblaApi?.scrollNext()}
@@ -84,11 +80,7 @@ const ProjectsCarousel = memo(
                                 : "dark:hover:bg-primary-hovered-dark"
                         }`}
                     >
-                        <Icon
-                            icon="basil:caret-right-solid"
-                            width={30}
-                            height={30}
-                        />
+                        <FaChevronRight size={16} />
                     </button>
                 </div>
                 {/* Pagination Dots */}

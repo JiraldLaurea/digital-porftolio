@@ -1,21 +1,17 @@
 "use client";
-import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { throttle } from "lodash";
 import debounce from "lodash/debounce";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
-import { RiSunLine } from "react-icons/ri";
+import { RiCloseLargeFill, RiMenuFill, RiSunLine } from "react-icons/ri";
 import { RxMoon } from "react-icons/rx";
 import { Link, scroller } from "react-scroll/modules";
 import Button from "./Button";
 
-type ActiveSource = "scroll" | "click";
-
 const Navbar = ({ showButtons }: any) => {
     const { theme, setTheme }: any = useTheme();
     const [isMenuOpened, setIsMenuOpened] = useState(false);
-    const [mounted, setMounted] = useState(false);
     const [activeTab, setActiveTab] = useState<number>(0);
     const [navItemSourceType, setNavItemSourceType] = useState<
         "scrolled" | "clicked"
@@ -33,10 +29,6 @@ const Navbar = ({ showButtons }: any) => {
         { label: "Projects", page: "projects" },
         { label: "Contact", page: "contact" },
     ];
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     // Closes menu when passing on a certain threshold
     useEffect(() => {
@@ -200,44 +192,43 @@ const Navbar = ({ showButtons }: any) => {
                             />
                         </div>
                         {/* Theme switcher and Menu Buttons */}
-                        {mounted ? (
-                            <div className="flex items-center">
-                                <button
-                                    className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-full dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
-                                    onClick={() => {
-                                        theme === "dark"
-                                            ? setTheme("light")
-                                            : setTheme("dark");
-                                    }}
-                                >
-                                    {theme === "dark" ? (
-                                        <RiSunLine size={18} />
-                                    ) : (
-                                        <RxMoon size={18} />
-                                    )}
-                                </button>
-                                <div
-                                    onClick={() =>
-                                        setIsMenuOpened(!isMenuOpened)
-                                    }
-                                    className="flex items-center justify-center w-10 h-10 ml-2 transition-colors ease-in border border-opacity-50 rounded-full cursor-pointer select-none md:hidden dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary-hovered-dark"
-                                >
-                                    {isMenuOpened ? (
-                                        <Icon
-                                            icon="material-symbols:close-rounded"
-                                            width="25"
-                                            height="25"
-                                        />
-                                    ) : (
-                                        <Icon
-                                            icon="fa-solid:bars"
-                                            width="16"
-                                            height="16"
-                                        />
-                                    )}
-                                </div>
+
+                        <div className="flex items-center">
+                            <button
+                                className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-full dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
+                                onClick={() =>
+                                    setTheme(
+                                        theme === "dark" ? "light" : "dark"
+                                    )
+                                }
+                            >
+                                <RiSunLine
+                                    size={18}
+                                    className="hidden dark:block"
+                                />
+                                <RxMoon
+                                    size={18}
+                                    className="block dark:hidden"
+                                />
+                            </button>
+                            <div
+                                onClick={() => setIsMenuOpened(!isMenuOpened)}
+                                className="flex items-center justify-center w-10 h-10 ml-2 transition-colors ease-in border border-opacity-50 rounded-full cursor-pointer select-none md:hidden dark:border-zinc-700 hover:bg-primary3 dark:hover:bg-primary-hovered-dark"
+                            >
+                                <RiCloseLargeFill
+                                    size={18}
+                                    className={`${
+                                        isMenuOpened ? "block" : "hidden"
+                                    }`}
+                                />
+                                <RiMenuFill
+                                    size={18}
+                                    className={`${
+                                        isMenuOpened ? "hidden" : "block"
+                                    }`}
+                                />
                             </div>
-                        ) : null}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -33,9 +33,9 @@ const ProjectsCard = memo(
                 </div>
 
                 <div className="flex flex-col gap-4 pt-4 text-left grow md:pt-0 md:pl-4">
-                    <div>
-                        <div className="flex items-center justify-between mb-4">
-                            <p className="text-base font-medium sm:text-lg">
+                    <div className="space-y-4">
+                        <div>
+                            <p className="mb-2 text-base font-medium sm:text-lg">
                                 {name}
                             </p>
                             <Badge text={projectType} />

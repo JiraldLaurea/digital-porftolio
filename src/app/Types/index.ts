@@ -1,6 +1,9 @@
+import { IconType } from "react-icons";
+
 export type Tech = {
     imgSrc: string;
     techName: string;
+    Icon?: IconType;
 };
 
 export type Task = {
@@ -8,10 +11,10 @@ export type Task = {
 };
 
 export type Skill = {
-    imgSrc: string;
+    imgSrc?: string;
     techName: string;
     level: number;
-    mounted?: boolean;
+    Icon?: IconType;
 };
 
 export type ProjectType = "Website" | "UI Design";
@@ -26,4 +29,10 @@ export type Project = {
     figmaLink?: string;
     techs?: Tech[];
     index?: number;
+};
+
+export type ContactDetails = {
+    Icon: IconType;
+    header: string;
+    detail: string;
 };

@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useMemo, useState } from "react";
+import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
@@ -35,6 +36,7 @@ const Projects = () => {
                             techName: "MaterialUI",
                         },
                         {
+                            Icon: RiVercelFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_vercelDark.svg"
@@ -69,6 +71,7 @@ const Projects = () => {
                             techName: "React",
                         },
                         {
+                            Icon: RiNextjsFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_nextjsDark.svg"
@@ -81,6 +84,7 @@ const Projects = () => {
                             techName: "Tailwind",
                         },
                         {
+                            Icon: RiVercelFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_vercelDark.svg"
@@ -105,6 +109,7 @@ const Projects = () => {
                             techName: "React",
                         },
                         {
+                            Icon: RiNextjsFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_nextjsDark.svg"
@@ -117,6 +122,7 @@ const Projects = () => {
                             techName: "Tailwind",
                         },
                         {
+                            Icon: RiVercelFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_vercelDark.svg"
@@ -158,6 +164,7 @@ const Projects = () => {
                             techName: "React",
                         },
                         {
+                            Icon: RiNextjsFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_nextjsDark.svg"
@@ -170,6 +177,7 @@ const Projects = () => {
                             techName: "Tailwind",
                         },
                         {
+                            Icon: RiVercelFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_vercelDark.svg"

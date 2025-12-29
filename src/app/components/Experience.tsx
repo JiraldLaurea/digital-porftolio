@@ -1,10 +1,11 @@
 import { useTheme } from "next-themes";
+import { RiNextjsFill } from "react-icons/ri";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceJob from "./ExperienceJob";
 import Wrapper from "./Wrapper";
 
 const Experience = () => {
-    const { theme, setTheme }: any = useTheme();
+    const { theme }: any = useTheme();
 
     return (
         <Wrapper
@@ -160,6 +161,7 @@ const Experience = () => {
                             techName: "React.js",
                         },
                         {
+                            Icon: RiNextjsFill,
                             imgSrc: `${
                                 theme === "dark"
                                     ? "skills_nextjsDark.svg"

@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 type Props = {};
 
@@ -15,10 +15,7 @@ const Footer = (props: Props) => {
                         target="_blank"
                         className="flex items-center space-x-1"
                     >
-                        <Icon
-                            icon="mdi:linkedin"
-                            className="w-8 h-8 cursor-pointer sm:w-9 sm:h-9"
-                        />
+                        <FaLinkedin size={30} />
                         <p>LinkedIn</p>
                     </a>
                     <a
@@ -26,10 +23,7 @@ const Footer = (props: Props) => {
                         target="_blank"
                         className="flex items-center space-x-1"
                     >
-                        <Icon
-                            icon="mdi:github"
-                            className="w-8 h-8 cursor-pointer sm:w-9 sm:h-9"
-                        />
+                        <FaGithub size={30} />
                         <p>Github</p>
                     </a>
                 </div>

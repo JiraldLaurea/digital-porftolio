@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import { Tech } from "../Types/index";
 
 type TechStackProps = {
@@ -7,12 +6,6 @@ type TechStackProps = {
 };
 
 const TechStack = ({ techs }: TechStackProps) => {
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
     return (
         <div>
             {techs && (
@@ -21,30 +14,33 @@ const TechStack = ({ techs }: TechStackProps) => {
                 </h3>
             )}
             <div className="flex flex-wrap gap-2">
-                {techs?.map((tech, index) => (
-                    <React.Fragment key={index}>
-                        {mounted ? (
-                            <div className="flex items-center h-8 px-2 border rounded-md bg-primary3 lg:h-10 lg:px-3 dark:bg-primary3-dark dark:border-zinc-700">
-                                <div className="relative w-4.5 h-4.5 mr-2 lg:w-6 lg:h-6">
+                {techs?.map((tech, index) => {
+                    const Icon = tech.Icon;
+
+                    return (
+                        <div
+                            key={index}
+                            className="flex items-center h-8 px-2 border rounded-md bg-primary3 lg:h-10 lg:px-3 dark:bg-primary3-dark dark:border-zinc-700"
+                        >
+                            <div className="relative w-4.5 h-4.5 mr-2 lg:w-6 lg:h-6">
+                                {Icon ? (
+                                    <Icon className="w-full h-full" />
+                                ) : (
                                     <Image
                                         src={`/img/${tech.imgSrc}`}
                                         alt={tech.techName}
                                         fill
                                         sizes="100vw"
-                                        style={{
-                                            objectFit: "contain",
-                                        }}
+                                        style={{ objectFit: "contain" }}
                                     />
-                                </div>
-                                <p className="text-xs lg:text-sm text-zinc-600 dark:text-zinc-300">
-                                    {tech.techName}
-                                </p>
+                                )}
                             </div>
-                        ) : (
-                            <div className="w-20 h-8 border rounded-md lg:h-10 bg-primary3 dark:bg-primary3-dark dark:border-zinc-700 animate-pulse" />
-                        )}
-                    </React.Fragment>
-                ))}
+                            <p className="text-xs lg:text-sm text-zinc-600 dark:text-zinc-300">
+                                {tech.techName}
+                            </p>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

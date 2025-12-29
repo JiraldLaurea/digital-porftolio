@@ -1,6 +1,8 @@
 "use client";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { Skill } from "../Types/index";
 import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
@@ -15,13 +17,6 @@ type SkillsData = {
 
 const Skills: React.FC = () => {
     const { theme }: any = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // if (!mounted) return null; // or a placeholder
 
     const skillsData: SkillsData = {
         Frontend: [
@@ -31,6 +26,7 @@ const Skills: React.FC = () => {
                 level: 3,
             },
             {
+                Icon: RiNextjsFill,
                 imgSrc: `${
                     theme === "dark"
                         ? "skills_nextjsDark.svg"
@@ -107,6 +103,7 @@ const Skills: React.FC = () => {
         ],
         Tools: [
             {
+                Icon: FaGithub,
                 imgSrc: `${
                     theme === "dark"
                         ? "skills_githubDark.svg"
@@ -116,6 +113,7 @@ const Skills: React.FC = () => {
                 level: 2,
             },
             {
+                Icon: RiVercelFill,
                 imgSrc: `${
                     theme === "dark"
                         ? "skills_vercelDark.svg"
@@ -154,7 +152,7 @@ const Skills: React.FC = () => {
                         imgSrc={skill.imgSrc}
                         techName={skill.techName}
                         level={skill.level}
-                        mounted={mounted}
+                        Icon={skill.Icon}
                     />
                 ))}
             </div>
