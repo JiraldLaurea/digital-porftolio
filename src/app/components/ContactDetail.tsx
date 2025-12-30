@@ -4,7 +4,7 @@ import { ContactDetails } from "../Types";
 const ContactDetail = ({ Icon, header, detail }: ContactDetails) => {
     return (
         <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 text-white rounded-full sm:w-12 sm:h-12 bg-accent dark:bg-accent-dark">
+            <div className="flex items-center justify-center text-white rounded-full w-11 h-11 bg-accent dark:bg-accent-dark">
                 <Icon size={18} />
             </div>
             <div className="text-left">
