@@ -1,12 +1,12 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useMemo, useState } from "react";
-import { RiNextjsFill, RiTailwindCssFill, RiVercelFill } from "react-icons/ri";
+import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { ProjectsData } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import Tabs from "./Tabs";
 import Wrapper from "./Wrapper";
-import { FirebaseIcon, MuiIcon, ReactIcon } from "./icons/Icons";
+import { FirebaseIcon, MuiIcon, ReactIcon, TailwindIcon } from "./icons/Icons";
 
 const Projects = () => {
     const { theme }: any = useTheme();
@@ -17,9 +17,9 @@ const Projects = () => {
                 {
                     projectType: "Website",
                     imgSrc: "projects_pareto-chart.jpg",
-                    name: "Chart Creation Tool",
+                    name: "Pareto Chart Creation Tool",
                     description:
-                        "Allows users to create charts(Fishbone & Pareto).",
+                        "A website that allows users to create a Pareto Chart.",
                     link: "https://pareto-chart.vercel.app/",
                     sourceCode: "https://gitlab.com/Zandell/chart/tree/master",
                     techs: [
@@ -41,6 +41,15 @@ const Projects = () => {
                                     : "skills_vercelLight.svg"
                             }`,
                             techName: "Vercel",
+                        },
+                        {
+                            Icon: TailwindIcon,
+                            imgSrc: `${
+                                theme === "dark"
+                                    ? "skills_vercelDark.svg"
+                                    : "skills_vercelLight.svg"
+                            }`,
+                            techName: "Tailwind",
                         },
                     ],
                 },
@@ -79,7 +88,7 @@ const Projects = () => {
                             techName: "Next.js",
                         },
                         {
-                            Icon: RiTailwindCssFill,
+                            Icon: TailwindIcon,
                             imgSrc: "skills_tailwindcss.svg",
                             techName: "Tailwind",
                         },
@@ -119,7 +128,7 @@ const Projects = () => {
                             techName: "Next.js",
                         },
                         {
-                            Icon: RiTailwindCssFill,
+                            Icon: TailwindIcon,
                             imgSrc: "skills_tailwindcss.svg",
                             techName: "Tailwind",
                         },
@@ -178,7 +187,7 @@ const Projects = () => {
                             techName: "Next.js",
                         },
                         {
-                            Icon: RiTailwindCssFill,
+                            Icon: TailwindIcon,
                             imgSrc: "skills_tailwindcss.svg",
                             techName: "Tailwind",
                         },
