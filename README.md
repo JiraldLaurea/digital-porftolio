@@ -30,6 +30,6 @@ A modern and responsive personal portfolio built with Next.js to showcase my pro
 
 Jirald Calusay
 
--   GitHub: https://github.com/yourusername
--   LinkedIn: https://linkedin.com/in/yourname
--   Email: your@email.com
+-   GitHub: https://github.com/JiraldLaurea
+-   LinkedIn: https://www.linkedin.com/in/jirald-calusay-064b09220/
+-   Email: jiraldcalusay@email.com

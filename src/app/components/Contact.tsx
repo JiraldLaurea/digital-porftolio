@@ -36,7 +36,7 @@ const Contact = () => {
                             <ContactDetail
                                 Icon={IoMdMail}
                                 header="Email"
-                                detail="jiraldlaurea@gmail.com"
+                                detail="jiraldcalusay@gmail.com"
                             />
                             <ContactDetail
                                 Icon={FaLocationDot}
