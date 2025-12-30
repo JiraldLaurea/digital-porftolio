@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaAws } from "react-icons/fa6";
+import { GrMysql } from "react-icons/gr";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { Skill } from "../Types/index";
 import SkillsGrid from "./SkillsGrid";
@@ -86,7 +87,12 @@ const Skills: React.FC = () => {
                 techName: "Nodejs",
                 level: 2,
             },
-            { imgSrc: "skills_mysql.svg", techName: "MySQL", level: 2 },
+            {
+                Icon: GrMysql,
+                imgSrc: "skills_mysql.svg",
+                techName: "MySQL",
+                level: 2,
+            },
             {
                 Icon: FirebaseIcon,
                 imgSrc: "skills_firebase.svg",

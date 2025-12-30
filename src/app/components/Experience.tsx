@@ -1,5 +1,6 @@
 import { useTheme } from "next-themes";
-import { DiJqueryLogo, DiMysql } from "react-icons/di";
+import { DiJqueryLogo } from "react-icons/di";
+import { GrMysql } from "react-icons/gr";
 import { RiNextjsFill } from "react-icons/ri";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceJob from "./ExperienceJob";
@@ -213,7 +214,7 @@ const Experience = () => {
                             techName: "Firebase",
                         },
                         {
-                            Icon: DiMysql,
+                            Icon: GrMysql,
                             imgSrc: "skills_mysql.svg",
                             techName: "MySQL",
                         },
