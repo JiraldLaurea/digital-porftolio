@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern and responsive personal portfolio built with Next.js to showcase my projects, skills, and contact information.
+A modern and responsive personal portfolio built with Next.js to showcase my experience, skills, projects, and contact information.
 
 🔗 Live Demo: https://jiraldcalusay.vercel.app
 
