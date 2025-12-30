@@ -51,7 +51,9 @@ const Wrapper = ({
                     {subtitle}
                 </p>
             </div>
-            <div className={`w-full max-w-6xl  ${isProject ? "px-0" : "px-4"}`}>
+            <div
+                className={`w-full max-w-6xl  ${isProject ? "px-0" : "px-4"}  `}
+            >
                 {children}
             </div>
         </div>

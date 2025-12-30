@@ -1,4 +1,5 @@
 "use client";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
@@ -16,6 +17,12 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {children}
+                    <Toaster
+                        position="bottom-center"
+                        toastOptions={{
+                            duration: 4000,
+                        }}
+                    />
                 </ThemeProvider>
             </body>
         </html>
