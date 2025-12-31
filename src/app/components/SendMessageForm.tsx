@@ -48,29 +48,31 @@ const SendMessageForm = () => {
     };
 
     return (
-        <div className="flex-none w-full p-6 border sm:p-8 bg-primary4 rounded-3xl dark:border-zinc-700 dark:bg-primary4-dark">
+        <div className="flex-none w-full p-6 border lg:col-span-3 sm:p-8 rounded-3xl dark:border-zinc-700">
             <h3 className="mb-6 text-xl font-medium">Send a message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
-                />
+                <div className="flex space-x-5">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
+                    />
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
-                />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
+                    />
+                </div>
 
                 <input
                     type="text"
@@ -85,7 +87,7 @@ const SendMessageForm = () => {
                 <textarea
                     name="message"
                     placeholder="Message"
-                    rows={5}
+                    rows={3}
                     value={formData.message}
                     onChange={handleChange}
                     required

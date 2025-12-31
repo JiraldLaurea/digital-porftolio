@@ -16,13 +16,13 @@ const Contact = () => {
             isAlternate
             isContact
         >
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
                 {/* Send Message Form */}
                 <SendMessageForm />
 
                 {/* Contact Details */}
-                <div className="w-full">
-                    <div className="p-6 border sm:p-8 bg-primary4 rounded-3xl dark:border-zinc-700 dark:bg-primary4-dark">
+                <div className="w-full lg:col-span-2">
+                    <div className="p-6 border sm:p-8 rounded-3xl dark:border-zinc-700">
                         <h3 className="mb-6 text-xl font-medium">
                             Contact information
                         </h3>
