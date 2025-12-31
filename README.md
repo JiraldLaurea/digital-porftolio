@@ -32,4 +32,4 @@ Jirald Calusay
 
 -   GitHub: https://github.com/JiraldLaurea
 -   LinkedIn: https://www.linkedin.com/in/jirald-calusay-064b09220/
--   Email: jiraldcalusay@email.com
+-   Email: jiraldcalusay@gmail.com
