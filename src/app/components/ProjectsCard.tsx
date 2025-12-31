@@ -26,8 +26,9 @@ const ProjectsCard = memo(
                         alt=""
                         className="object-cover h-full rounded-md"
                         quality={75}
-                        priority={index === 0}
                         fill
+                        placeholder="blur"
+                        blurDataURL="/img/blur-placeholder.png"
                         sizes="100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw,"
                     />
                 </div>

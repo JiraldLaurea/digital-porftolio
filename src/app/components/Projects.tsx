@@ -244,7 +244,11 @@ const Projects = () => {
                 section="Projects"
                 isProject
             />
-            <ProjectsCarousel projects={projects} activeTab={activeTab} />
+            <ProjectsCarousel
+                key={categories[activeTab]}
+                projects={projects}
+                activeTab={activeTab}
+            />
         </Wrapper>
     );
 };
