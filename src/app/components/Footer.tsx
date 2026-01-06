@@ -7,7 +7,7 @@ const Footer = (props: Props) => {
         <div className="flex justify-center py-10 border-t bg-gray-50 dark:bg-primary2-dark dark:border-zinc-700">
             <div className="flex flex-col-reverse items-center justify-center w-full max-w-6xl px-4 sm:justify-between sm:flex-row">
                 <p className="text-sm text-secondary-text dark:text-secondary-text-dark">
-                    © 2025 Jirald Calusay
+                    © 2026 Jirald Calusay
                 </p>
                 <div className="flex items-center mb-4 space-x-4 text-sm sm:space-x-8 sm:mb-0 sm:text-base">
                     <a
