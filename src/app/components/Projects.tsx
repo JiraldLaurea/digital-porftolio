@@ -21,7 +21,7 @@ const Projects = () => {
                     description:
                         "A website that allows users to create a Pareto Chart.",
                     link: "https://pareto-chart.vercel.app/",
-                    sourceCode: "https://gitlab.com/Zandell/chart/tree/master",
+                    sourceCode: "https://gitlab.com/Zandell/chart.git",
                     techs: [
                         {
                             Icon: ReactIcon,
