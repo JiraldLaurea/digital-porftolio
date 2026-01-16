@@ -84,7 +84,7 @@ const Experience = () => {
                     ]}
                 />
                 <ExperienceCard
-                    project="BOSCH-UBICOM-ODX Offshore"
+                    project="Quality Analysis & Root Cause Visualization Tool"
                     date="July 2024 - August 2024"
                     tasks={[
                         {
@@ -111,7 +111,7 @@ const Experience = () => {
                     ]}
                 />
                 <ExperienceCard
-                    project="JATCO-UBICOM Web Recipe"
+                    project="Location-Based Promotional Mobile Application"
                     date="May 2024 - July 2024"
                     tasks={[
                         {
@@ -138,7 +138,7 @@ const Experience = () => {
                     ]}
                 />
                 <ExperienceCard
-                    project="JRC Cell Coverage Development"
+                    project="Cell Coverage Web Development Project"
                     date="March 2024 - April 2024"
                     tasks={[{ description: "- Developer for web platform." }]}
                     techs={[
