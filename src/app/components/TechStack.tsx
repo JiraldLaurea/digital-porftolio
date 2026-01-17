@@ -9,7 +9,7 @@ const TechStack = ({ techs }: TechStackProps) => {
     return (
         <div>
             {techs && (
-                <h3 className="mb-1 text-xs text-gray-500 dark:text-secondary-text-dark">
+                <h3 className="mb-1 text-xs sm:text-sm text-gray-500 dark:text-secondary-text-dark">
                     Tech Stack
                 </h3>
             )}
@@ -20,7 +20,7 @@ const TechStack = ({ techs }: TechStackProps) => {
                     return (
                         <div
                             key={index}
-                            className="flex items-center h-8 px-2 border rounded-md bg-primary3 lg:h-8 lg:px-2 dark:bg-primary3-dark dark:border-zinc-700"
+                            className="flex items-center h-8 px-2 border rounded-md bg-primary3 lg:h-9 lg:px-2.5 dark:bg-primary3-dark dark:border-zinc-700"
                         >
                             <div className="relative w-4.5 h-4.5 mr-2 lg:w-5 lg:h-5">
                                 {Icon ? (
@@ -35,7 +35,7 @@ const TechStack = ({ techs }: TechStackProps) => {
                                     />
                                 )}
                             </div>
-                            <p className="text-xs text-zinc-600 dark:text-zinc-300">
+                            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
                                 {tech.techName}
                             </p>
                         </div>
