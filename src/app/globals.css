@@ -61,3 +61,24 @@
         border-color: var(--color-gray-200, currentColor);
     }
 }
+
+.p-timeline-event-opposite {
+    display: none !important;
+}
+
+.p-timeline-event-separator {
+    position: relative;
+    top: 4px;
+}
+
+.p-timeline-event {
+    font-family: var(--font-inter-tight) !important;
+}
+
+.dark .p-timeline-event-connector {
+    background-color: #3f3f46 !important;
+}
+
+.p-timeline-event-content {
+    padding-left: 0px;
+}
