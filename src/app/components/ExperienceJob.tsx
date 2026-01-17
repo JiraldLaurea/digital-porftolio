@@ -43,7 +43,7 @@ const ExperienceJob = ({
                 </div>
             </div>
             <div className="flex items-center justify-between grow">
-                <div className="">
+                <div>
                     <h2 className="font-semibold sm:text-base">{job}</h2>
                     <p className="text-sm dark:text-secondary-text-dark">
                         {company}

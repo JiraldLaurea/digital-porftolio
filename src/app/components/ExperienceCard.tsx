@@ -1,29 +1,33 @@
-import { Task, Tech } from "../Types/index";
+import { Tech } from "../Types/index";
 import Badge from "./Badge";
 import TechStack from "./TechStack";
 
 type ExperienceCardProps = {
     project: string;
-    role?: string;
+    roles?: string[];
     date: string;
     tasks?: string[];
     techs?: Tech[];
-    isLast?: boolean;
 };
 
 const ExperienceCard = ({
     project,
-    role,
+    roles,
     date,
     tasks,
     techs,
-    isLast,
 }: ExperienceCardProps) => {
     return (
         <div className="pb-6 pl-3 space-y-4">
             <div className="space-y-1">
                 <p className="font-semibold">{project}</p>
-                {role && <p className="text-sm">{role}</p>}
+                <div className="flex items-center divide-x text-sm dark:divide-secondary-text-dark gap-2">
+                    {roles?.map((role, index) => (
+                        <p key={index} className="pr-2">
+                            {role}
+                        </p>
+                    ))}
+                </div>
                 <p className="text-sm text-gray-500 dark:text-secondary-text-dark">
                     {date}
                 </p>
