@@ -1,7 +1,7 @@
 "use client";
+
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
