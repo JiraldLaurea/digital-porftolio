@@ -17,8 +17,7 @@ const Navbar = ({ showButtons }: any) => {
         "scrolled" | "clicked"
     >("scrolled");
 
-    const resumeLink =
-        "https://drive.google.com/file/d/1w-ep7j_ZsZbAQHgd_KyecjXKQGjdwqWR/view?usp=drive_link";
+    const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
     const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
     const SM_BREAKPOINT = 640;
 
@@ -56,13 +55,13 @@ const Navbar = ({ showButtons }: any) => {
     // Throttled
     const scrollBegin = useCallback(
         throttle(() => setNavItemSourceType("clicked"), 300),
-        []
+        [],
     );
 
     // Debounced
     const scrollEnd = useCallback(
         debounce(() => setNavItemSourceType("scrolled"), 500),
-        []
+        [],
     );
 
     useEffect(() => {
@@ -141,7 +140,7 @@ const Navbar = ({ showButtons }: any) => {
                                         onClick={() =>
                                             handleNavItemClick(
                                                 index,
-                                                navItem.page
+                                                navItem.page,
                                             )
                                         }
                                     >
@@ -198,7 +197,7 @@ const Navbar = ({ showButtons }: any) => {
                                 className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-full dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
                                 onClick={() =>
                                     setTheme(
-                                        theme === "dark" ? "light" : "dark"
+                                        theme === "dark" ? "light" : "dark",
                                     )
                                 }
                             >

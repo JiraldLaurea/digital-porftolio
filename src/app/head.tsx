@@ -1,7 +1,7 @@
 export default function Head() {
     return (
         <>
-            <title>Jirald</title>
+            <title>Jirald Calusay</title>
             <meta name="description" content="Welcome to my portfolio" />
         </>
     );

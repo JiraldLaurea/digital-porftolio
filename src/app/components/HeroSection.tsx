@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 
 const HeroSection = ({ buttonsRef }: any) => {
-    const resumeLink =
-        "https://drive.google.com/file/d/1w-ep7j_ZsZbAQHgd_KyecjXKQGjdwqWR/view?usp=drive_link";
+    const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
     const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
 
     const roles = ["Web", "Frontend", "Fullstack"];
@@ -28,19 +27,19 @@ const HeroSection = ({ buttonsRef }: any) => {
             if (text.length < currentRole.length) {
                 timeout = setTimeout(
                     () => setText(currentRole.slice(0, text.length + 1)),
-                    typingSpeed * 1000
+                    typingSpeed * 1000,
                 );
             } else {
                 timeout = setTimeout(
                     () => setIsDeleting(true),
-                    pauseAfterTyping * 1000
+                    pauseAfterTyping * 1000,
                 );
             }
         } else {
             if (text.length > 0) {
                 timeout = setTimeout(
                     () => setText(currentRole.slice(0, text.length - 1)),
-                    deletingSpeed * 1000
+                    deletingSpeed * 1000,
                 );
             } else {
                 setIsDeleting(false);
