@@ -14,7 +14,7 @@ const SendMessageForm = () => {
     });
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -28,7 +28,7 @@ const SendMessageForm = () => {
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 formData,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
             );
 
             toast.success("Message sent successfully!");
@@ -48,7 +48,7 @@ const SendMessageForm = () => {
     };
 
     return (
-        <div className="flex-none w-full p-6 border lg:col-span-3 sm:p-8 rounded-3xl dark:border-zinc-700">
+        <div className="flex-none w-full dark:border-zinc-700">
             <h3 className="mb-6 text-xl font-medium">Send a message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">

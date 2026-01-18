@@ -14,15 +14,14 @@ const Contact = () => {
             title="Contact"
             subtitle="Let's work together"
             isAlternate
-            isContact
         >
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 {/* Send Message Form */}
                 <SendMessageForm />
 
                 {/* Contact Details */}
-                <div className="w-full lg:col-span-2">
-                    <div className="p-6 border sm:p-8 rounded-3xl dark:border-zinc-700">
+                <div className="w-full">
+                    <div className=" dark:border-zinc-700">
                         <h3 className="mb-6 text-xl font-medium">
                             Contact information
                         </h3>
