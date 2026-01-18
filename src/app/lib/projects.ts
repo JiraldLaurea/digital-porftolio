@@ -151,11 +151,8 @@ export const gsoProjects = [
         date: "Feb 2023 - May 2023",
         tasks: [
             "Designed and developed an end-to-end web-based Barangay Solid Waste Management System as the sole developer during an OJT engagement",
-            "Built the frontend using React.js and Next.js, implementing responsive UI components and data-driven views",
-            "Developed a RESTful backend using Node.js and Express.js, handling business logic and API routing",
-            "Designed and implemented database models using Sequelize ORM, including relationships for waste records, barangays, users, schedules, and reports",
-            "Integrated the backend with a MySQL database for persistent storage and statistical waste reporting",
-            "Implemented authentication and request validation using custom Express middleware",
+            "Built a full-stack solution using React.js and Next.js for the frontend, and a RESTful backend with Node.js and Express.js",
+            "Designed relational database models with Sequelize ORM and MySQL, implementing authentication, data management, and reporting features",
         ],
 
         techs: [
