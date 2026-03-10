@@ -63,7 +63,46 @@ const Projects = () => {
                         "https://www.figma.com/design/1PgYCJAbYvft6CriicoMKI/Beacon-App?node-id=0-1&t=MtjCpUL5MIX5yprq-1",
                 },
             ],
-            "Side Projects": [
+            Personal: [
+                {
+                    projectType: "Website",
+                    imgSrc: "projects-sellix.png",
+                    name: "Sellix - Modern Full-Stack E-Commerce Platform",
+                    description:
+                        "A production-grade e-commerce web application built to demonstrate real-world frontend and full-stack development skills.",
+                    link: "https://sellix-ecommerce.vercel.app/",
+                    sourceCode: "https://github.com/JiraldLaurea/sellix",
+                    techs: [
+                        {
+                            Icon: ReactIcon,
+                            imgSrc: "skills_react.svg",
+                            techName: "React",
+                        },
+                        {
+                            Icon: RiNextjsFill,
+                            imgSrc: `${
+                                theme === "dark"
+                                    ? "skills_nextjsDark.svg"
+                                    : "skills_nextjsLight.svg"
+                            }`,
+                            techName: "Next.js",
+                        },
+                        {
+                            Icon: TailwindIcon,
+                            imgSrc: "skills_tailwindcss.svg",
+                            techName: "Tailwind",
+                        },
+                        {
+                            Icon: RiVercelFill,
+                            imgSrc: `${
+                                theme === "dark"
+                                    ? "skills_vercelDark.svg"
+                                    : "skills_vercelLight.svg"
+                            }`,
+                            techName: "Vercel",
+                        },
+                    ],
+                },
                 {
                     projectType: "Website",
                     imgSrc: "projects_digital-portfolio.jpg",
@@ -164,45 +203,6 @@ const Projects = () => {
                     ],
                 },
                 {
-                    projectType: "Website",
-                    imgSrc: "projects_airbnb-clone.jpg",
-                    name: "Airbnb Clone",
-                    description:
-                        "A mobile-responsive website with calendar and date functionality.",
-                    link: "https://zandell-airbnb-clone.vercel.app",
-                    sourceCode: "https://github.com/JiraldLaurea/airbnb-clone",
-                    techs: [
-                        {
-                            Icon: ReactIcon,
-                            imgSrc: "skills_react.svg",
-                            techName: "React",
-                        },
-                        {
-                            Icon: RiNextjsFill,
-                            imgSrc: `${
-                                theme === "dark"
-                                    ? "skills_nextjsDark.svg"
-                                    : "skills_nextjsLight.svg"
-                            }`,
-                            techName: "Next.js",
-                        },
-                        {
-                            Icon: TailwindIcon,
-                            imgSrc: "skills_tailwindcss.svg",
-                            techName: "Tailwind",
-                        },
-                        {
-                            Icon: RiVercelFill,
-                            imgSrc: `${
-                                theme === "dark"
-                                    ? "skills_vercelDark.svg"
-                                    : "skills_vercelLight.svg"
-                            }`,
-                            techName: "Vercel",
-                        },
-                    ],
-                },
-                {
                     projectType: "UI Design",
                     imgSrc: "projects-mobile-grocery-app.jpg",
                     name: "Mobile Grocery App UI",
@@ -222,7 +222,7 @@ const Projects = () => {
                 },
             ],
         }),
-        [theme]
+        [theme],
     );
 
     const [activeTab, setActiveTab] = useState(0);

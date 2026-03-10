@@ -33,7 +33,7 @@ export type Project = {
 
 export type ProjectsData = {
     Professional: Project[];
-    "Side Projects": Project[];
+    Personal: Project[];
 };
 
 export type ContactDetails = {
