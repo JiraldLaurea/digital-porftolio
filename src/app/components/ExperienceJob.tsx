@@ -8,6 +8,7 @@ type ExperienceJobProps = {
     date: string;
     isFirst?: boolean;
     hasNoBackground?: boolean;
+    reducedPadding?: boolean;
 };
 
 const ExperienceJob = ({
@@ -17,6 +18,7 @@ const ExperienceJob = ({
     date,
     isFirst,
     hasNoBackground,
+    reducedPadding,
 }: ExperienceJobProps) => {
     return (
         <div
@@ -28,7 +30,9 @@ const ExperienceJob = ({
                 className={`rounded-full flex-none h-14 w-14 sm:h-16 sm:w-16 ${
                     hasNoBackground
                         ? "p-0 bg-transparent"
-                        : "p-2 sm:p-3 sm:w-16 flex items-center justify-center bg-white border"
+                        : `${
+                              reducedPadding ? "p-1 sm:p-1.5" : "p-2 sm:p-3"
+                          } sm:w-16 flex items-center justify-center overflow-hidden bg-white border`
                 }`}
             >
                 <div className="relative w-full h-full ">

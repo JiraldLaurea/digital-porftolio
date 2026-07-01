@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaAws } from "react-icons/fa6";
 import { GrMysql } from "react-icons/gr";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
+import { SiClaude, SiOpenai } from "react-icons/si";
 import { Skill } from "../Types/index";
 import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
@@ -178,6 +179,18 @@ const Skills: React.FC = () => {
                 imgSrc: "skills_figma.svg",
                 techName: "Figma",
                 level: 3,
+            },
+            {
+                Icon: SiClaude,
+                imgSrc: "",
+                techName: "Claude",
+                level: 2,
+            },
+            {
+                Icon: SiOpenai,
+                imgSrc: "",
+                techName: "Codex",
+                level: 2,
             },
         ],
     };
