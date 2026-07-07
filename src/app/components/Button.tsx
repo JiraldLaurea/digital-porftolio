@@ -23,15 +23,15 @@ const Button = ({
             href={link}
             target="_blank"
             className={`
-                flex items-center justify-center rounded-md transition-colors 
+                flex items-center justify-center rounded-full transition-colors font-medium
                 ${
                     isSmaller
                         ? `text-sm h-10 ${isFromNavbar ? "px-5" : "lg:px-5"}`
-                        : "px-5 sm:px-6 h-10 text-sm sm:text-base sm:h-12"
-                } 
+                        : "px-6 sm:px-7 h-11 text-sm sm:text-base sm:h-12"
+                }
                 ${
                     isPrimary
-                        ? "text-white bg-accent hover:bg-accent-hovered dark:hover:bg-accent-hovered-dark dark:bg-accent-dark"
+                        ? "text-primary1 bg-primary-text hover:bg-primary-text/85 dark:text-black dark:bg-white dark:hover:bg-white/85"
                         : "border hover:bg-primary-hovered hover:dark:bg-primary-hovered-dark dark:border-zinc-700"
                 }
                 ${isFigma && "gap-2"}`}

@@ -23,9 +23,9 @@ const Navbar = ({ showButtons }: any) => {
 
     const navItems = [
         { label: "Home", page: "home" },
+        { label: "Work", page: "projects" },
         { label: "Experience", page: "experience" },
         { label: "Skills", page: "skills" },
-        { label: "Projects", page: "projects" },
         { label: "Contact", page: "contact" },
     ];
 
@@ -129,11 +129,18 @@ const Navbar = ({ showButtons }: any) => {
     return (
         <>
             <div
-                className={`flex sticky top-0 z-100 justify-center w-full h-16 bg-white border-b dark:bg-primary1-dark dark:border-zinc-700`}
+                className={`flex sticky top-0 z-100 justify-center w-full h-16 bg-primary1/90 backdrop-blur border-b dark:bg-primary1-dark dark:border-zinc-700`}
             >
-                <div className="flex items-center justify-end w-full max-w-6xl gap-8 px-4 md:justify-between md:px-4">
+                <div className="flex items-center justify-between w-full max-w-6xl gap-8 px-4">
+                    <button
+                        onClick={() => handleNavItemClick(0, "home")}
+                        className="text-base font-semibold tracking-tight shrink-0"
+                    >
+                        Jirald Calusay
+                    </button>
                     <div className="relative items-center hidden text-sm md:flex">
                         {navItems.map((navItem, index) => {
+                            if (navItem.page === "home") return null;
                             return (
                                 <div key={index} className="relative">
                                     <button
@@ -235,6 +242,7 @@ const Navbar = ({ showButtons }: any) => {
                 <div className="fixed w-full h-screen bg-white z-100 top-16 dark:bg-primary1-dark">
                     <div className="flex flex-col items-center h-full px-4 py-4 space-y-4 bg-primary1 dark:bg-primary1-dark">
                         {navItems.map((navItem, index) => {
+                            if (navItem.page === "home") return null;
                             return (
                                 <Link
                                     offset={index === 0 ? -64 : -63}

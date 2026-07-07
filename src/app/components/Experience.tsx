@@ -1,95 +1,85 @@
-import { Timeline } from "primereact/timeline";
 import { awsProjects, gsoProjects, qroadProjects } from "../lib/projects";
-import ExperienceCard from "./ExperienceCard";
-import ExperienceJob from "./ExperienceJob";
-import Wrapper from "./Wrapper";
+import TechStack from "./TechStack";
+
+const jobs = [
+    {
+        job: "Lead AI Engineer",
+        company: "Qroad Ph",
+        date: "Jun 2026 — Present",
+        entries: qroadProjects,
+    },
+    {
+        job: "Frontend / React Developer",
+        company: "Advanced World Solutions, Inc.",
+        date: "Oct 2023 — Mar 2026",
+        entries: awsProjects,
+    },
+    {
+        job: "Fullstack Developer",
+        company: "General Services Office Iloilo",
+        date: "Feb 2023 — May 2023",
+        entries: gsoProjects,
+    },
+];
 
 const Experience = () => {
-  return (
-    <Wrapper
-      id="experience"
-      title="Experience"
-      subtitle="My Professional Experience"
-    >
-      <ExperienceJob
-        imgSrc="exp_qroad.png"
-        job="Lead AI Engineer"
-        company="Qroad Ph"
-        date="June 2026 - Present"
-        isFirst
-        reducedPadding
-      />
-      <div className="p-4 bg-white border-b border-x rounded-b-3xl sm:p-6 dark:bg-primary1-dark dark:border-zinc-700">
-        <Timeline
-          value={qroadProjects}
-          align="left"
-          marker={() => (
-            <div className="flex items-center justify-center w-4 h-4 border-2 rounded-full dark:border-zinc-700" />
-          )}
-          content={(item) => (
-            <ExperienceCard
-              project={item.project}
-              roles={item.roles}
-              date={item.date}
-              tasks={item.tasks}
-              techs={item.techs}
-            />
-          )}
-        />
-      </div>
+    return (
+        <section
+            id="experience"
+            className="flex flex-col items-center px-4 py-14 border-t sm:px-8 bg-primary1 dark:bg-primary1-dark dark:border-zinc-700"
+        >
+            <div className="w-full max-w-6xl">
+                {/* Section header */}
+                <div className="flex items-end justify-between pb-6 mb-4 border-b dark:border-zinc-700">
+                    <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                        Experience
+                    </h2>
+                    <span className="text-sm text-secondary-text dark:text-secondary-text-dark">
+                        My professional history
+                    </span>
+                </div>
 
-      <ExperienceJob
-        imgSrc="exp_aws.png"
-        job="Frontend / React Developer"
-        company="Advanced World Solutions, Inc."
-        date="October 2023 - March 2026"
-      />
-      <div className="p-4 bg-white border-b border-x rounded-b-3xl sm:p-6 dark:bg-primary1-dark dark:border-zinc-700">
-        <Timeline
-          value={awsProjects}
-          align="left"
-          marker={() => (
-            <div className="flex items-center justify-center w-4 h-4 border-2 rounded-full dark:border-zinc-700" />
-          )}
-          content={(item) => (
-            <ExperienceCard
-              project={item.project}
-              roles={item.roles}
-              date={item.date}
-              tasks={item.tasks}
-              techs={item.techs}
-            />
-          )}
-        />
-      </div>
+                {jobs.map((job, i) => (
+                    <div
+                        key={i}
+                        className="grid gap-x-10 gap-y-6 py-10 border-b md:grid-cols-[220px_1fr] dark:border-zinc-700 last:border-b-0"
+                    >
+                        {/* Left: role meta */}
+                        <div className="md:sticky md:top-24 h-fit">
+                            <p className="font-mono text-xs tracking-wide uppercase text-accent">
+                                {job.date}
+                            </p>
+                            <h3 className="mt-2 text-lg font-semibold">
+                                {job.job}
+                            </h3>
+                            <p className="text-sm text-secondary-text dark:text-secondary-text-dark">
+                                {job.company}
+                            </p>
+                        </div>
 
-      <ExperienceJob
-        imgSrc="exp_gso.png"
-        job="Fullstack Developer"
-        company="General Services Office Iloilo"
-        date="February 2023 - May 2023"
-        hasNoBackground
-      />
-      <div className="p-4 bg-white border-b border-x rounded-b-3xl sm:p-6 dark:bg-primary1-dark dark:border-zinc-700">
-        <Timeline
-          value={gsoProjects}
-          align="left"
-          marker={() => (
-            <div className="flex items-center justify-center w-4 h-4 border-2 rounded-full dark:border-zinc-700" />
-          )}
-          content={(item) => (
-            <ExperienceCard
-              project={item.project}
-              roles={item.roles}
-              date={item.date}
-              tasks={item.tasks}
-              techs={item.techs}
-            />
-          )}
-        />
-      </div>
-    </Wrapper>
-  );
+                        {/* Right: project entries */}
+                        <div className="space-y-9">
+                            {job.entries.map((entry, j) => (
+                                <div key={j}>
+                                    <h4 className="font-semibold">
+                                        {entry.project}
+                                    </h4>
+                                    <ul className="mt-1.5 space-y-1 text-sm text-secondary-text dark:text-secondary-text-dark">
+                                        {entry.tasks?.map((task, k) => (
+                                            <li key={k}>{task}</li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-3">
+                                        <TechStack techs={entry.techs} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
 };
 
 export default Experience;

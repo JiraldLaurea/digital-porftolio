@@ -33,9 +33,9 @@ export default function Home() {
             <Head />
             <Navbar showButtons={!buttonsVisible} />
             <HeroSection buttonsRef={buttonsRef} />
+            <Projects />
             <Experience />
             <Skills />
-            <Projects />
             <Contact />
             <Footer />
         </div>

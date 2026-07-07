@@ -21,9 +21,11 @@ export type ProjectType = "Website" | "UI Design";
 
 export type Project = {
     projectType: ProjectType;
-    imgSrc: string;
+    imgSrc?: string;
     name: string;
     description: string;
+    category?: string;
+    year?: string;
     link?: string;
     sourceCode?: string;
     figmaLink?: string;

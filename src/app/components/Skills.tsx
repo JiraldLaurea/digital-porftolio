@@ -9,7 +9,6 @@ import { SiClaude, SiOpenai } from "react-icons/si";
 import { Skill } from "../Types/index";
 import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
-import Wrapper from "./Wrapper";
 import {
     CsharpIcon,
     CssIcon,
@@ -200,32 +199,47 @@ const Skills: React.FC = () => {
     const skills = skillsData[categories[activeTab]];
 
     return (
-        <Wrapper
+        <section
             id="skills"
-            title="Skills"
-            subtitle="My Technical Expertise"
-            isAlternate
-            isFullHeight
-            isCentered
+            className="flex flex-col items-center px-4 py-14 border-t sm:px-8 bg-primary2 dark:bg-primary2-dark dark:border-zinc-700"
         >
-            <Tabs
-                categories={categories}
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
-                section="Skills"
-            />
-            <div className="grid grid-cols-1 gap-4 xs:grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4">
-                {skills.map((skill, index) => (
-                    <SkillsGrid
-                        key={index}
-                        imgSrc={skill.imgSrc}
-                        techName={skill.techName}
-                        level={skill.level}
-                        Icon={skill.Icon}
-                    />
-                ))}
+            <div className="w-full max-w-6xl">
+                <p className="mb-8 font-mono text-xs tracking-widest uppercase text-secondary-text dark:text-secondary-text-dark">
+                    Capabilities
+                </p>
+
+                <Tabs
+                    categories={categories}
+                    activeTab={activeTab}
+                    setActiveTab={setActiveTab}
+                    section="Skills"
+                />
+
+                <div className="overflow-hidden border rounded-2xl bg-border-warm dark:bg-zinc-700 dark:border-zinc-700">
+                    <div className="grid grid-cols-1 gap-px xs:grid-cols-2 lg:grid-cols-3">
+                        {skills.map((skill, index) => (
+                            <SkillsGrid
+                                key={index}
+                                imgSrc={skill.imgSrc}
+                                techName={skill.techName}
+                                level={skill.level}
+                                Icon={skill.Icon}
+                            />
+                        ))}
+                        {/* White fillers so the last row is never a coloured gap
+                            (6 = lcm of the 1/2/3 responsive column counts) */}
+                        {Array.from({
+                            length: (6 - (skills.length % 6)) % 6,
+                        }).map((_, index) => (
+                            <div
+                                key={`filler-${index}`}
+                                className="bg-white dark:bg-primary1-dark"
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
-        </Wrapper>
+        </section>
     );
 };
 

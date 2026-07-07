@@ -47,12 +47,13 @@ const SendMessageForm = () => {
         }
     };
 
-    return (
-        <div className="flex-none w-full dark:border-zinc-700">
-            <h3 className="mb-6 text-xl font-medium">Send a message</h3>
+    const inputClass =
+        "w-full px-4 py-3 border rounded-lg outline-none bg-primary1 dark:border-zinc-700 dark:bg-primary2-dark focus:border-primary-text dark:focus:border-white transition-colors placeholder:text-secondary-text";
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="flex space-x-5">
+    return (
+        <div className="w-full">
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                     <input
                         type="text"
                         name="name"
@@ -60,7 +61,7 @@ const SendMessageForm = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
+                        className={inputClass}
                     />
 
                     <input
@@ -70,7 +71,7 @@ const SendMessageForm = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
+                        className={inputClass}
                     />
                 </div>
 
@@ -81,23 +82,23 @@ const SendMessageForm = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border rounded-md outline-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
+                    className={inputClass}
                 />
 
                 <textarea
                     name="message"
                     placeholder="Message"
-                    rows={3}
+                    rows={5}
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border rounded-md outline-none resize-none dark:border-zinc-700 dark:bg-primary1-dark focus:ring-2 focus:ring-primary "
+                    className={`${inputClass} resize-none`}
                 />
 
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full px-6 py-3 text-white transition rounded-md bg-accent dark:bg-accent-dark bg-primary hover:bg-accent-hovered dark:hover:bg-accent-hovered-dark"
+                    className="px-7 h-11 font-medium transition-colors rounded-full text-primary1 bg-primary-text hover:bg-primary-text/85 dark:text-black dark:bg-white dark:hover:bg-white/85 disabled:opacity-60"
                 >
                     {loading ? "Sending..." : "Send message"}
                 </button>

@@ -12,60 +12,41 @@ const Tabs = ({
     categories,
     activeTab,
     setActiveTab,
-    isProject,
     section,
 }: TabsProps) => {
     const transition: any = {
         type: "tween",
         ease: "easeOut",
-        duration: 0.15,
+        duration: 0.2,
     };
 
     return (
-        <div
-            className={`flex items-center mb-6  sm:text-base text-sm ${
-                isProject ? "justify-center" : "justify-center"
-            }`}
-        >
-            <div className="flex p-2 overflow-x-auto border rounded-full bg-primary1 dark:border-zinc-700 dark:bg-primary1-dark">
-                <div className="z-0 flex items-center overflow-y-hidden ">
-                    {categories.map((category, index) => (
-                        <div
-                            key={index}
-                            className="relative flex flex-col items-center"
-                        >
-                            <motion.button
-                                onClick={() => setActiveTab(index)}
-                                className={` relative rounded-full py-2 px-4 sm:hover:dark:text-white sm:hover:text-black transition-colors ${
-                                    activeTab === index
-                                        ? "dark:text-white"
-                                        : "text-secondary-text dark:text-secondary-text-dark"
-                                }`}
-                            >
-                                {category}
-                            </motion.button>
-
-                            {activeTab === index && (
-                                <motion.span
-                                    layoutId={
-                                        section === "Skills"
-                                            ? "skillsUnderline"
-                                            : "projectsUnderline"
-                                    }
-                                    className="absolute inset-0 border rounded-full dark:border-zinc-700 bg-primary3 dark:bg-primary3-dark"
-                                    style={{ zIndex: -1 }}
-                                    animate={{
-                                        opacity: 1,
-                                    }}
-                                    exit={{
-                                        opacity: 0,
-                                    }}
-                                    transition={transition}
-                                />
-                            )}
-                        </div>
-                    ))}
-                </div>
+        <div className="flex mb-6">
+            <div className="inline-flex p-1 overflow-x-auto text-sm border rounded-full bg-primary1 dark:border-zinc-700 dark:bg-primary1-dark">
+                {categories.map((category, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setActiveTab(index)}
+                        className={`relative px-4 py-2 rounded-full transition-colors whitespace-nowrap ${
+                            activeTab === index
+                                ? "text-white dark:text-black"
+                                : "text-secondary-text dark:text-secondary-text-dark hover:text-primary-text dark:hover:text-white"
+                        }`}
+                    >
+                        {activeTab === index && (
+                            <motion.span
+                                layoutId={
+                                    section === "Skills"
+                                        ? "skillsTab"
+                                        : "projectsTab"
+                                }
+                                className="absolute inset-0 z-0 rounded-full bg-primary-text dark:bg-white"
+                                transition={transition}
+                            />
+                        )}
+                        <span className="relative z-10">{category}</span>
+                    </button>
+                ))}
             </div>
         </div>
     );

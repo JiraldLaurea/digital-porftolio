@@ -1,52 +1,49 @@
 "use client";
 
-import { FaLocationDot } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
-import { MdPhoneIphone } from "react-icons/md";
-import ContactDetail from "./ContactDetail";
-import Wrapper from "./Wrapper";
 import SendMessageForm from "./SendMessageForm";
 
 const Contact = () => {
     return (
-        <Wrapper
+        <section
             id="contact"
-            title="Contact"
-            subtitle="Let's work together"
-            isAlternate
+            className="flex flex-col items-center px-4 py-16 border-t sm:px-8 bg-primary1 dark:bg-primary1-dark dark:border-zinc-700"
         >
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                {/* Send Message Form */}
-                <SendMessageForm />
+            <div className="grid w-full max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
+                {/* Left: get in touch */}
+                <div>
+                    <p className="mb-6 font-mono text-xs tracking-widest uppercase text-secondary-text dark:text-secondary-text-dark">
+                        Get in touch
+                    </p>
 
-                {/* Contact Details */}
-                <div className="w-full">
-                    <div className=" dark:border-zinc-700">
-                        <h3 className="mb-6 text-xl font-medium">
-                            Contact information
-                        </h3>
+                    <a
+                        href="mailto:jiraldcalusay@gmail.com"
+                        className="block text-2xl font-semibold tracking-tight wrap-break-word transition-colors sm:text-4xl hover:text-accent"
+                    >
+                        jiraldcalusay@gmail.com
+                    </a>
 
-                        <div className="space-y-8">
-                            <ContactDetail
-                                Icon={MdPhoneIphone}
-                                header="Phone"
-                                detail="09614073159"
-                            />
-                            <ContactDetail
-                                Icon={IoMdMail}
-                                header="Email"
-                                detail="jiraldcalusay@gmail.com"
-                            />
-                            <ContactDetail
-                                Icon={FaLocationDot}
-                                header="Location"
-                                detail="Makati, Metro Manila, Philippines"
-                            />
+                    <div className="flex gap-12 mt-10">
+                        <div>
+                            <p className="mb-1 font-mono text-xs tracking-wide uppercase text-secondary-text dark:text-secondary-text-dark">
+                                Phone
+                            </p>
+                            <p className="text-sm sm:text-base">0961 407 3159</p>
+                        </div>
+                        <div>
+                            <p className="mb-1 font-mono text-xs tracking-wide uppercase text-secondary-text dark:text-secondary-text-dark">
+                                Location
+                            </p>
+                            <p className="text-sm sm:text-base">
+                                Makati, Metro Manila, PH
+                            </p>
                         </div>
                     </div>
                 </div>
+
+                {/* Right: message form */}
+                <SendMessageForm />
             </div>
-        </Wrapper>
+        </section>
     );
 };
 
