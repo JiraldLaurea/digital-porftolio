@@ -134,7 +134,7 @@ const Navbar = ({ showButtons }: any) => {
                 <div className="flex items-center justify-between w-full max-w-6xl gap-8 px-4">
                     <button
                         onClick={() => handleNavItemClick(0, "home")}
-                        className="text-base font-semibold tracking-tight shrink-0"
+                        className="hidden text-base font-semibold tracking-tight md:block shrink-0"
                     >
                         Jirald Calusay
                     </button>

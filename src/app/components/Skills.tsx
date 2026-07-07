@@ -215,8 +215,13 @@ const Skills: React.FC = () => {
                     section="Skills"
                 />
 
-                <div className="overflow-hidden border rounded-2xl bg-border-warm dark:bg-zinc-700 dark:border-zinc-700">
-                    <div className="grid grid-cols-1 gap-px xs:grid-cols-2 lg:grid-cols-3">
+                {/* Each cell draws its right + bottom divider. The grid's
+                    -mr-px/-mb-px pulls the trailing (last-column / last-row)
+                    borders under the wrapper's rounded border, so they're hidden
+                    at every screen size — no doubling, clean rounded corners.
+                    Empty cells simply show the wrapper's white background. */}
+                <div className="overflow-hidden bg-white border rounded-2xl dark:bg-primary1-dark dark:border-zinc-700">
+                    <div className="grid grid-cols-1 -mb-px -mr-px xs:grid-cols-2 lg:grid-cols-3">
                         {skills.map((skill, index) => (
                             <SkillsGrid
                                 key={index}
@@ -224,16 +229,6 @@ const Skills: React.FC = () => {
                                 techName={skill.techName}
                                 level={skill.level}
                                 Icon={skill.Icon}
-                            />
-                        ))}
-                        {/* White fillers so the last row is never a coloured gap
-                            (6 = lcm of the 1/2/3 responsive column counts) */}
-                        {Array.from({
-                            length: (6 - (skills.length % 6)) % 6,
-                        }).map((_, index) => (
-                            <div
-                                key={`filler-${index}`}
-                                className="bg-white dark:bg-primary1-dark"
                             />
                         ))}
                     </div>

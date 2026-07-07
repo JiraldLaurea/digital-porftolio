@@ -11,7 +11,7 @@ const SkillsGrid = ({ techName, level }: Skill) => {
     const { label, percent } = LEVELS[level] ?? LEVELS[1];
 
     return (
-        <div className="flex items-center justify-between p-5 bg-white dark:bg-primary1-dark">
+        <div className="flex items-center justify-between p-5 bg-white border-b border-r dark:bg-primary1-dark dark:border-zinc-700">
             <div>
                 <p className="font-medium">{techName}</p>
                 <p className="text-xs text-secondary-text dark:text-secondary-text-dark">

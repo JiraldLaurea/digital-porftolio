@@ -2,48 +2,44 @@
 import Button from "./Button";
 
 const HeroSection = ({ buttonsRef }: any) => {
-    const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
-    const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
+  const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
+  const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
 
-    return (
-        <section
-            id="home"
-            className="relative flex flex-col items-center justify-center px-4 overflow-hidden text-center bg-primary1 dark:bg-primary1-dark min-h-fit h-[calc(100vh-64px)] max-h-225 py-16"
-        >
-            {/* Animated gradient background */}
-            <div className="hero-bg" aria-hidden="true">
-                <div className="hero-blob hero-blob-1" />
-                <div className="hero-blob hero-blob-2" />
-                <div className="hero-blob hero-blob-3" />
-            </div>
+  return (
+    <section
+      id="home"
+      className="relative flex flex-col items-center justify-center px-4 overflow-hidden text-center bg-primary1 dark:bg-primary1-dark min-h-fit h-[calc(100vh-64px)] max-h-225 py-16"
+    >
+      {/* Animated gradient background */}
+      <div className="hero-bg" aria-hidden="true">
+        <div className="hero-blob hero-blob-1" />
+        <div className="hero-blob hero-blob-2" />
+        <div className="hero-blob hero-blob-3" />
+      </div>
 
-            <div className="relative z-10 flex flex-col items-center max-w-3xl">
-                <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent sm:text-sm">
-                    Frontend / React Developer
-                </p>
+      <div className="relative z-10 flex flex-col items-center max-w-3xl">
+        <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent sm:text-sm">
+          Lead AI Engineer
+        </p>
 
-                <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                    Building user-friendly,
-                    <br className="hidden sm:block" /> considered web
-                    experiences.
-                </h1>
+        <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          Building intelligent,
+          <br className="hidden sm:block" /> reliable web products.
+        </h1>
 
-                <p className="max-w-xl mt-6 text-base leading-relaxed sm:text-lg text-secondary-text dark:text-secondary-text-dark">
-                    Frontend developer based in Metro Manila, focused on clean
-                    interfaces and seamless interaction — currently leading AI
-                    engineering at Qroad Ph.
-                </p>
+        <p className="max-w-xl mt-6 text-base leading-relaxed sm:text-lg text-secondary-text dark:text-secondary-text-dark">
+          AI engineer and fullstack developer based in Metro Manila, shipping
+          intelligent web products end to end — currently leading AI development
+          at Qroad Ph.
+        </p>
 
-                <div
-                    ref={buttonsRef}
-                    className="flex justify-center gap-3 mt-8"
-                >
-                    <Button link={resumeLink} text="View résumé" isPrimary />
-                    <Button link={linkedInLink} text="LinkedIn" />
-                </div>
-            </div>
-        </section>
-    );
+        <div ref={buttonsRef} className="flex justify-center gap-3 mt-8">
+          <Button link={resumeLink} text="View résumé" isPrimary />
+          <Button link={linkedInLink} text="LinkedIn" />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default HeroSection;
