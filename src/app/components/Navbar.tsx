@@ -4,9 +4,14 @@ import { throttle } from "lodash";
 import debounce from "lodash/debounce";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
-import { RiCloseLargeFill, RiMenuFill, RiSunLine } from "react-icons/ri";
+import {
+    RiArrowRightLine,
+    RiCloseLargeFill,
+    RiMenuFill,
+    RiSunLine,
+} from "react-icons/ri";
 import { RxMoon } from "react-icons/rx";
-import { Link, scroller } from "react-scroll/modules";
+import { scroller } from "react-scroll/modules";
 import Button from "./Button";
 
 const Navbar = ({ showButtons }: any) => {
@@ -239,24 +244,66 @@ const Navbar = ({ showButtons }: any) => {
                 </div>
             </div>
             {isMenuOpened && (
-                <div className="fixed w-full h-screen bg-white z-100 top-16 dark:bg-primary1-dark">
-                    <div className="flex flex-col items-center h-full px-4 py-4 space-y-4 bg-primary1 dark:bg-primary1-dark">
+                <div className="fixed inset-0 z-100 flex flex-col bg-primary1 md:hidden dark:bg-primary1-dark">
+                    <div className="flex items-center justify-between h-16 px-4 border-b shrink-0 dark:border-zinc-700">
+                        <span className="font-mono text-xs tracking-widest uppercase text-secondary-text dark:text-secondary-text-dark">
+                            Menu
+                        </span>
+                        <button
+                            onClick={() => setIsMenuOpened(false)}
+                            className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-full dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
+                        >
+                            <RiCloseLargeFill size={18} />
+                        </button>
+                    </div>
+
+                    <div className="flex flex-col flex-1 px-4 overflow-y-auto">
                         {navItems.map((navItem, index) => {
                             if (navItem.page === "home") return null;
                             return (
-                                <Link
-                                    offset={index === 0 ? -64 : -63}
-                                    smooth
-                                    duration={400}
-                                    to={navItem.page}
+                                <button
                                     key={index}
-                                    className={`w-full rounded-3xl text-sm px-5 py-4 bg-primary3 dark:bg-primary3-dark border cursor-pointer dark:border-zinc-700`}
-                                    onClick={() => setIsMenuOpened(false)}
+                                    onClick={() => {
+                                        handleNavItemClick(
+                                            index,
+                                            navItem.page,
+                                        );
+                                        setIsMenuOpened(false);
+                                    }}
+                                    className="flex items-center justify-between py-6 text-left border-b dark:border-zinc-700"
                                 >
-                                    <p>{navItem.label}</p>
-                                </Link>
+                                    <span className="flex items-baseline gap-4">
+                                        <span className="font-mono text-xs text-secondary-text dark:text-secondary-text-dark">
+                                            {String(index).padStart(2, "0")}
+                                        </span>
+                                        <span className="text-3xl font-bold tracking-tight sm:text-4xl">
+                                            {navItem.label}
+                                        </span>
+                                    </span>
+                                    <RiArrowRightLine
+                                        size={20}
+                                        className="text-accent dark:text-accent-dark shrink-0"
+                                    />
+                                </button>
                             );
                         })}
+                    </div>
+
+                    <div className="flex flex-col gap-4 px-4 py-6 border-t shrink-0 dark:border-zinc-700">
+                        <div className="flex space-x-2">
+                            <Button
+                                link={resumeLink}
+                                text="Résumé"
+                                isPrimary
+                            />
+                            <Button link={linkedInLink} text="LinkedIn" />
+                        </div>
+                        <a
+                            href="mailto:jiraldcalusay@gmail.com"
+                            className="text-sm text-secondary-text dark:text-secondary-text-dark"
+                        >
+                            jiraldcalusay@gmail.com
+                        </a>
                     </div>
                 </div>
             )}
