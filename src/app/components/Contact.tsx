@@ -1,5 +1,6 @@
 "use client";
 
+import FadeIn from "./FadeIn";
 import SendMessageForm from "./SendMessageForm";
 
 const Contact = () => {
@@ -10,7 +11,7 @@ const Contact = () => {
         >
             <div className="grid w-full max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
                 {/* Left: get in touch */}
-                <div>
+                <FadeIn>
                     <p className="mb-6 font-mono text-xs tracking-widest uppercase text-secondary-text dark:text-secondary-text-dark">
                         Get in touch
                     </p>
@@ -38,10 +39,12 @@ const Contact = () => {
                             </p>
                         </div>
                     </div>
-                </div>
+                </FadeIn>
 
                 {/* Right: message form */}
-                <SendMessageForm />
+                <FadeIn delay={0.1}>
+                    <SendMessageForm />
+                </FadeIn>
             </div>
         </section>
     );

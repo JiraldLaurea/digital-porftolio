@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
+import FadeIn from "./FadeIn";
 import { ReactIcon, TailwindIcon } from "./icons/Icons";
 
 const Projects = () => {
@@ -132,7 +133,7 @@ const Projects = () => {
             className="py-14 overflow-hidden border-t bg-primary1 dark:bg-primary1-dark dark:border-zinc-700"
         >
             {/* Section header (constrained to the content column) */}
-            <div className="w-full max-w-6xl px-4 mx-auto mb-8">
+            <FadeIn className="w-full max-w-6xl px-4 mx-auto mb-8">
                 <div className="flex items-end justify-between">
                     <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                         Selected Work
@@ -141,10 +142,12 @@ const Projects = () => {
                         2024 — 2026
                     </span>
                 </div>
-            </div>
+            </FadeIn>
 
             {/* Carousel is full-bleed so neighbours peek outside the column */}
-            <ProjectsCarousel projects={projects} />
+            <FadeIn delay={0.1}>
+                <ProjectsCarousel projects={projects} />
+            </FadeIn>
         </section>
     );
 };

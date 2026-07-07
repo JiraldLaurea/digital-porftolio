@@ -1,4 +1,5 @@
 import { awsProjects, gsoProjects, qroadProjects } from "../lib/projects";
+import FadeIn from "./FadeIn";
 import TechStack from "./TechStack";
 
 const jobs = [
@@ -30,18 +31,19 @@ const Experience = () => {
         >
             <div className="w-full max-w-6xl">
                 {/* Section header */}
-                <div className="flex flex-col gap-1 pb-6 mb-4 border-b sm:flex-row sm:items-end sm:justify-between dark:border-zinc-700">
+                <FadeIn className="flex flex-col gap-1 pb-6 mb-4 border-b sm:flex-row sm:items-end sm:justify-between dark:border-zinc-700">
                     <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                         Experience
                     </h2>
                     <span className="text-sm text-secondary-text dark:text-secondary-text-dark">
                         My professional history
                     </span>
-                </div>
+                </FadeIn>
 
                 {jobs.map((job, i) => (
-                    <div
+                    <FadeIn
                         key={i}
+                        delay={0.1}
                         className="grid gap-x-10 gap-y-6 py-10 border-b md:grid-cols-[220px_1fr] dark:border-zinc-700 last:border-b-0"
                     >
                         {/* Left: role meta */}
@@ -75,7 +77,7 @@ const Experience = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </FadeIn>
                 ))}
             </div>
         </section>

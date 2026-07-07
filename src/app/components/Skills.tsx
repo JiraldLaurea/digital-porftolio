@@ -7,6 +7,7 @@ import { GrMysql } from "react-icons/gr";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
 import { SiClaude, SiOpenai } from "react-icons/si";
 import { Skill } from "../Types/index";
+import FadeIn from "./FadeIn";
 import SkillsGrid from "./SkillsGrid";
 import Tabs from "./Tabs";
 import {
@@ -204,23 +205,28 @@ const Skills: React.FC = () => {
             className="flex flex-col items-center px-4 py-14 border-t sm:px-8 bg-primary2 dark:bg-primary2-dark dark:border-zinc-700"
         >
             <div className="w-full max-w-6xl">
-                <p className="mb-8 font-mono text-xs tracking-widest uppercase text-secondary-text dark:text-secondary-text-dark">
-                    Capabilities
-                </p>
+                <FadeIn>
+                    <p className="mb-8 font-mono text-xs tracking-widest uppercase text-secondary-text dark:text-secondary-text-dark">
+                        Capabilities
+                    </p>
 
-                <Tabs
-                    categories={categories}
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                    section="Skills"
-                />
+                    <Tabs
+                        categories={categories}
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                        section="Skills"
+                    />
+                </FadeIn>
 
                 {/* Each cell draws its right + bottom divider. The grid's
                     -mr-px/-mb-px pulls the trailing (last-column / last-row)
                     borders under the wrapper's rounded border, so they're hidden
                     at every screen size — no doubling, clean rounded corners.
                     Empty cells simply show the wrapper's white background. */}
-                <div className="overflow-hidden bg-white border rounded-2xl dark:bg-primary1-dark dark:border-zinc-700">
+                <FadeIn
+                    delay={0.1}
+                    className="overflow-hidden bg-white border rounded-2xl dark:bg-primary1-dark dark:border-zinc-700"
+                >
                     <div className="grid grid-cols-1 -mb-px -mr-px xs:grid-cols-2 lg:grid-cols-3">
                         {skills.map((skill, index) => (
                             <SkillsGrid
@@ -232,7 +238,7 @@ const Skills: React.FC = () => {
                             />
                         ))}
                     </div>
-                </div>
+                </FadeIn>
             </div>
         </section>
     );

@@ -1,5 +1,6 @@
 "use client";
 import Button from "./Button";
+import FadeIn from "./FadeIn";
 
 const HeroSection = ({ buttonsRef }: any) => {
   const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
@@ -18,25 +19,33 @@ const HeroSection = ({ buttonsRef }: any) => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center max-w-3xl">
-        <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent sm:text-sm">
-          Lead AI Engineer
-        </p>
+        <FadeIn onMount delay={0}>
+          <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent sm:text-sm">
+            Lead AI Engineer
+          </p>
+        </FadeIn>
 
-        <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          Building intelligent,
-          <br className="hidden sm:block" /> reliable web products.
-        </h1>
+        <FadeIn onMount delay={0.1}>
+          <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            Building intelligent,
+            <br className="hidden sm:block" /> reliable web products.
+          </h1>
+        </FadeIn>
 
-        <p className="max-w-xl mt-6 text-base leading-relaxed sm:text-lg text-secondary-text dark:text-secondary-text-dark">
-          AI engineer and fullstack developer based in Metro Manila, shipping
-          intelligent web products end to end — currently leading AI development
-          at Qroad Ph.
-        </p>
+        <FadeIn onMount delay={0.2}>
+          <p className="max-w-xl mt-6 text-base leading-relaxed sm:text-lg text-secondary-text dark:text-secondary-text-dark">
+            AI engineer and fullstack developer based in Metro Manila, shipping
+            intelligent web products end to end — currently leading AI development
+            at Qroad Ph.
+          </p>
+        </FadeIn>
 
-        <div ref={buttonsRef} className="flex justify-center gap-3 mt-8">
-          <Button link={resumeLink} text="View résumé" isPrimary />
-          <Button link={linkedInLink} text="LinkedIn" />
-        </div>
+        <FadeIn onMount delay={0.3}>
+          <div ref={buttonsRef} className="flex justify-center gap-3 mt-8">
+            <Button link={resumeLink} text="View résumé" isPrimary />
+            <Button link={linkedInLink} text="LinkedIn" />
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
