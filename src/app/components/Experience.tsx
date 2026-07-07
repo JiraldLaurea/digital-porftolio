@@ -30,7 +30,7 @@ const Experience = () => {
         >
             <div className="w-full max-w-6xl">
                 {/* Section header */}
-                <div className="flex items-end justify-between pb-6 mb-4 border-b dark:border-zinc-700">
+                <div className="flex flex-col gap-1 pb-6 mb-4 border-b sm:flex-row sm:items-end sm:justify-between dark:border-zinc-700">
                     <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                         Experience
                     </h2>
@@ -64,7 +64,7 @@ const Experience = () => {
                                     <h4 className="font-semibold">
                                         {entry.project}
                                     </h4>
-                                    <ul className="mt-1.5 space-y-1 text-sm text-secondary-text dark:text-secondary-text-dark">
+                                    <ul className="mt-1.5 space-y-1 pl-4 text-sm list-disc marker:text-secondary-text dark:marker:text-secondary-text-dark text-secondary-text dark:text-secondary-text-dark">
                                         {entry.tasks?.map((task, k) => (
                                             <li key={k}>{task}</li>
                                         ))}

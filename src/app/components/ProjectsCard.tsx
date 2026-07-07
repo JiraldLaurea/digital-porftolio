@@ -67,14 +67,14 @@ const ProjectsCard = memo(
             </p>
           </div>
 
-          {/* Action buttons */}
-          <div className="flex flex-wrap gap-2 shrink-0">
+          {/* Action buttons: fill the row equally on mobile, auto-width from sm up */}
+          <div className="flex gap-2 sm:flex-wrap sm:shrink-0">
             {link && (
               <a
                 href={link}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-5 h-11 text-sm font-medium text-primary1 dark:text-black transition-colors bg-primary-text dark:bg-white rounded-full hover:bg-primary-text/85 dark:hover:bg-white/85 sm:text-black sm:bg-white sm:hover:bg-white/85"
+                className="flex flex-1 items-center justify-center gap-1.5 px-5 h-11 text-sm font-medium text-primary1 dark:text-black transition-colors bg-primary-text dark:bg-white rounded-full hover:bg-primary-text/85 dark:hover:bg-white/85 sm:flex-none sm:text-black sm:bg-white sm:hover:bg-white/85"
               >
                 Live Demo
                 <FiArrowUpRight size={16} />
@@ -85,7 +85,7 @@ const ProjectsCard = memo(
                 href={sourceCode}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center px-5 text-sm font-medium transition-colors border rounded-full h-11 border-border-warm dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark sm:text-white sm:border-white/25 sm:bg-white/10 sm:backdrop-blur sm:hover:bg-white/20"
+                className="flex flex-1 items-center justify-center px-5 text-sm font-medium transition-colors border rounded-full h-11 border-border-warm dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark sm:flex-none sm:text-white sm:border-white/25 sm:bg-white/10 sm:backdrop-blur sm:hover:bg-white/20"
               >
                 Source Code
               </a>
@@ -95,7 +95,7 @@ const ProjectsCard = memo(
                 href={figmaLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center px-5 text-sm font-medium transition-colors border rounded-full h-11 border-border-warm dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark sm:text-white sm:border-white/25 sm:bg-white/10 sm:backdrop-blur sm:hover:bg-white/20"
+                className="flex flex-1 items-center justify-center px-5 text-sm font-medium transition-colors border rounded-full h-11 border-border-warm dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark sm:flex-none sm:text-white sm:border-white/25 sm:bg-white/10 sm:backdrop-blur sm:hover:bg-white/20"
               >
                 Open in Figma
               </a>
