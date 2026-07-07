@@ -6,7 +6,6 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Head from "./head";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -30,7 +29,6 @@ export default function Home() {
 
     return (
         <div className="mx-auto">
-            <Head />
             <Navbar showButtons={!buttonsVisible} />
             <HeroSection buttonsRef={buttonsRef} />
             <Projects />
