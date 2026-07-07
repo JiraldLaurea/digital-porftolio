@@ -183,7 +183,7 @@ const Navbar = ({ showButtons }: any) => {
                         {/* Resume and LinkedIn Buttons */}
                         <div
                             className={`flex space-x-2 items-center transition-all ${
-                                showButtons || isMenuOpened
+                                showButtons
                                     ? "opacity-100"
                                     : "opacity-0 pointer-events-none"
                             }`}
@@ -276,7 +276,7 @@ const Navbar = ({ showButtons }: any) => {
                                         <span className="font-mono text-xs text-secondary-text dark:text-secondary-text-dark">
                                             {String(index).padStart(2, "0")}
                                         </span>
-                                        <span className="text-3xl font-bold tracking-tight sm:text-4xl">
+                                        <span className="text-xl font-bold tracking-tight sm:text-2xl">
                                             {navItem.label}
                                         </span>
                                     </span>
@@ -289,18 +289,23 @@ const Navbar = ({ showButtons }: any) => {
                         })}
                     </div>
 
-                    <div className="flex flex-col gap-4 px-4 py-6 border-t shrink-0 dark:border-zinc-700">
+                    <div className="flex flex-col gap-4 px-4 pt-6 pb-10 mb-6 border-t shrink-0 dark:border-zinc-700">
                         <div className="flex space-x-2">
                             <Button
                                 link={resumeLink}
                                 text="Résumé"
                                 isPrimary
+                                fullWidth
                             />
-                            <Button link={linkedInLink} text="LinkedIn" />
+                            <Button
+                                link={linkedInLink}
+                                text="LinkedIn"
+                                fullWidth
+                            />
                         </div>
                         <a
                             href="mailto:jiraldcalusay@gmail.com"
-                            className="text-sm text-secondary-text dark:text-secondary-text-dark"
+                            className="text-sm text-center text-secondary-text dark:text-secondary-text-dark"
                         >
                             jiraldcalusay@gmail.com
                         </a>

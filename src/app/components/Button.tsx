@@ -7,6 +7,7 @@ type ButtonProps = {
     isSmaller?: boolean;
     isFromNavbar?: boolean;
     isFigma?: boolean;
+    fullWidth?: boolean;
 };
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
     isSmaller,
     isFromNavbar,
     isFigma,
+    fullWidth,
 }: ButtonProps) => {
     return (
         // text-blue-600
@@ -34,7 +36,8 @@ const Button = ({
                         ? "text-primary1 bg-primary-text hover:bg-primary-text/85 dark:text-black dark:bg-white dark:hover:bg-white/85"
                         : "border hover:bg-primary-hovered hover:dark:bg-primary-hovered-dark dark:border-zinc-700"
                 }
-                ${isFigma && "gap-2"}`}
+                ${isFigma ? "gap-2" : ""}
+                ${fullWidth ? "flex-1" : ""}`}
         >
             {isFigma && (
                 <div className={`relative w-5 h-5`}>
