@@ -26,7 +26,24 @@ const ProjectsCarousel = memo(({ projects }: ProjectsCarouselProps) => {
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isInView, setIsInView] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Only allow autoplay once the carousel scrolls into view, so the first
+  // slide is what the visitor actually lands on (and it pauses off-screen)
+  useEffect(() => {
+    if (!emblaApi) return;
+    const node = emblaApi.rootNode();
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.4 },
+    );
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [emblaApi]);
 
   // Track the selected slide for the pagination
   useEffect(() => {
@@ -52,12 +69,12 @@ const ProjectsCarousel = memo(({ projects }: ProjectsCarouselProps) => {
 
   const startAutoplay = useCallback(() => {
     clearAutoplay();
-    if (isPlaying && emblaApi && projects.length > 1) {
+    if (isPlaying && isInView && emblaApi && projects.length > 1) {
       intervalRef.current = setInterval(() => {
         emblaApi.scrollNext();
       }, AUTOPLAY_DELAY);
     }
-  }, [clearAutoplay, isPlaying, emblaApi, projects.length]);
+  }, [clearAutoplay, isPlaying, isInView, emblaApi, projects.length]);
 
   useEffect(() => {
     startAutoplay();
