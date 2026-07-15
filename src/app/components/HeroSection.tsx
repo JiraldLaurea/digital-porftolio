@@ -35,14 +35,14 @@ const HeroSection = ({ buttonsRef }: any) => {
         <FadeIn onMount delay={0.2}>
           <p className="max-w-xl mt-6 text-base leading-relaxed sm:text-lg text-secondary-text dark:text-secondary-text-dark">
             AI engineer and fullstack developer based in Metro Manila, shipping
-            intelligent web products end to end — currently leading AI development
-            at Qroad Ph.
+            intelligent web products end to end — currently leading AI
+            development at Qroad Ph.
           </p>
         </FadeIn>
 
         <FadeIn onMount delay={0.3}>
           <div ref={buttonsRef} className="flex justify-center gap-3 mt-8">
-            <Button link={resumeLink} text="View résumé" isPrimary />
+            <Button link={resumeLink} text="View resume" isPrimary />
             <Button link={linkedInLink} text="LinkedIn" />
           </div>
         </FadeIn>
