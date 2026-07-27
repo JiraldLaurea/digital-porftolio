@@ -4,7 +4,7 @@ import TechStack from "./TechStack";
 
 const jobs = [
     {
-        job: "Lead AI Engineer",
+        job: "Lead Web Developer",
         company: "Qroad Ph",
         date: "Jun 2026 — Present",
         entries: qroadProjects,

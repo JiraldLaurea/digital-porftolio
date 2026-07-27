@@ -21,7 +21,7 @@ const HeroSection = ({ buttonsRef }: any) => {
       <div className="relative z-10 flex flex-col items-center max-w-3xl">
         <FadeIn onMount delay={0}>
           <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent sm:text-sm">
-            Lead AI Engineer
+            Lead Web Developer
           </p>
         </FadeIn>
 
@@ -34,9 +34,9 @@ const HeroSection = ({ buttonsRef }: any) => {
 
         <FadeIn onMount delay={0.2}>
           <p className="max-w-xl mt-6 text-base leading-relaxed sm:text-lg text-secondary-text dark:text-secondary-text-dark">
-            AI engineer and fullstack developer based in Metro Manila, shipping
-            intelligent web products end to end — currently leading AI development
-            at Qroad Ph.
+            Lead web developer based in Metro Manila, building web and mobile
+            products end to end — from AI-powered apps to enterprise systems,
+            currently leading development at Qroad Ph.
           </p>
         </FadeIn>
 
