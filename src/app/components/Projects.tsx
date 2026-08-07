@@ -2,16 +2,57 @@
 import { useTheme } from "next-themes";
 import { useMemo } from "react";
 import { RiNextjsFill, RiVercelFill } from "react-icons/ri";
+import { SiExpo, SiTurso } from "react-icons/si";
 import { Project } from "../Types/index";
 import ProjectsCarousel from "./ProjectsCarousel";
 import FadeIn from "./FadeIn";
-import { ReactIcon, TailwindIcon } from "./icons/Icons";
+import { ReactIcon, TailwindIcon, TypescriptIcon } from "./icons/Icons";
 
 const Projects = () => {
     const { theme }: any = useTheme();
 
     const projects: Project[] = useMemo(
         () => [
+            {
+                projectType: "Website",
+                category: "Web & Mobile Platform",
+                year: "2026",
+                imgSrc: "projects-voucher-hunt.png",
+                name: "Voucher Hunt",
+                description:
+                    "A reservation-based voucher marketing platform for small businesses: spin to reveal a voucher, book a slot tied to that prize, then redeem it in store — with an admin dashboard and an Expo Android app on one API.",
+                techs: [
+                    {
+                        Icon: RiNextjsFill,
+                        imgSrc: `${
+                            theme === "dark"
+                                ? "skills_nextjsDark.svg"
+                                : "skills_nextjsLight.svg"
+                        }`,
+                        techName: "Next.js",
+                    },
+                    {
+                        Icon: ReactIcon,
+                        imgSrc: "skills_react.svg",
+                        techName: "React Native",
+                    },
+                    {
+                        Icon: SiExpo,
+                        imgSrc: "",
+                        techName: "Expo",
+                    },
+                    {
+                        Icon: TypescriptIcon,
+                        imgSrc: "skills_typescript.svg",
+                        techName: "TypeScript",
+                    },
+                    {
+                        Icon: SiTurso,
+                        imgSrc: "",
+                        techName: "Turso / libSQL",
+                    },
+                ],
+            },
             {
                 projectType: "Website",
                 category: "Web Platform",

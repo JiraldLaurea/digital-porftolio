@@ -3,11 +3,13 @@ import { GrMysql } from "react-icons/gr";
 import { RiNextjsFill } from "react-icons/ri";
 import {
   SiAndroid,
+  SiExpo,
   SiJetpackcompose,
   SiOpenai,
-  SiPostgresql,
   SiPrisma,
   SiSqlite,
+  SiTurso,
+  SiZod,
 } from "react-icons/si";
 import {
   CsharpIcon,
@@ -59,8 +61,36 @@ const nodeTech = {
   techName: "Node.js",
 };
 const openaiTech = { Icon: SiOpenai, imgSrc: "", techName: "OpenAI" };
+const reactNativeTech = {
+  Icon: ReactIcon,
+  imgSrc: "skills_react.svg",
+  techName: "React Native",
+};
+const expoTech = { Icon: SiExpo, imgSrc: "", techName: "Expo" };
+const tursoTech = { Icon: SiTurso, imgSrc: "", techName: "Turso / libSQL" };
+const zodTech = { Icon: SiZod, imgSrc: "", techName: "Zod" };
 
 export const qroadProjects = [
+  {
+    project: "Voucher Hunt — Voucher Marketing Platform (Web + Android)",
+    roles: ["Lead Developer", "Fullstack Developer", "Mobile Developer"],
+    date: "June 2026",
+    tasks: [
+      "Led development of a reservation-based voucher marketing platform for small businesses — a roulette draw, tier-gated slot booking, and in-store redemption — spanning an admin dashboard, a staff validation surface, and a loyalty points ledger",
+      "Engineered race-safe voucher issuance on libSQL/Turso with write transactions and conditional stock updates, so a depleted pool or slot can never be over-issued across serverless instances",
+      "Hardened the public flow with phone OTP sign-in, hashed-IP rate limiting, and pluggable SMS delivery (SMPP, Movider, Twilio, Infobip, ClickSend), covered by unit, integration, and concurrency tests",
+      "Shipped the customer journey as an Expo/React Native Android app on the same API, released to Google Play with push notifications, deep links, and QR voucher tickets",
+    ],
+    techs: [
+      nextTech,
+      reactTech,
+      reactNativeTech,
+      expoTech,
+      typescriptTech,
+      tursoTech,
+      zodTech,
+    ],
+  },
   {
     project: "GameLead Radar — AI Lead Discovery Platform",
     roles: ["AI Engineer", "Fullstack Developer"],
@@ -95,23 +125,6 @@ export const qroadProjects = [
       openaiTech,
       prismaTech,
       { Icon: SiSqlite, imgSrc: "", techName: "Turso / libSQL" },
-      tailwindTech,
-    ],
-  },
-  {
-    project: "BizFlow Voucher Engine",
-    roles: ["Fullstack Developer"],
-    date: "June 2026",
-    tasks: [
-      "Built a performance-trackable voucher marketing engine that turns ad/QR engagement into a measurable landing-page-to-redemption funnel",
-      "Engineered a concurrency-safe issuance flow using PostgreSQL row locking to prevent overselling, with JWT auth, role-based access, and pluggable SMS delivery",
-    ],
-    techs: [
-      nextTech,
-      reactTech,
-      typescriptTech,
-      { Icon: SiPostgresql, imgSrc: "", techName: "PostgreSQL" },
-      prismaTech,
       tailwindTech,
     ],
   },
