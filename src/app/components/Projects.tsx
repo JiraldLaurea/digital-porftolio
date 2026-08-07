@@ -21,6 +21,8 @@ const Projects = () => {
                 name: "Voucher Hunt",
                 description:
                     "A reservation-based voucher marketing platform for small businesses: spin to reveal a voucher, book a slot tied to that prize, then redeem it in store — with an admin dashboard and an Expo Android app on one API.",
+                link: "https://bizflow-voucher-hunt.vercel.app/",
+                sourceCode: "https://github.com/JiraldLaurea/bizflow-voucher-hunter",
                 techs: [
                     {
                         Icon: RiNextjsFill,
