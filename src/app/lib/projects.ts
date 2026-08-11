@@ -76,10 +76,12 @@ export const qroadProjects = [
     roles: ["Lead Developer", "Fullstack Developer", "Mobile Developer"],
     date: "June 2026",
     tasks: [
-      "Led development of a reservation-based voucher marketing platform for small businesses — a roulette draw, tier-gated slot booking, and in-store redemption — spanning an admin dashboard, a staff validation surface, and a loyalty points ledger",
-      "Engineered race-safe voucher issuance on libSQL/Turso with write transactions and conditional stock updates, so a depleted pool or slot can never be over-issued across serverless instances",
-      "Hardened the public flow with phone OTP sign-in, hashed-IP rate limiting, and pluggable SMS delivery (SMPP, Movider, Twilio, Infobip, ClickSend), covered by unit, integration, and concurrency tests",
-      "Shipped the customer journey as an Expo/React Native Android app on the same API, released to Google Play with push notifications, deep links, and QR voucher tickets",
+      "Led development of a voucher marketing platform for small businesses — customers spin to win a discount, book a time slot to use it, then redeem it in store — covering an admin dashboard, a staff counter screen, and an Android app",
+      "Built the campaign setup: venues, bookable time slots with capacity, and prizes with their own stock and win rates, so a business can steer its biggest discounts to its quietest hours",
+      "Built the prize draw and booking flow so a prize is only offered while it is still in stock with a date open, and slots and prizes are never overbooked when several customers confirm at once",
+      "Added passwordless sign-in with a one-time code sent by SMS, and the counter screen where staff scan a QR code or type a voucher code to check it and mark it used",
+      "Built a loyalty points system shared across partner businesses — customers earn points on purchases and spend them on partner items in an in-app shop, with monthly statements settling what each partner owes or is owed",
+      "Shipped the customer experience as an Android app on Google Play with push notifications, in English, Korean, Chinese, and Japanese",
     ],
     techs: [
       nextTech,
