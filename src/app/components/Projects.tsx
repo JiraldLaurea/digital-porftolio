@@ -21,8 +21,8 @@ const Projects = () => {
                 name: "Voucher Hunt",
                 description:
                     "A voucher marketing platform for small businesses: customers spin to win a discount, book a time slot to use it, then redeem it in store — with an admin dashboard, a staff counter screen, loyalty points, and an Android app.",
-                link: "https://bizflow-voucher-hunt.vercel.app/",
-                sourceCode: "https://github.com/JiraldLaurea/bizflow-voucher-hunter",
+                link: "https://voucher-hunt.com/",
+                sourceCode: "https://github.com/jiraldcalusay/bizflow-voucher-hunter",
                 techs: [
                     {
                         Icon: RiNextjsFill,
@@ -64,7 +64,7 @@ const Projects = () => {
                 description:
                     "A responsive personal finance app for tracking income, expenses, budgets, accounts, transfers, reports, and backups with authenticated workspace persistence.",
                 link: "https://kwarta.vercel.app/",
-                sourceCode: "https://github.com/JiraldLaurea/kwarta",
+                sourceCode: "https://github.com/jiraldcalusay/kwarta",
                 techs: [
                     {
                         Icon: ReactIcon,
@@ -105,7 +105,7 @@ const Projects = () => {
                 description:
                     "A production-grade full-stack e-commerce platform built to demonstrate real-world frontend and full-stack development skills.",
                 link: "https://sellix-ecommerce.vercel.app/",
-                sourceCode: "https://github.com/JiraldLaurea/sellix",
+                sourceCode: "https://github.com/jiraldcalusay/sellix",
                 techs: [
                     {
                         Icon: ReactIcon,
@@ -141,9 +141,11 @@ const Projects = () => {
                 projectType: "Website",
                 category: "AI Platform",
                 year: "2026",
+                imgSrc: "projects-gamelead-radar.png",
                 name: "GameLead Radar",
                 description:
                     "An AI-powered lead discovery platform that crawls game-industry news and RSS feeds to surface pre-launch leads, then enriches contacts and automates scheduled outreach.",
+                sourceCode: "https://github.com/jiraldcalusay/gamelead-radar",
                 techs: [
                     {
                         Icon: RiNextjsFill,

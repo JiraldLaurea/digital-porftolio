@@ -31,7 +31,7 @@ const ProjectsCard = memo(
               src={`/img/${imgSrc}`}
               alt={name}
               className="object-cover object-center"
-              quality={80}
+              quality={75}
               fill
               placeholder="blur"
               blurDataURL="/img/blur-placeholder.png"

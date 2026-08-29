@@ -1,11 +1,9 @@
 "use client";
+import { linkedInLink, resumeLink } from "../lib/links";
 import Button from "./Button";
 import FadeIn from "./FadeIn";
 
 const HeroSection = ({ buttonsRef }: any) => {
-  const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
-  const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
-
   return (
     <section
       id="home"

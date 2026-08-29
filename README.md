@@ -2,7 +2,7 @@
 
 A modern and responsive personal portfolio built with Next.js to showcase my experience, skills, projects, and contact information.
 
-🔗 Live Demo: https://jiraldcalusay.vercel.app
+🔗 Live Demo: https://jiraldcalusay.com
 
 ## 📸 Preview
 
@@ -30,6 +30,6 @@ A modern and responsive personal portfolio built with Next.js to showcase my exp
 
 Jirald Calusay
 
--   GitHub: https://github.com/JiraldLaurea
+-   GitHub: https://github.com/jiraldcalusay
 -   LinkedIn: https://www.linkedin.com/in/jirald-calusay-064b09220/
 -   Email: jiraldcalusay@gmail.com

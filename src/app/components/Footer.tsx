@@ -1,3 +1,5 @@
+import { githubLink, linkedInLink } from "../lib/links";
+
 const Footer = () => {
     return (
         <footer className="flex justify-center px-4 py-8 border-t sm:px-8 bg-primary1 dark:bg-primary2-dark dark:border-zinc-700">
@@ -7,7 +9,7 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center gap-6 text-sm">
                     <a
-                        href="https://www.linkedin.com/in/jirald-calusay-064b09220"
+                        href={linkedInLink}
                         target="_blank"
                         rel="noreferrer"
                         className="transition-colors text-secondary-text dark:text-secondary-text-dark hover:text-primary-text dark:hover:text-white"
@@ -15,7 +17,7 @@ const Footer = () => {
                         LinkedIn
                     </a>
                     <a
-                        href="https://github.com/JiraldLaurea"
+                        href={githubLink}
                         target="_blank"
                         rel="noreferrer"
                         className="transition-colors text-secondary-text dark:text-secondary-text-dark hover:text-primary-text dark:hover:text-white"

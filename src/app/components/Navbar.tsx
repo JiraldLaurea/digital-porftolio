@@ -4,6 +4,7 @@ import { throttle } from "lodash";
 import debounce from "lodash/debounce";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import {
     RiArrowRightLine,
     RiCloseLargeFill,
@@ -12,6 +13,12 @@ import {
 } from "react-icons/ri";
 import { RxMoon } from "react-icons/rx";
 import { scroller } from "react-scroll/modules";
+import {
+    emailAddress,
+    githubLink,
+    linkedInLink,
+    resumeLink,
+} from "../lib/links";
 import Button from "./Button";
 
 const Navbar = ({ showButtons }: any) => {
@@ -22,8 +29,6 @@ const Navbar = ({ showButtons }: any) => {
         "scrolled" | "clicked"
     >("scrolled");
 
-    const resumeLink = "/assets/Jirald_Calusay_Resume.pdf";
-    const linkedInLink = "https://linkedin.com/in/jirald-calusay-064b09220";
     const SM_BREAKPOINT = 640;
 
     const navItems = [
@@ -205,6 +210,16 @@ const Navbar = ({ showButtons }: any) => {
                         {/* Theme switcher and Menu Buttons */}
 
                         <div className="flex items-center">
+                            <a
+                                href={githubLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="GitHub profile"
+                                title="GitHub"
+                                className="flex items-center justify-center w-10 h-10 mr-2 transition-colors border border-opacity-50 rounded-full dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
+                            >
+                                <FaGithub size={18} />
+                            </a>
                             <button
                                 className="flex items-center justify-center w-10 h-10 transition-colors border border-opacity-50 rounded-full dark:border-zinc-700 hover:bg-primary-hovered dark:hover:bg-primary-hovered-dark"
                                 onClick={() =>
@@ -264,10 +279,7 @@ const Navbar = ({ showButtons }: any) => {
                                 <button
                                     key={index}
                                     onClick={() => {
-                                        handleNavItemClick(
-                                            index,
-                                            navItem.page,
-                                        );
+                                        handleNavItemClick(index, navItem.page);
                                         setIsMenuOpened(false);
                                     }}
                                     className="flex items-center justify-between py-6 text-left border-b dark:border-zinc-700"
@@ -290,24 +302,33 @@ const Navbar = ({ showButtons }: any) => {
                     </div>
 
                     <div className="flex flex-col gap-4 px-4 pt-6 pb-10 mb-6 border-t shrink-0 dark:border-zinc-700">
-                        <div className="flex space-x-2">
-                            <Button
-                                link={resumeLink}
-                                text="Résumé"
-                                isPrimary
-                                fullWidth
-                            />
-                            <Button
-                                link={linkedInLink}
-                                text="LinkedIn"
-                                fullWidth
-                            />
+                        <div className="flex flex-col gap-2">
+                            <div className="flex">
+                                <Button
+                                    link={resumeLink}
+                                    text="Resume"
+                                    isPrimary
+                                    fullWidth
+                                />
+                            </div>
+                            <div className="flex space-x-2">
+                                <Button
+                                    link={linkedInLink}
+                                    text="LinkedIn"
+                                    fullWidth
+                                />
+                                <Button
+                                    link={githubLink}
+                                    text="GitHub"
+                                    fullWidth
+                                />
+                            </div>
                         </div>
                         <a
-                            href="mailto:jiraldcalusay@gmail.com"
+                            href={`mailto:${emailAddress}`}
                             className="text-sm text-center text-secondary-text dark:text-secondary-text-dark"
                         >
-                            jiraldcalusay@gmail.com
+                            {emailAddress}
                         </a>
                     </div>
                 </div>
